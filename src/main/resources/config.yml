@@ -1,0 +1,57 @@
+# Seasons – Hauptkonfiguration
+# Alle numerischen Werte sind ueber diese Datei steuerbar.
+
+season:
+  year-length-days: 365
+  start-season: SPRING
+  start-day: 0
+  spring-days: 91
+  summer-days: 91
+  fall-days: 91
+  winter-days: 92
+  debug-mode: true
+
+temperature:
+  min-winter: -0.5
+  max-summer: 0.8
+  biome-offsets:
+    default: 0.0
+    cold: -0.3
+    arid: 0.2
+    temperate: 0.0
+  day-night-amplitude: 0.15
+
+weather:
+  enabled: true
+  snow:
+    freeze-threshold: 0.0
+    melt-threshold: 0.5
+    melt-speed: 1
+    max-natural-height: 2
+    height-per-cold: 1
+    layers-per-scan: 8
+    min-neighbors-for-growth: 3
+    particle-radius: 32
+    particle-count: 50
+    particle-y-min: 2
+    particle-y-max: 8
+    snow-melt-bonemeal: true
+    spring-regeneration-bonemeal: true
+    first-snow-min-layers: 3
+    first-snow-max-layers: 5
+    max-attempts-multiplier: 16
+    max-down-search: 32
+
+persistence:
+  file: seasons_data.yml
+  save-interval-minutes: 5
+
+commands:
+  enabled: true
+  debug-requires-op: true
+
+performance:
+  chunk-scan-interval-ticks: 20
+  max-snow-chunks-per-tick: 32
+  melt-chunks-per-tick: 8
+  summary-interval-scans: 50

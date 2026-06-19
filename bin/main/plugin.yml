@@ -1,0 +1,23 @@
+name: Seasons
+version: "${version}"
+api-version: "1.21"
+main: de.ajsch.seasons.SeasonsPlugin
+description: Vanilla-Plus Jahreszeiten f~ur Paper-Minecraft
+author: ajsch
+
+commands:
+  season:
+    description: Zeigt aktuellen Tag, Jahreszeit & Temperatur
+    usage: /season
+    permission: seasons.info
+
+permissions:
+  seasons.info:
+    description: Erlaubt /season (Info)
+    default: true
+  seasons.debug:
+    description: Erlaubt /season debug (erweiterte Info)
+    default: op
+  seasons.admin:
+    description: Erlaubt /season skip/set/speed (Admin)
+    default: op
