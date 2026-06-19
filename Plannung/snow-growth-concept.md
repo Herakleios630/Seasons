@@ -1,4 +1,4 @@
-"# Snow Growth – Mini-Konzept (mit Caching)
+# Snow Growth – Mini-Konzept (mit Caching + Persistenz)
 
 **Ziel:** Platzierung/Ausbreitung und Höhenwachstum strikt trennen.
 Erst wenn alle platzierbaren Spalten im Chunk Schnee haben, beginnt langsames Wachstum.
@@ -11,58 +11,79 @@ Erst wenn alle platzierbaren Spalten im Chunk Schnee haben, beginnt langsames Wa
 |-------|------|-----|
 | `processChunk` (Platzierung) | Chunk nicht gesättigt | Shuffled `layersPerScan` Spalten, setzt Layer 1. **Kein grow mehr.** |
 | `growSnowInChunk` (Wachstum) | Chunk gesättigt | Shuffled `growth-layers-per-scan` Schnee-Spalten, wächst +1 Layer. Keine Nachbar-Prüfung. |
-| nichts | Chunk gesättigt + alle Spalten auf Max-Höhe | Komplett überspringen (spart 256 Scans) |
+| nichts | `isFullyGrown == true` | Chunk komplett überspringen (0ms) |
 
 ---
 
-## 2. Sättigungs-Prüfung + Cache
+## 2. Sättigungs-Prüfung (Cache + Persistenz)
 
 **Pro Chunk speichern wir:**
-- `snowCapableColumns`: Anzahl Spalten, die Schnee tragen können (solider, voller Block, nicht zu warm)
-- `snowCoveredColumns`: Davon haben aktuell Schnee
-- `snowAtMaxColumns`: Davon sind auf Maximal-Höhe für aktuelle Temperatur
-- `computedAtTick`: Wann berechnet
-- `computedAtTemperature`: Bei welcher Temperatur
+- `snowCapableColumns`: Spalten, die Schnee tragen können (solider, voller Block, nicht zu warm)
+- `snowCoveredColumns`: Davon haben aktuell Schnee (irgendeine Höhe)
+- `snowBelowMaxColumns`: Davon haben Schnee unter dem aktuellen Grow-Limit (können noch wachsen)
+- `computedAtTempLevel`: `floor(temperatur / 0.2)`, nur bei Level-Wechsel → Cache-Invalidierung
+- `lastUpdated`: Timestamp (für TTL-Fallback)
 
-**Cache-Key:** `chunk.getChunkKey()` (long: `(x << 32) | z & 0xFFFFFFFFL`)
+**Grow-Limit vs. existierender Schnee:**
+- `getMaxSnowHeight(temp)` liefert das aktuelle **Grow-Limit**
+- Existierender Schnee über dem Limit **bleibt** (solange `temp < meltThreshold`)
+- Er wächst nur nicht weiter, bis das Limit wieder steigt
+- Deshalb: `snowBelowMaxColumns` – Spalten, die unter dem aktuellen Limit sind → können wachsen
 
-**Invalidierung:**
-| Trigger | Was |
-|---------|-----|
-| `BlockPlaceEvent` / `BlockBreakEvent` | Cache für den Chunk löschen |
-| `ChunkUnloadEvent` | Cache-Eintrag löschen |
-| Season-Wechsel / Temperatur-Änderung | `computedAtTemperature` vs. aktuelle Temperatur → neu berechnen |
-| TTL (30s) | Fallback, periodischer Refresh |
-
-**Erneute Berechnung:** `scanChunkColumns()` zählt einmal alle 256 Spalten durch:
-```
-für jede Spalte:
-    top = getHighestBlockAt(x,z)
-    ground = findColumnGround(top)
-    wenn ground != null UND isSnowCapable(ground):
-        snowCapableColumns++
-        wenn ground+1 == SNOW:
-            snowCoveredColumns++
-            wenn Schnee-Höhe >= maxHeight(temperature):
-                snowAtMaxColumns++
-```
-Ergebnis:
-- `isSaturated = snowCoveredColumns == snowCapableColumns`
-- `isFullyGrown = snowCoveredColumns == snowAtMaxColumns && snowCapableColumns > 0`
+**Ergebnis:**
+- `isSaturated = snowCoveredColumns >= snowCapableColumns * saturationThreshold`
+- `isFullyGrown = snowBelowMaxColumns == 0 && snowCapableColumns > 0`
 
 ---
 
-## 3. Ablauf im Scheduler
+## 3. Persistenz (JSON)
+
+**Datei:** `plugins/Seasons/chunk_cache.json`
+
+**Format:**
+```json
+{
+  "world": "minecraft:overworld",
+  "chunks": {
+    "-1099511627568": {
+      "snowCapable": 220,
+      "snowCovered": 218,
+      "snowBelowMax": 45,
+      "tempLevel": -2,
+      "updated": 1713123456789
+    }
+  }
+}
+```
+
+- **Key:** `chunk.getChunkKey()` als String (long: `(x << 32) | z & 0xFFFFFFFFL`)
+- **Asynchrones Speichern:** Bei jedem Cache-Miss oder Block-Update wird die JSON in den nächsten 5s asynchron geschrieben (Batch-Schutz)
+- **Laden:** Beim Server-Start einmalig – Cache-Misses für fehlende Chunks werden live berechnet
+- **Modul-übergreifend:** Andere Module (Gewächshaus, Schmelze) können die JSON lesen
+
+---
+
+## 4. Invalidierung
+
+| Trigger | Was |
+|---------|-----|
+| `BlockPlaceEvent` / `BlockBreakEvent` | Cache für den Chunk löschen, `dirty` flag für JSON-Sync |
+| `ChunkUnloadEvent` | Cache-Eintrag löschen, in JSON schreiben (letzter Stand) |
+| `computedAtTempLevel != floor(temperatur / 0.2)` | Nur bei Level-Änderung → Cache-Eintrag invalidieren |
+| TTL (30s) | Fallback, periodischer Refresh gegen Memory-Leak |
+
+---
+
+## 5. Ablauf im Scheduler
 
 ```
 accumulateSnow(world):
     für jeden geladenen Chunk:
-        cache = getCache(chunk)
-        wenn cache == null || cache.invalid():
-            cache = scanChunkColumns(chunk)
+        cache = getOrComputeCache(chunk)
         
         wenn cache.isFullyGrown:
             // nichts tun – alle Limits erreicht
+            continue
         
         wenn cache.isSaturated:
             growSnowInChunk(chunk)       // nur Wachstum
@@ -72,7 +93,7 @@ accumulateSnow(world):
 
 ---
 
-## 4. Neue Config (nur Wachstum)
+## 6. Neue Config (nur Wachstum)
 
 ```yaml
 weather:
@@ -88,7 +109,7 @@ weather:
 
 ---
 
-## 5. Entfernte Dinge
+## 7. Entfernte Dinge
 
 - `enoughNeighborsSnowOrBlocked` – wird nicht mehr gebraucht
 - `min-neighbors-for-growth` Config – entfällt
@@ -97,7 +118,7 @@ weather:
 
 ---
 
-## 6. Performance
+## 8. Performance
 
 | Operation | Pro Chunk | Max. Kosten |
 |-----------|-----------|-------------|
@@ -106,17 +127,24 @@ weather:
 | `growSnowInChunk` (Wachstum) | `growth.layers-per-scan` (2) Spalten | ~0,05ms |
 | Cache-Hit, fully grown | Nichts | 0ms |
 
-Bei 100 geladenen Chunks, 95% gesättigt:
+Bei 100 geladenen Chunks, 95% gesättigt, 50% fully grown:
 - 5 × `processChunk` = ~0,5ms
-- 95 × `growSnowInChunk` = ~5ms
-- Total: ~5,5ms pro Scan – akzeptabel
+- 45 × `growSnowInChunk` = ~2,2ms
+- 50 × fully grown = 0ms
+- Total: ~2,7ms pro Scan – sehr akzeptabel
+
+**Tag/Nacht-Schwankung:** `computedAtTempLevel` ändert sich nur bei Temperatur-Sprung >0.2°C.
+Die dayNightAmplitude (~0.15°C) triggert kein Re-Scan. Keine spürbare Last.
 
 ---
 
-## 7. ToDo
+## 9. ToDo
 
-- [ ] `SaturationCache`-Klasse mit `Map<Long, CacheEntry>` in `SnowAccumulator`
-- [ ] `scanChunkColumns(Chunk)` → liefert CacheEntry
+- [ ] `ChunkCacheEntry`-Klasse (Datenmodell)
+- [ ] `HashMap<Long, ChunkCacheEntry>` in `SnowAccumulator`
+- [ ] `scanChunkColumns(Chunk)` → liefert `ChunkCacheEntry`
+- [ ] `getOrComputeCache(Chunk)` → Cache-Hit oder Neuberechnung
+- [ ] JSON-Persistenz: `ChunkCacheStore` (laden/speichern/asynchron)
 - [ ] Block-Listener für Invalidierung (Break/Place) in `SnowListener` oder neuem Listener
 - [ ] `growSnowInChunk(Chunk)` implementieren
 - [ ] grow-Aufruf aus `processColumn` entfernen
@@ -124,4 +152,3 @@ Bei 100 geladenen Chunks, 95% gesättigt:
 - [ ] `min-neighbors-for-growth` aus Config/WeatherConfig/ConfigManager entfernen
 - [ ] Neue `growth.*` Config-Einträge hinzufügen
 - [ ] Build & Deploy
-"
