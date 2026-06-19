@@ -98,9 +98,13 @@ de.ajsch.seasons/
 │   ├── WeatherConfig.java          (Schnee-Höhen, Freeze-Map)
 │   └── PrecipitationCategory.java  (CAN_FREEZE, NO_FREEZE, NO_RAIN)
 │
-├── foliage/                        (Phase 2 – Laubfärbung)
+├── visual/                         (Phase 2 – Laubfärbung, Packet-basiert)
+│   ├── VisualSeasonManager.java
 │   ├── FoliageTintManager.java
-│   └── FoliageConfig.java
+│   ├── VisualConfig.java
+│   ├── ColorCalculator.java
+│   └── nms/
+│       └── NmsAdapter.java
 │
 ├── effects/                        (Phase 3 – Spieler-Effekte)
 │   ├── SeasonalEffect.java         (Interface)
@@ -158,7 +162,12 @@ de.ajsch.seasons/
 - `categories.NO_FREEZE`: Liste aller Biome ohne Schnee (Regen normal)
 - `categories.NO_RAIN`: Liste aller Biome ohne Niederschlag (Wueste etc.)
 
-### seasons_data.yml (auto-generiert)
+"### foliage_tints.yml
+- `foliage.transition-days`: Dauer des Farbübergangs in Ingame-Tagen
+- `foliage.seasons.<SEASON>.default-tint`: Hex-Farbe für alle Biome
+- `foliage.seasons.<SEASON>.overrides.<BIOME>`: Biome-spezifische Hex-Farbe
+
+### seasons_data.yml (auto-generiert)"
 - `year-start-offset`: FullTime-Wert bei Plugin-Installation
 - `last-season`: Letzte bekannte Season
 - `current-day`: Aktueller Jahrestag

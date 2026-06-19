@@ -74,6 +74,6 @@ de.ajsch.seasons/
 3. **Services holen Config** über `ConfigManager`‑Injection
 4. **SeasonClock** ist alleinige Quelle für die aktuelle Season
 5. **Kein Service hält mutable State** außer Persistenz‑Daten
-6. **Keine Java‑Datei > 800 Zeilen** – früh auslagern
+6. **Keine Java‑Datei > 400 Zeilen** – ab ~350 Zeilen in separate Klassen auslagern (Single Responsibility)
 7. **Biome nie hardcoden** – immer über Config‑Kategorien
 8. **Phase 1: Kein NMS** – nur Paper‑API
