@@ -1,5 +1,6 @@
 package de.ajsch.seasons.temperature;
 
+import de.ajsch.seasons.season.Season;
 import de.ajsch.seasons.season.SeasonConfig;
 import org.bukkit.block.Biome;
 
@@ -29,7 +30,8 @@ public class TemperatureCalculator {
         double maxSummer = tempConfig.getMaxSummer();
         double amplitude = (maxSummer - minWinter) / 2.0;
         double offset = (maxSummer + minWinter) / 2.0;
-        double phaseShift = yearLength * 0.25;
+        // Temperaturmaximum in Mitte Sommer, Minimum in Mitte Winter
+        double phaseShift = seasonConfig.getDaysForSeason(Season.SPRING) + seasonConfig.getDaysForSeason(Season.SUMMER) / 2.0;
 
         double base = amplitude * Math.cos(2.0 * Math.PI * (dayOfYear - phaseShift) / yearLength) + offset;
 

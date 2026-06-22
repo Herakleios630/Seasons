@@ -1,0 +1,43 @@
+# Seasons - Foliage Tints Configuration
+# Controls biome foliage/grass colors for each season.
+# Colors are specified in 0xRRGGBB format.
+#
+# This file is loaded on plugin startup and can be reloaded with /season reload.
+
+foliage:
+  # Duration of color transition between seasons in Minecraft days
+  transition-days: 4.0
+
+  # Ticks between periodic foliage tint updates during transitions (200 = 10s)
+  update-interval-ticks: 200
+
+  # Per-season default foliage tint and per-biome overrides
+  seasons:
+    SUMMER:
+      # Default tint for all biomes not listed in overrides
+      default-tint: "0x7C9E4F"
+      overrides:
+        BIRCH: "0xA0C05F"
+
+    FALL:
+      default-tint: "0xC68A3F"
+      overrides:
+        OAK: "0xD45A2E"
+        DARK_OAK: "0x9B3A1C"
+        BIRCH: "0xF0C040"
+        CHERRY: "0xE8706A"
+        SPRUCE: "0x8B6B3A"
+        JUNGLE: "0xC78A2F"
+        ACACIA: "0xE8A050"
+        MANGROVE: "0xB88A40"
+
+    WINTER:
+      default-tint: "0xA8B0B8"
+      overrides:
+        SPRUCE: "0x7A8A6A"
+
+    SPRING:
+      default-tint: "0x8FD15F"
+      overrides:
+        CHERRY: "0xFF99CC"
+        BIRCH: "0xA8D86A"

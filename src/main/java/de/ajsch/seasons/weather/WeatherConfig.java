@@ -1,6 +1,9 @@
 package de.ajsch.seasons.weather;
 
 import de.ajsch.seasons.config.ConfigManager;
+import org.bukkit.Material;
+
+import java.util.Set;
 
 public class WeatherConfig {
 
@@ -17,7 +20,9 @@ public class WeatherConfig {
     public double getMeltThreshold() { return config.getMeltThreshold(); }
     public int getMeltSpeed() { return config.getMeltSpeed(); }
     public int getLayersPerScan() { return config.getLayersPerScan(); }
-    public int getMinNeighborsForGrowth() { return config.getMinNeighborsForGrowth(); }
+    public int getGrowthLayersPerScan() { return config.getGrowthLayersPerScan(); }
+    public double getSaturationThreshold() { return config.getSaturationThreshold(); }
+    public int getCacheTempLevelTolerance() { return config.getCacheTempLevelTolerance(); }
     public int getParticleRadius() { return config.getParticleRadius(); }
     public int getParticleCount() { return config.getParticleCount(); }
     public int getParticleYMin() { return config.getParticleYMin(); }
@@ -25,10 +30,11 @@ public class WeatherConfig {
     public boolean getSnowMeltBonemeal() { return config.getSnowMeltBonemeal(); }
     public boolean getSpringRegenerationBonemeal() { return config.getSpringRegenerationBonemeal(); }
     public boolean isDebugMode() { return config.isDebugMode(); }
-    public int getFirstSnowMinLayers() { return config.getFirstSnowMinLayers(); }
-    public int getFirstSnowMaxLayers() { return config.getFirstSnowMaxLayers(); }
-    public int getMaxAttemptsMultiplier() { return config.getMaxAttemptsMultiplier(); }
+    public int getCacheTTLSeconds() { return config.getCacheTTLSeconds(); }
     public int getMeltChunksPerTick() { return config.getMeltChunksPerTick(); }
+    public int getMeltLayersPerChunk() { return config.getMeltLayersPerChunk(); }
     public int getSummaryIntervalScans() { return config.getSummaryIntervalScans(); }
-    public int getMaxDownSearchTicks() { return config.getMaxDownSearchTicks(); }
+
+    public Set<Material> getReplaceablePlants() { return config.getReplaceablePlants(); }
+    public Set<Material> getDoublePlants() { return config.getDoublePlants(); }
 }

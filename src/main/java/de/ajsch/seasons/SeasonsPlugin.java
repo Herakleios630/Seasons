@@ -5,10 +5,12 @@ import de.ajsch.seasons.commands.MainSeasonCommand;
 import de.ajsch.seasons.commands.SeasonCommand;
 import de.ajsch.seasons.config.ConfigManager;
 import de.ajsch.seasons.config.ResourceCopier;
+import de.ajsch.seasons.listener.BlockEventListener;
 import de.ajsch.seasons.listener.PlayerJoinListener;
 import de.ajsch.seasons.listener.PlayerMoveListener;
 import de.ajsch.seasons.listener.SeasonChangeListener;
 import de.ajsch.seasons.listener.SnowListener;
+import de.ajsch.seasons.persistence.ChunkCacheStore;
 import de.ajsch.seasons.persistence.SeasonsDataStore;
 import de.ajsch.seasons.season.Season;
 import de.ajsch.seasons.season.SeasonChangeEvent;
@@ -17,9 +19,14 @@ import de.ajsch.seasons.season.SeasonConfig;
 import de.ajsch.seasons.temperature.BiomeTemperature;
 import de.ajsch.seasons.temperature.TemperatureCalculator;
 import de.ajsch.seasons.temperature.TemperatureConfig;
+import de.ajsch.seasons.weather.ChunkCacheManager;
 import de.ajsch.seasons.weather.SnowAccumulator;
 import de.ajsch.seasons.weather.WeatherConfig;
 import de.ajsch.seasons.weather.WeatherInterceptor;
+import de.ajsch.seasons.visual.FoliageTintManager;
+import de.ajsch.seasons.visual.VisualConfig;
+import de.ajsch.seasons.visual.VisualSeasonManager;
+import de.ajsch.seasons.visual.nms.NmsAdapter;
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -29,9 +36,13 @@ public final class SeasonsPlugin extends JavaPlugin {
 
     private ConfigManager configManager;
     private SeasonsDataStore dataStore;
+    private ChunkCacheStore chunkCacheStore;
     private SeasonClock clock;
     private BiomeTemperature biomeTemp;
+    private ChunkCacheManager cacheManager;
     private SnowAccumulator snowAccumulator;
+    private VisualSeasonManager visualSeasonManager;
+    private NmsAdapter nmsAdapter;
 
     @Override
     public void onEnable() {
@@ -71,8 +82,8 @@ public final class SeasonsPlugin extends JavaPlugin {
         WeatherInterceptor weatherInterceptor = new WeatherInterceptor(this, clock, tempCalc, biomeTemp, weatherConfig);
         getServer().getPluginManager().registerEvents(weatherInterceptor, this);
 
-        SeasonChangeListener seasonChangeListener = new SeasonChangeListener(this, weatherInterceptor, weatherConfig);
-        getServer().getPluginManager().registerEvents(seasonChangeListener, this);
+
+        
 
         if (clock.getCurrentSeason() == Season.WINTER) {
             weatherInterceptor.startSnowParticleScheduler();
@@ -93,15 +104,49 @@ public final class SeasonsPlugin extends JavaPlugin {
             }
         }.runTaskTimer(this, 20L, 20L);
 
+        cacheManager = new ChunkCacheManager(this, clock, tempCalc, weatherConfig, null);
+
+        chunkCacheStore = new ChunkCacheStore(this, configManager, cacheManager.getCacheMap());
+        cacheManager.setChunkCacheStore(chunkCacheStore);
+        chunkCacheStore.load();
+
         snowAccumulator = new SnowAccumulator(
             this, clock, tempCalc, weatherConfig,
             configManager.getChunkScanIntervalTicks(),
-            configManager.getMaxSnowChunksPerTick()
+            configManager.getMaxSnowChunksPerTick(),
+            cacheManager
         );
         snowAccumulator.start();
 
+        // --- Visual Season System (Phase 2) ---
+        VisualConfig visualConfig = new VisualConfig(this);
+        visualConfig.load();
+
+        try {
+            nmsAdapter = NmsAdapter.create(this);
+            nmsAdapter.onEnable();
+        } catch (UnsupportedOperationException e) {
+            getLogger().warning("[Visual] NmsAdapter not available for this server version; visual features disabled.");
+            nmsAdapter = null;
+        }
+
+        if (nmsAdapter != null) {
+            FoliageTintManager tintManager = new FoliageTintManager(this, nmsAdapter, visualConfig);
+            visualSeasonManager = new VisualSeasonManager(this, tintManager, visualConfig);
+            visualSeasonManager.start();
+            getLogger().info("[Visual] VisualSeasonManager initialized.");
+        }
+
+        SeasonChangeListener seasonChangeListener = new SeasonChangeListener(this, weatherInterceptor, weatherConfig);
+        getServer().getPluginManager().registerEvents(seasonChangeListener, this);
+
+        chunkCacheStore.startAsyncSaveTask();
+
         SnowListener snowListener = new SnowListener(this, clock, tempCalc, snowAccumulator, weatherConfig);
         getServer().getPluginManager().registerEvents(snowListener, this);
+
+        BlockEventListener blockEventListener = new BlockEventListener(snowAccumulator, cacheManager);
+        getServer().getPluginManager().registerEvents(blockEventListener, this);
 
         PlayerJoinListener joinListener = new PlayerJoinListener(clock, tempCalc, biomeTemp, weatherConfig);
         getServer().getPluginManager().registerEvents(joinListener, this);
@@ -119,6 +164,15 @@ public final class SeasonsPlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        if (visualSeasonManager != null) {
+            visualSeasonManager.stop();
+        }
+        if (nmsAdapter != null) {
+            nmsAdapter.onDisable();
+        }
+        if (chunkCacheStore != null) {
+            chunkCacheStore.save();
+        }
         if (dataStore != null) {
             dataStore.save();
         }

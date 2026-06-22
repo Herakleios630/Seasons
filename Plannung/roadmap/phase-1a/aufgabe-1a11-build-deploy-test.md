@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: Build & Deploy + Funktionstest Phase 1a"
 quelle: "roadmap.md → Phase 1a, Sprint 1a.11"
 related-roadmap: "Plannung/roadmap.md → Phase 1a"
 created: "2026-06-19"
-status: offen
+status: done (vorläufig)
 ---
 
 # Arbeitsauftrag: Build & Deploy + Funktionstest Phase 1a

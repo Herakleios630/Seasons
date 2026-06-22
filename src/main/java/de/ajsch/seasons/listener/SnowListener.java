@@ -4,6 +4,7 @@ import de.ajsch.seasons.season.Season;
 import de.ajsch.seasons.season.SeasonClock;
 import de.ajsch.seasons.temperature.TemperatureCalculator;
 import de.ajsch.seasons.weather.SnowAccumulator;
+import de.ajsch.seasons.weather.SnowGrower;
 import de.ajsch.seasons.weather.WeatherConfig;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -22,6 +23,7 @@ public class SnowListener implements Listener {
     private final SeasonClock clock;
     private final TemperatureCalculator tempCalc;
     private final SnowAccumulator accumulator;
+    private final SnowGrower snowGrower;
     private final WeatherConfig weatherConfig;
 
     public SnowListener(JavaPlugin plugin, SeasonClock clock, TemperatureCalculator tempCalc,
@@ -30,6 +32,7 @@ public class SnowListener implements Listener {
         this.clock = clock;
         this.tempCalc = tempCalc;
         this.accumulator = accumulator;
+        this.snowGrower = accumulator.getSnowGrower();
         this.weatherConfig = weatherConfig;
     }
 
@@ -40,7 +43,7 @@ public class SnowListener implements Listener {
         Block block = event.getBlock();
         org.bukkit.block.Biome biome = block.getBiome();
         double temp = tempCalc.calculate(clock.calculateDayOfYear(), biome);
-        int maxHeight = accumulator.getMaxSnowHeight(temp);
+        int maxHeight = snowGrower.getMaxSnowHeight(temp);
 
         if (block.getType() == Material.SNOW) {
             Snow snow = (Snow) block.getBlockData();

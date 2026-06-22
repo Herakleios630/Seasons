@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: getOrComputeCache + TTL"
 quelle: "roadmap.md → Phase 1a, Sprint 1a.3"
 related-roadmap: "Plannung/roadmap.md → Phase 1a"
 created: "2026-06-19"
-status: offen
+status: done
 ---
 
 # Arbeitsauftrag: getOrComputeCache + TTL

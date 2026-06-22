@@ -20,6 +20,7 @@ public class SeasonChangeListener implements Listener {
     private final WeatherConfig weatherConfig;
 
     public SeasonChangeListener(JavaPlugin plugin, WeatherInterceptor weatherInterceptor,
+
                                 WeatherConfig weatherConfig) {
         this.plugin = plugin;
         this.weatherInterceptor = weatherInterceptor;

@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: Phase 2.1 – Foundation (NmsAdapter, VisualConfig, Colo
 quelle: "roadmap.md → Phase 2, Sprint 2.1"
 related-roadmap: "Plannung/roadmap.md"
 created: "2025-02-20"
-status: pending
+status: done
 ---
 
 # Arbeitsauftrag: Phase 2.1 – Foundation (NmsAdapter, VisualConfig, ColorCalculator)

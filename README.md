@@ -10,8 +10,9 @@ Alle Werte sind über Configs steuerbar – keine Magic Numbers, kein Hardcoding
 
 ## Aktueller Stand
 
-- **Phase 1 in Planung abgeschlossen** – Architektur, Entscheidungen und Sprints definiert
-- **Noch kein Code geschrieben** – Planungsphase, detaillierte Roadmap liegt vor
+- **Phase 1 MVP abgeschlossen** – Seasons, Temperatur, Schnee-Akkumulation, Commands
+- **Phase 2 (Visual Seasons) abgeschlossen** – Saisonale Laubfarben per NMS-Packet-Override, Chunk-Biome-Caching, sanfte Übergänge
+- **Phase 2b (Frost) offen** – Temperaturabhängiger Frost als Tint-Lerp + Partikel
 - Siehe [Roadmap](Plannung/roadmap.md) und [Architektur-Konzept](docs/architecture-concept.md)
 
 ---

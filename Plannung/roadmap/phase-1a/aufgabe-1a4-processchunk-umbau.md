@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: processChunk (Platzierung) umbauen + grow entfernen"
 quelle: "roadmap.md → Phase 1a, Sprint 1a.4"
 related-roadmap: "Plannung/roadmap.md → Phase 1a"
 created: "2026-06-19"
-status: offen
+status: erledigt
 ---
 
 # Arbeitsauftrag: processChunk (Platzierung) umbauen + grow entfernen

@@ -1,0 +1,67 @@
+# Replaceable plants configuration
+# Plants listed here are removed when snow is placed and restored when snow melts.
+#
+# replaceable: Single-block plants or the bottom half of two-block plants.
+#              These are safely removed by setting the block to AIR.
+# double_plants: Two-block-high plants. Both halves are removed when snow is placed,
+#                and the bottom half is restored when snow melts (top half regrows).
+#
+# New Minecraft plants can be added without code changes.
+
+replaceable:
+  - SHORT_GRASS
+  - TALL_GRASS
+  - FERN
+  - LARGE_FERN
+  - DEAD_BUSH
+  - VINE
+  - GLOW_LICHEN
+  - PEONY
+  - ROSE_BUSH
+  - LILAC
+  - SUNFLOWER
+  - POPPY
+  - DANDELION
+  - BLUE_ORCHID
+  - ALLIUM
+  - AZURE_BLUET
+  - RED_TULIP
+  - ORANGE_TULIP
+  - WHITE_TULIP
+  - PINK_TULIP
+  - OXEYE_DAISY
+  - CORNFLOWER
+  - LILY_OF_THE_VALLEY
+  - WITHER_ROSE
+  - SWEET_BERRY_BUSH
+  - WARPED_ROOTS
+  - CRIMSON_ROOTS
+  - WARPED_FUNGUS
+  - CRIMSON_FUNGUS
+  - NETHER_SPROUTS
+  - WEEPING_VINES
+  - TWISTING_VINES
+  - CAVE_VINES
+  - KELP
+  - SEAGRASS
+  - TALL_SEAGRASS
+  - BROWN_MUSHROOM
+  - RED_MUSHROOM
+  - LEAF_LITTER
+  - PINK_PETALS
+  - WILDFLOWERS
+  - CACTUS_FLOWER
+  - FIREFLY_BUSH
+  - BUSH
+  - SHORT_DRY_GRASS
+  - TALL_DRY_GRASS
+  - OPEN_EYEBLOSSOM
+  - CLOSED_EYEBLOSSOM
+
+double_plants:
+  - TALL_GRASS
+  - LARGE_FERN
+  - SUNFLOWER
+  - LILAC
+  - ROSE_BUSH
+  - PEONY
