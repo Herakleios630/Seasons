@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: Summary-Log um Cache-Stats erweitern"
 quelle: "roadmap.md → Phase 1a, Sprint 1a.10"
 related-roadmap: "Plannung/roadmap.md → Phase 1a"
 created: "2026-06-19"
-status: offen
+status: done
 ---
 
 # Arbeitsauftrag: Summary-Log um Cache-Stats erweitern
@@ -51,4 +51,15 @@ Den bestehenden Summary-Log in `SnowAccumulator` um Cache-Statistiken erweitern:
 ## Sync nach Abschluss
 - `docs/developer-guide.md` (Log-Format)
 - `docs/handover.md`
-- `Plannung/roadmap.md` (1a.10 abhaken)
+"- `Plannung/roadmap.md` (1a.10 abhaken)
+
+---
+
+## Erledigungsnotiz (2026-06-19)
+- `fullyGrownSkipped` Counter auf Klassebene hinzugefügt (neben `totalGrown`)
+- `totalGrown` Counter auf Klassebene hinzugefügt
+- In `accumulateSnow()`: `fullyGrownSkipped++` bei `cache.isFullyGrown()`
+- In `growSnowInChunk()`: `totalGrown++` neben `totalPlaced++`
+- Summary-Log-Format geändert auf `[SnowAcc] summary: placed=%d grown=%d | cache: %d hits, %d misses, %d fullyGrown`
+- Summary-Reset um `totalGrown` und `fullyGrownSkipped` erweitert
+- Build: `BUILD SUCCESSFUL`"

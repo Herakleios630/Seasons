@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: BlockListener + SeasonChangeEvent → Cache-Invalidierun
 quelle: "roadmap.md → Phase 1a, Sprint 1a.6"
 related-roadmap: "Plannung/roadmap.md → Phase 1a"
 created: "2026-06-19"
-status: offen
+status: done
 ---
 
 # Arbeitsauftrag: BlockListener + SeasonChangeEvent → Cache-Invalidierung
@@ -32,7 +32,11 @@ Einen `BlockEventListener` (oder Erweiterung des existierenden `SnowListener`) e
 | `src/main/java/de/ajsch/seasons/listener/SeasonChangeListener.java` | Cache-Clear bei SeasonChange |
 | `src/main/java/de/ajsch/seasons/SeasonsPlugin.java` | BlockEventListener registrieren |
 
-## Erbetene Hilfe
+## Ergebnis
+
+Alle vier Schritte erfolgreich umgesetzt.
+
+## Erledigte Schritte
 
 1. **`BlockEventListener` erstellen:**
    - `@EventHandler onBlockBreak(BlockBreakEvent)` → Cache für den Chunk löschen
@@ -46,13 +50,13 @@ Einen `BlockEventListener` (oder Erweiterung des existierenden `SnowListener`) e
 3. **Registrierung in `SeasonsPlugin`:**
    - `BlockEventListener` instanziieren und beim PluginManager registrieren
 
-4. Build: `.\gradlew.bat compileJava` dann `.\gradlew.bat shadowJar`
+4. Build: `.\gradlew.bat compileJava` dann `.\gradlew.bat shadowJar` ✅
 
 ## Technische Randbedingungen
 - **Keine NMS/Reflection**
-- **Terminal:** PowerShell-Syntax
+- **Terminal:** PowerShell-Syntax ✅
 
 ## Sync nach Abschluss
-- `docs/developer-guide.md` (Cache-Invalidierung)
-- `docs/handover.md`
-- `Plannung/roadmap.md` (1a.6 abhaken)
+- `docs/developer-guide.md` (Cache-Invalidierung) ✅
+- `docs/handover.md` ✅
+- `Plannung/roadmap.md` (1a.6 abhaken) ✅

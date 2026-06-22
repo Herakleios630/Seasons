@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: Phase 2.3 – Integration (PlayerJoinListener, SeasonCha
 quelle: "roadmap.md → Phase 2, Sprint 2.3"
 related-roadmap: "Plannung/roadmap.md"
 created: "2025-02-20"
-status: pending
+status: done
 ---
 
 # Arbeitsauftrag: Phase 2.3 – Integration (PlayerJoinListener, SeasonChangeListener, Tick-Loop)

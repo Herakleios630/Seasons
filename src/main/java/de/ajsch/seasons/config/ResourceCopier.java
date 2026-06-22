@@ -14,6 +14,9 @@ public class ResourceCopier {
 
     public void copyDefaults() {
         copyIfMissing("config.yml");
+        copyIfMissing("precipitation_categories.yml");
+        copyIfMissing("replaceable_plants.yml");
+        copyIfMissing("foliage_tints.yml");
     }
 
     private void copyIfMissing(String resourceName) {

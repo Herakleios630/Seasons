@@ -1,0 +1,70 @@
+ [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,250 grown=2 stale=0 growableB4=198 | cap=209 cov=200 belowMax=254
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,252 grown=2 stale=0 growableB4=232 | cap=243 cov=232 belowMax=256
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,257 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,243 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=254
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,254 grown=2 stale=0 growableB4=212 | cap=227 cov=216 belowMax=251
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,260 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,242 grown=2 stale=0 growableB4=173 | cap=178 cov=173 belowMax=256
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,259 grown=2 stale=0 growableB4=222 | cap=233 cov=224 belowMax=254
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,247 grown=2 stale=0 growableB4=230 | cap=238 cov=231 belowMax=254
+[16:14:16] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,262 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=255
+[16:14:17] [Server thread/INFO]: Mhakari issued server command: /season set summer
+[16:14:23] [Server thread/INFO]: Mhakari issued server command: /weather clear
+[16:14:23] [Server thread/INFO]: [Mhakari: Set the weather to clear]
+[16:14:29] [Server thread/INFO]: Mhakari issued server command: /season debug
+[16:14:41] [Server thread/INFO]: Mhakari issued server command: /tick rate 200
+[16:14:41] [Server thread/INFO]: [Mhakari: Set the target tick rate to 200.0 per second]
+[16:14:41] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=1082 grown=1066 melted=208 | cache: 181 hits, 615 misses, 0 fullyGrown
+[16:14:42] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #60 | enabled=true | onlinePlayers=1 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[16:14:47] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=398 | cache: 63 hits, 389 misses, 0 fullyGrown
+[16:14:49] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #120 | enabled=true | onlinePlayers=1 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[16:14:52] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=397 | cache: 435 hits, 15 misses, 0 fullyGrown
+[16:14:55] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #180 | enabled=true | onlinePlayers=1 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[16:14:57] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=398 | cache: 370 hits, 81 misses, 0 fullyGrown
+[16:15:01] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #240 | enabled=true | onlinePlayers=1 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[16:15:02] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=397 | cache: 451 hits, 0 misses, 0 fullyGrown
+[16:15:07] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=397 | cache: 382 hits, 68 misses, 0 fullyGrown
+[16:15:07] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #300 | enabled=true | onlinePlayers=1 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[16:15:12] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=398 | cache: 451 hits, 0 misses, 0 fullyGrown
+[16:15:13] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #360 | enabled=true | onlinePlayers=1 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[16:15:15] [Server thread/INFO]: Mhakari lost connection: Disconnected
+[16:15:16] [Server thread/INFO]: Mhakari left the game
+[16:15:17] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=342 | cache: 66 hits, 321 misses, 0 fullyGrown
+[16:15:17] [Server thread/INFO]: Stopping the server
+[16:15:17] [Server thread/INFO]: Stopping server
+[16:15:17] [Server thread/INFO]: [VillagerAI] Disabling VillagerAI v0.1.0-SNAPSHOT
+[16:15:17] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] shutdown() – activeMarkers.size=0
+[16:15:17] [Server thread/INFO]: [Seasons] Disabling Seasons v0.1.0-SNAPSHOT
+[16:15:17] [Server thread/INFO]: [Seasons] Saved 143 chunk cache entries to chunk_cache.json.
+[16:15:17] [Server thread/INFO]: [Seasons] Seasons Plugin disabled.
+[16:15:17] [Server thread/INFO]: Saving players
+[16:15:17] [Server thread/INFO]: Saving worlds
+[16:15:17] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[16:15:17] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
+[16:15:17] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
+[16:15:17] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.20s
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
+[16:15:18] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
+[16:15:18] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_end'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_end'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_end'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_end' in 0.00s
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_end'
+[16:15:18] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_end'
+[16:15:18] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[16:15:18] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[16:15:18] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[16:15:18] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[16:15:18] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[16:15:18] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[16:15:18] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[16:15:18] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...

@@ -1,0 +1,355 @@
+r thread/INFO]: [Seasons] [SnowGrower] chunk 104,245 grown=2 stale=0 growableB4=239 | cap=253 cov=240 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,252 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,242 grown=2 stale=0 growableB4=224 | cap=234 cov=224 belowMax=256
+[16:09:47] [Server thread/INFO]: Mhakari lost connection: Disconnected
+[16:09:47] [Server thread/INFO]: Mhakari left the game
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,246 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,247 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,265 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,251 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,256 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,246 grown=2 stale=0 growableB4=223 | cap=235 cov=224 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,264 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,261 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,263 grown=2 stale=0 growableB4=174 | cap=180 cov=176 belowMax=254
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,244 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,262 grown=2 stale=0 growableB4=239 | cap=252 cov=240 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,262 grown=2 stale=0 growableB4=85 | cap=98 cov=94 belowMax=247
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,264 grown=2 stale=0 growableB4=157 | cap=162 cov=160 belowMax=253
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,255 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,261 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,246 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,247 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,261 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,257 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,250 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,252 grown=2 stale=0 growableB4=240 | cap=252 cov=240 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,262 grown=2 stale=0 growableB4=156 | cap=164 cov=160 belowMax=252
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,253 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,260 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,248 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,243 grown=2 stale=0 growableB4=227 | cap=238 cov=228 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,257 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,245 grown=2 stale=0 growableB4=240 | cap=252 cov=240 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,246 grown=2 stale=0 growableB4=114 | cap=117 cov=115 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,251 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,252 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,242 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,262 grown=2 stale=0 growableB4=192 | cap=201 cov=192 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,254 grown=2 stale=0 growableB4=246 | cap=255 cov=248 belowMax=254
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,249 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,250 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,260 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,245 grown=2 stale=0 growableB4=246 | cap=255 cov=248 belowMax=254
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,250 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,264 grown=2 stale=0 growableB4=239 | cap=250 cov=240 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,265 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=255
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,245 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:47] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,261 grown=2 stale=0 growableB4=44 | cap=60 cov=60 belowMax=240
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,257 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,256 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,254 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,259 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,256 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,258 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,258 grown=2 stale=0 growableB4=231 | cap=242 cov=231 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,257 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,258 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,258 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,247 grown=2 stale=0 growableB4=69 | cap=79 cov=79 belowMax=245
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,247 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,241 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,254 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,249 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,252 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,252 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,259 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,246 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,261 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,243 grown=2 stale=0 growableB4=240 | cap=249 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,253 grown=2 stale=0 growableB4=224 | cap=231 cov=224 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,260 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,253 grown=2 stale=0 growableB4=247 | cap=254 cov=247 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,247 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,262 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,260 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,253 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,248 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,243 grown=2 stale=0 growableB4=239 | cap=253 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,264 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,255 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,255 grown=2 stale=0 growableB4=239 | cap=253 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,254 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,251 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,244 grown=2 stale=0 growableB4=231 | cap=240 cov=232 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,248 grown=2 stale=0 growableB4=50 | cap=66 cov=64 belowMax=242
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,251 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,250 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,255 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,246 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,258 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,249 grown=2 stale=0 growableB4=188 | cap=195 cov=190 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,258 grown=2 stale=0 growableB4=239 | cap=253 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,246 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,247 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,263 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,253 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,247 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,251 grown=2 stale=0 growableB4=239 | cap=253 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,242 grown=2 stale=0 growableB4=240 | cap=252 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,260 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,262 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,261 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,265 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,257 grown=2 stale=0 growableB4=246 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,249 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,243 grown=2 stale=0 growableB4=246 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,244 grown=2 stale=0 growableB4=231 | cap=240 cov=231 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,264 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,242 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,254 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,247 grown=2 stale=0 growableB4=240 | cap=252 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,257 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,255 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,251 grown=2 stale=0 growableB4=240 | cap=252 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,264 grown=2 stale=0 growableB4=189 | cap=200 cov=192 belowMax=253
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,254 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,246 grown=2 stale=0 growableB4=223 | cap=235 cov=224 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,241 grown=2 stale=0 growableB4=247 | cap=254 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,262 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,247 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,247 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,243 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,265 grown=2 stale=0 growableB4=165 | cap=171 cov=168 belowMax=252
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,260 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,252 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,261 grown=2 stale=0 growableB4=223 | cap=233 cov=224 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,262 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,247 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,253 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,251 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,245 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,244 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,259 grown=2 stale=0 growableB4=232 | cap=243 cov=232 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,248 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,242 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,250 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,263 grown=2 stale=0 growableB4=246 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,250 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,245 grown=2 stale=0 growableB4=193 | cap=197 cov=194 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,255 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,255 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,249 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,242 grown=2 stale=0 growableB4=197 | cap=211 cov=200 belowMax=253
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,258 grown=2 stale=0 growableB4=240 | cap=249 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,255 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,254 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,241 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,251 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,251 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,255 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,253 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,242 grown=2 stale=0 growableB4=215 | cap=228 cov=216 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,252 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,264 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,245 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,250 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,263 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,262 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,259 grown=2 stale=0 growableB4=229 | cap=245 cov=232 belowMax=253
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,252 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,243 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,241 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,262 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,246 grown=2 stale=0 growableB4=246 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,253 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,241 grown=2 stale=0 growableB4=240 | cap=252 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,259 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,247 grown=2 stale=0 growableB4=239 | cap=251 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,243 grown=2 stale=0 growableB4=229 | cap=239 cov=231 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,260 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,255 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,259 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,243 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,258 grown=2 stale=0 growableB4=246 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,247 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,253 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,264 grown=2 stale=0 growableB4=240 | cap=252 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,248 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,256 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,248 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,248 grown=2 stale=0 growableB4=239 | cap=252 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,259 grown=2 stale=0 growableB4=240 | cap=251 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,256 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,245 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,246 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,258 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,246 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,264 grown=2 stale=0 growableB4=239 | cap=253 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,242 grown=2 stale=0 growableB4=239 | cap=249 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,242 grown=2 stale=0 growableB4=239 | cap=252 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,248 grown=2 stale=0 growableB4=22 | cap=49 cov=48 belowMax=230
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,245 grown=2 stale=0 growableB4=232 | cap=237 cov=232 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,253 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,262 grown=2 stale=0 growableB4=61 | cap=71 cov=71 belowMax=245
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,263 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,252 grown=2 stale=0 growableB4=232 | cap=244 cov=232 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,256 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,250 grown=2 stale=0 growableB4=239 | cap=252 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,257 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,262 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,246 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,243 grown=2 stale=0 growableB4=239 | cap=253 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,251 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,255 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,263 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,253 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,265 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,256 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,263 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,260 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,260 grown=2 stale=0 growableB4=239 | cap=252 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,247 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,265 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,261 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,263 grown=2 stale=0 growableB4=189 | cap=194 cov=191 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,256 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,254 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,241 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,254 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,245 grown=2 stale=0 growableB4=215 | cap=226 cov=216 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,243 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,251 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,241 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,252 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,256 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,258 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,257 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,262 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,244 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,252 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,242 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,248 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,260 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,258 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,246 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,244 grown=2 stale=0 growableB4=246 | cap=255 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,248 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,251 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,257 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,245 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,255 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,250 grown=2 stale=0 growableB4=215 | cap=226 cov=216 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,242 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,243 grown=2 stale=0 growableB4=240 | cap=250 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,249 grown=2 stale=0 growableB4=246 | cap=255 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,254 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,258 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,252 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,242 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,265 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,247 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,265 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,260 grown=2 stale=0 growableB4=126 | cap=132 cov=128 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,246 grown=2 stale=0 growableB4=224 | cap=229 cov=224 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,259 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,260 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,262 grown=2 stale=0 growableB4=10 | cap=41 cov=40 belowMax=224
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,264 grown=2 stale=0 growableB4=232 | cap=245 cov=232 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,256 grown=2 stale=0 growableB4=238 | cap=253 cov=240 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,263 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,250 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,256 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,252 grown=2 stale=0 growableB4=246 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,253 grown=2 stale=0 growableB4=246 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 105,245 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 104,255 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,257 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,248 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,257 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,262 grown=2 stale=0 growableB4=184 | cap=192 cov=184 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,241 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,259 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,247 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 109,249 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,245 grown=2 stale=0 growableB4=246 | cap=256 cov=248 belowMax=254
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,241 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,244 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 95,246 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,242 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,258 grown=2 stale=0 growableB4=248 | cap=254 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,249 grown=2 stale=0 growableB4=194 | cap=204 cov=195 belowMax=255
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,243 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,263 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,250 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,264 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:48] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 103,249 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 107,252 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 114,249 grown=2 stale=0 growableB4=247 | cap=256 cov=248 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,265 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 106,252 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 108,250 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 118,242 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,264 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,259 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,253 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 102,241 grown=2 stale=0 growableB4=238 | cap=248 cov=239 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 96,258 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,250 grown=2 stale=0 growableB4=197 | cap=210 cov=199 belowMax=254
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 94,250 grown=2 stale=0 growableB4=198 | cap=209 cov=200 belowMax=254
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 97,252 grown=2 stale=0 growableB4=232 | cap=243 cov=232 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,257 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 116,243 grown=2 stale=0 growableB4=247 | cap=255 cov=248 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,254 grown=2 stale=0 growableB4=212 | cap=227 cov=216 belowMax=252
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,260 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 100,242 grown=2 stale=0 growableB4=176 | cap=181 cov=176 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,259 grown=2 stale=0 growableB4=223 | cap=233 cov=224 belowMax=254
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 99,247 grown=2 stale=0 growableB4=230 | cap=239 cov=231 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 98,262 grown=2 stale=0 growableB4=240 | cap=253 cov=240 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 111,245 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 113,261 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 117,256 grown=2 stale=0 growableB4=239 | cap=252 cov=240 belowMax=255
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 112,249 grown=2 stale=0 growableB4=188 | cap=201 cov=190 belowMax=254
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,249 grown=2 stale=0 growableB4=248 | cap=256 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 101,258 grown=2 stale=0 growableB4=239 | cap=250 cov=239 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 110,265 grown=2 stale=0 growableB4=240 | cap=251 cov=240 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowGrower] chunk 115,253 grown=2 stale=0 growableB4=248 | cap=255 cov=248 belowMax=256
+[16:09:49] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=3068 grown=2820 melted=0 | cache: 1420 hits, 99 misses, 0 fullyGrown
+[16:09:49] [Server thread/INFO]: Stopping the server
+[16:09:49] [Server thread/INFO]: Stopping server
+[16:09:49] [Server thread/INFO]: [VillagerAI] Disabling VillagerAI v0.1.0-SNAPSHOT
+[16:09:49] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] shutdown() – activeMarkers.size=0
+[16:09:49] [Server thread/INFO]: [Seasons] Disabling Seasons v0.1.0-SNAPSHOT
+[16:09:49] [Server thread/INFO]: [Seasons] Saved 143 chunk cache entries to chunk_cache.json.
+[16:09:49] [Server thread/INFO]: [Seasons] Seasons Plugin disabled.
+[16:09:49] [Server thread/INFO]: Saving players
+[16:09:49] [Server thread/INFO]: Saving worlds
+[16:09:49] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[16:09:49] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
+[16:09:49] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
+[16:09:49] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.81s
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
+[16:09:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
+[16:09:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_end'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_end'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_end'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_end' in 0.00s
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_end'
+[16:09:50] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_end'
+[16:09:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[16:09:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[16:09:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[16:09:50] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[16:09:50] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[16:09:50] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[16:09:50] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[16:09:50] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...

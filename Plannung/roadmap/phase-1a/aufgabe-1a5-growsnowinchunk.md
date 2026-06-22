@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: growSnowInChunk implementieren"
 quelle: "roadmap.md → Phase 1a, Sprint 1a.5"
 related-roadmap: "Plannung/roadmap.md → Phase 1a"
 created: "2026-06-19"
-status: offen
+status: erledigt
 ---
 
 # Arbeitsauftrag: growSnowInChunk implementieren

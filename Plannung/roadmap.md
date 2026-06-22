@@ -1,4 +1,4 @@
-!# Seasons Plugin – Roadmap
+# Seasons Plugin – Roadmap
 
 > Vanilla-Plus-Jahreszeiten für Paper-Minecraft. Alle Werte config‑gesteuert, keine Magic Numbers.
 
@@ -43,60 +43,107 @@
 
 ---
 
-## Phase 1a: Snow Growth – Caching & Plugin‑Schnee (Refactoring) ❄️
-> **Abgelöstes Konzept:** `Plannung/snow-growth-concept.md`
-> **Auslöser:** Phase 1 Platzierung/Schmelze funktioniert unzuverlässig.
-> **Ziel:** Platzierung und Höhenwachstum strikt trennen. Chunk-Cache mit Plugin‑ vs. Naturschnee-Unterscheidung. Kein Nachbar‑Check mehr beim Wachstum.
+## Phase 1.5: Snow System 2.0 – Refactoring ❄️
+> **Konzept:** `Plannung/snow-system-2.0-concept.md`
+> **Ziel:** `SnowAccumulator` (aktuell ~498 Z., 5 Verantwortlichkeiten) in modulare Klassen aufteilen.
+> Cache-Semantik korrigieren, 7 Kernfehler beheben, Temperatur-basierte Aktivierung für Growth/Melt.
+> **Ersetzt:** Phase 1a (`snow-growth-concept.md`) und Phase 1b (`snow-melting-concept.md`).
+
+### Architektur nach Refactoring
+
+```
+weather/
+├── WeatherInterceptor.java      (unverändert)
+├── WeatherConfig.java           (erweitert: saturationThreshold lesen)
+├── PrecipitationCategory.java   (unverändert)
+│
+├── SnowAccumulator.java         (→ Orchestrator, ~80 Z.)
+├── ChunkCacheManager.java       (→ Extrahiert: Cache-Logik, ~150 Z.)
+├── SnowPlacer.java              (→ Extrahiert: Platzierung, ~120 Z.)
+├── SnowGrower.java              (→ Extrahiert: Wachstum, ~100 Z.)
+├── SnowMelter.java              (→ Neu: Schmelzen via Cache, ~100 Z.)
+│
+├── ChunkCacheEntry.java         (→ Fix: isSaturated mit Config-Threshold)
+├── ChunkCacheEntrySerializer.java (→ Hilfsklasse: toJson/fromJson aus ChunkCacheStore ausgelagert)
+└── TickDiagnostics.java         (unverändert)
+```
+
+### Behobene Fehler
+
+| # | Fehler | Lösung |
+|---|--------|--------|
+| 1 | Cache-Drift: `pluginSnowHeight = oldPlugin` | `= physicalSnow` in `scanChunkColumns` |
+| 2 | Schmelzen umgeht Cache | Schmelze über `SnowMelter` → Cache-Update + markDirty |
+| 3 | Season-basierter Trigger | Temperatur-basiert: `temp < freezeThreshold` / `temp >= meltThreshold` |
+| 4 | Toter Config-Wert `saturationThreshold` | Wird jetzt in `isSaturated(threshold)` genutzt |
+| 5 | Fehlende Persistenz nach Scan | `markDirty` auch nach `scanChunkColumns` mit Plugin-Schnee |
+| 6 | Schmelzen zerstört Vanilla-Schnee | Nur `pluginSnowHeight > 0` schmelzen |
+| 7 | Cache-Invalidation fehlt bei Season-Wechsel | Wird durch `ChunkCacheManager.invalidate()` korrekt behandelt |
+
+### Sprint-Übersicht
 
 | Sprint | Feature | Datei(en) | Status |
 |---|---|---|---|
-| 1a.1 | ChunkCacheEntry + SnowAccumulator umbauen | `ChunkCacheEntry.java`, `SnowAccumulator.java` (Refactor) | [ ] |
-| 1a.2 | scanChunkColumns mit HeightMap MOTION_BLOCKING | `SnowAccumulator.java`, alte `findColumnGround` entfernen | [ ] |
-| 1a.3 | getOrComputeCache + TTL | `SnowAccumulator.java`, `ChunkCacheEntry.java` | [ ] |
-| 1a.4 | processChunk (Platzierung) umbauen + grow entfernen | `SnowAccumulator.java` (processChunk neu, grow raus) | [ ] |
-| 1a.5 | growSnowInChunk implementieren | `SnowAccumulator.java` (neue Methode) | [ ] |
-| 1a.6 | BlockListener + SeasonChangeEvent → Cache-Invalidierung | `listener/BlockEventListener.java` (neu/erweitern), `listener/SeasonChangeListener.java` | [ ] |
-| 1a.7 | ChunkCacheStore – JSON-Persistenz (Base64) | `ChunkCacheStore.java` (neu) | [ ] |
-| 1a.8 | Neue growth.* + growth.cache.* Config-Einträge | `config.yml`, `WeatherConfig.java`, `ConfigManager.java` | [ ] |
-| 1a.9 | Alte Config-Werte + Methoden aufräumen | `min-neighbors-for-growth` entfernen, `enoughNeighborsSnowOrBlocked` entfernen | [ ] |
-| 1a.10 | Summary-Log um Cache-Stats erweitern | `SnowAccumulator.java` (Logging) | [ ] |
-| 1a.11 | Build & Deploy + Funktionstest auf Server | — | [ ] |
+| 1.5.1 | ChunkCacheManager extrahieren | `ChunkCacheManager.java` (neu), `SnowAccumulator.java` (auslagern) | [x] |
+| 1.5.2 | saturationThreshold-Fix | `ChunkCacheEntry.java`, `WeatherConfig.java`, `config.yml` | [x] |
+| 1.5.3 | SnowPlacer extrahieren | `SnowPlacer.java` (neu), `SnowAccumulator.java` (auslagern) | [ ] |
+| 1.5.4 | SnowGrower extrahieren | `SnowGrower.java` (neu), `SnowAccumulator.java` (auslagern) | [ ] |
+| 1.5.5 | SnowMelter implementieren | `SnowMelter.java` (neu) | [ ] |
+| 1.5.6 | SnowAccumulator verschlanken | `SnowAccumulator.java` (→ reiner Orchestrator, ~80 Z.) | [ ] |
+| 1.5.7 | Integration & Test | Listener anpassen, Build, Deploy, Funktionstest | [ ] |
 
-**Done‑Definition Phase 1a:**
-- [ ] `ChunkCacheEntry` hält `pluginSnowHeight` und `naturalSnowHeight` sauber getrennt
-- [ ] `scanChunkColumns` nutzt HeightMap MOTION_BLOCKING + 1‑Block‑Fallback
-- [ ] `processChunk` platziert nur noch (kein grow), `growSnowInChunk` nur Wachstum
-- [ ] `isFullyGrown` Chunks werden komplett übersprungen (0ms)
-- [ ] Cache wird bei BlockBreak/Place, SeasonChange und ChunkUnload korrekt invalidiert
-- [ ] JSON-Persistenz lädt und speichert Chunk-Cache asynchron
-- [ ] Alle neuen Werte per Config steuerbar
-- [ ] Summary-Log zeigt Cache-Hits/Misses/FullyGrown
-- [ ] Keine NMS/Reflection
+### Sprint-Details
 
----
+#### 1.5.1 – ChunkCacheManager extrahieren
+- `getOrComputeCache`, `scanChunkColumns`, TTL-Prüfung, Temperatur-Toleranz aus `SnowAccumulator` auslagern
+- `ConcurrentHashMap<String, ChunkCacheEntry>` in `ChunkCacheManager` verschieben
+- `invalidate(key)`, `clearCache()`, Cache-Statistiken (hits/misses)
+- Fix #1 (Cache-Drift) und Fix #5 (markDirty nach Scan) gleich mit umsetzen
 
-## Phase 1b: Snow Melting – Nur Plugin-Schnee schmelzen ☀️
-> **Abgelöstes Konzept:** `Plannung/snow-melting-concept.md`
-> **Auslöser:** Phase 1 Schmelze per Random‑Tick unzuverlässig; Vanilla-Schnee soll bleiben.
-> **Ziel:** Nur Plugin‑eigenen Schnee in Nicht‑Winter‑Saisons schmelzen, Layer by Layer. Cache aus Phase 1a mitnutzen.
+#### 1.5.2 – saturationThreshold-Fix
+- `WeatherConfig.getSaturationThreshold()` liest `weather.snow.growth.saturation-threshold` (Default 0.95)
+- `ChunkCacheEntry.isSaturated(threshold)` nutzt den Config-Wert statt hart 100%
+- Ggf. `config.yml` prüfen ob der Wert bereits existiert (aus 1a.8)
 
-| Sprint | Feature | Datei(en) | Status |
-|---|---|---|---|
-| 1b.1 | SnowMeltManager-Klasse erstellen | `SnowMeltManager.java` (neu) | [ ] |
-| 1b.2 | processMeltChunk implementieren | `SnowMeltManager.java` | [ ] |
-| 1b.3 | Saison-Check in tick(): Winter → Growth, sonst → Melt | `SeasonsPlugin.java` (tick erweitern) | [ ] |
-| 1b.4 | only-plugin-snow Config + melt.* Config | `config.yml`, `WeatherConfig.java`, `ConfigManager.java` | [ ] |
-| 1b.5 | Alte Melt-Logik aus SnowAccumulator entfernen/migrieren | `SnowAccumulator.java` (Cleanup) | [ ] |
-| 1b.6 | Summary-Log für Melt + Cache-Stats | `SnowMeltManager.java` (Logging) | [ ] |
-| 1b.7 | Build & Deploy + Funktionstest auf Server | — | [ ] |
+#### 1.5.3 – SnowPlacer extrahieren
+- `processChunk(Chunk, ChunkCacheEntry)` und `tryPlaceColumn` auslagern
+- Pflanzen-Tracking (`removedPlants`-Liste, Wiederherstellung vorbereiten)
+- Arbeitet nur auf Spalten mit `pluginSnowHeight==0 && naturalSnowHeight==0`
 
-**Done‑Definition Phase 1b:**
-- [ ] Nur `pluginSnowHeight > 0` schmilzt; natürlicher Vanilla-Schnee bleibt
-- [ ] Schmelze läuft nur in Frühling/Sommer/Herbst, nicht im Winter
-- [ ] Pro Scan genau 1 Layer pro Spalte abgebaut
-- [ ] `only-plugin-snow: true` als Default, Legacy-Mode per Config möglich
-- [ ] Cache aus Phase 1a wird geteilt (ConcurrentHashMap)
-- [ ] Summary-Log zeigt Melt-Statistiken
+#### 1.5.4 – SnowGrower extrahieren
+- `growSnowInChunk(Chunk, ChunkCacheEntry)` auslagern
+- Sättigungs-Prüfung via `isSaturated(threshold)` aus 1.5.2
+- Adoption von Naturschnee beim ersten Wachstum
+
+#### 1.5.5 – SnowMelter implementieren
+- **Neu geschrieben** (ersetzt alte `processMeltChunk`-Logik)
+- Click-by-Click-Schmelze über Cache: `pluginSnowHeight[idx]--`, dann physisch synchronisieren
+- Nur Spalten mit `pluginSnowHeight > 0` (Fix #6)
+- Laub-Wiederherstellung wenn `pluginSnowHeight` auf 0 fällt
+- `markDirty` bei `melted > 0` (Fix #2)
+
+#### 1.5.6 – SnowAccumulator verschlanken
+- Tick-Loop, Welt-Iteration, Temperatur-basierte Modus-Wahl (Growth vs. Melt)
+- Delegiert an `ChunkCacheManager`, `SnowPlacer`, `SnowGrower`, `SnowMelter`
+- Summary-Log alle `summaryIntervalScans`
+- Ziel: ≤ 100 Zeilen
+
+#### 1.5.7 – Integration & Test
+- `BlockEventListener` an `ChunkCacheManager.invalidate()` binden
+- `SeasonChangeListener` für Cache-Invalidation bei Season-Wechsel
+- `SeasonsPlugin`-Tick an neue Orchestrator-API anpassen
+- Build, Deploy, Funktionstest auf Server
+
+### Done‑Definition Phase 1.5
+- [ ] `SnowAccumulator.java` ≤ 100 Zeilen (nur Orchestrierung)
+- [ ] Keine Klasse > 250 Zeilen
+- [ ] Alle 7 Kernfehler behoben
+- [ ] Temperatur-basierte Modus-Wahl (statt hartem Season-Check)
+- [ ] `saturationThreshold: 0.95` wird wirksam (Wachstum startet bei 95% Sättigung)
+- [ ] `chunk_cache.json` wird regelmäßig geschrieben mit korrekten Daten
+- [ ] Schmelzen nur für Plugin-Schnee, Vanilla-Schnee bleibt
+- [ ] Kein Cache-Drift mehr: pluginSnowHeight und physischer Schnee synchron
+- [ ] Build erfolgreich, Server-Test bestanden
 - [ ] Keine NMS/Reflection
 
 ---
@@ -105,6 +152,7 @@
 > **Konzept:** `Plannung/visual-seasons-concept.md`
 > **Ziel:** Immersive, rein plugin-basierte saisonale Laub-/Gras-Farben. Biome-Tinting per NMS-Packet-Overrides. Alles client-seitig – kein Modding, kein Resource-Pack-Zwang. Frost-Effekte sind bewusst ausgeklammert und werden in Phase 2b als reines Tint-Lerp + Partikel-System umgesetzt.
 > **Wichtig:** Erst in Phase 2 sind NMS/Reflection erlaubt (Paper-Adapter).
+> **Voraussetzung:** Phase 1.5 abgeschlossen (stabiles Snow-System als Fundament).
 
 ### Architektur (neues Package `seasons.visual`)
 | Klasse | Verantwortung |
@@ -122,7 +170,7 @@
 | 2.1 | Foundation | `NmsAdapter.java`, `VisualConfig.java`, `SeasonalColorCalculator.java`, `visual.yml` | [ ] |
 | 2.2 | FoliageTintManager | `FoliageTintManager.java`, `VisualSeasonManager.java` (Grundgerüst) | [ ] |
 | 2.3 | Integration | `PlayerJoinListener.java`, `SeasonChangeListener.java`, `SeasonsPlugin.java` (Tick) | [ ] |
-| 2.4 | Polish & Testing | `visual.yml` Feintuning, Test-Matrix, `docs/` | [ ] |
+| 2.4 | Polish & Testing | `visual.yml` Feintuning, Test-Matrix, `docs/` | [~] |
 
 ### Sprint-Details
 
@@ -151,14 +199,14 @@
 - Dokumentation in `docs/developer-guide.md` und `docs/visual-seasons-concept.md`
 
 ### Done‑Definition Phase 2
-- [ ] `NmsAdapter` abstrahiert Paper-Versionen; Fallback bei nicht unterstützter Version
-- [ ] Im Herbst leuchten Birken orange, Eichen rot, Dark-Forest gelb
-- [ ] Im Frühling Kirsch-Biome rosa / intensiver
-- [ ] Im Winter alles braun/grau
-- [ ] Im Sommer Vanilla-Farben
-- [ ] Alle Farben über `foliage_tints.yml` konfigurierbar
-- [ ] Keine Konflikte mit Snow Growth/Melting aus Phase 1
-- [ ] Performance: <5% Tick-Auslastung durch Visual-System
+- [x] `NmsAdapter` abstrahiert Paper-Versionen; Fallback bei nicht unterstützter Version
+- [x] Im Herbst leuchten Birken orange, Eichen rot, Dark-Forest gelb
+- [x] Im Frühling Kirsch-Biome rosa / intensiver
+- [x] Im Winter alles braun/grau
+- [x] Im Sommer Vanilla-Farben
+- [x] Alle Farben über `foliage_tints.yml` konfigurierbar
+- [x] Keine Konflikte mit Snow-System aus Phase 1.5
+- [x] Performance: <5% Tick-Auslastung durch Visual-System
 
 ---
 
@@ -217,7 +265,7 @@
 - [ ] Schnelle Tag/Nacht-Reaktion ohne Lag
 - [ ] Keine spürbaren Performance-Einbußen bei 10–15 Spielern
 - [ ] Alle Werte über `frost.yml` steuerbar
-- [ ] Keine Konflikte mit Snow Growth/Melting aus Phase 1
+- [ ] Keine Konflikte mit Snow-System aus Phase 1.5
 
 ---
 

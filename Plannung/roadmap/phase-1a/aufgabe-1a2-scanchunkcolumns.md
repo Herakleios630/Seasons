@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: scanChunkColumns mit HeightMap MOTION_BLOCKING"
 quelle: "roadmap.md → Phase 1a, Sprint 1a.2"
 related-roadmap: "Plannung/roadmap.md → Phase 1a"
 created: "2026-06-19"
-status: offen
+status: done
 ---
 
 # Arbeitsauftrag: scanChunkColumns mit HeightMap MOTION_BLOCKING

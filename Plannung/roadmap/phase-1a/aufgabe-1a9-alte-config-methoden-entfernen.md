@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: Alte Config-Werte + Methoden aufräumen"
 quelle: "roadmap.md → Phase 1a, Sprint 1a.9"
 related-roadmap: "Plannung/roadmap.md → Phase 1a"
 created: "2026-06-19"
-status: offen
+status: done
 ---
 
 # Arbeitsauftrag: Alte Config-Werte + Methoden aufräumen

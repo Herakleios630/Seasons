@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: Phase 2.2 – FoliageTintManager & VisualSeasonManager-G
 quelle: "roadmap.md → Phase 2, Sprint 2.2"
 related-roadmap: "Plannung/roadmap.md"
 created: "2025-02-20"
-status: pending
+status: done
 ---
 
 # Arbeitsauftrag: Phase 2.2 – FoliageTintManager & VisualSeasonManager-Grundgerüst
@@ -83,4 +83,19 @@ Nicht anwendbar (neues Feature).
   1. `scp build\libs\Seasons-0.1.0-SNAPSHOT.jar mc@10.0.0.86:"/home/mc/crafty-4/servers/f5334260-43a9-4b27-9c7d-746f4c1aa528/plugins/Seasons-0.1.0-SNAPSHOT.jar"`
   2. Wenn YAML-Configs geändert: zusätzlich die geänderten Config-Dateien kopieren (Ziel `plugins/Seasons/`)
   3. `ssh mc@10.0.0.86 "sudo systemctl restart crafty"` – **KEIN `/reload`**
-- **Sync nach jedem Slice:** `README.md`, `docs/developer-guide.md`, `docs/handover.md`, `Plannung/roadmap.md`
+"- **Sync nach jedem Slice:** `README.md`, `docs/developer-guide.md`, `docs/handover.md`, `Plannung/roadmap.md`
+
+---
+
+## Fortschritt (2025-02-20)
+
+| # | Aufgabe | Status |
+|---|---|---|
+| 1 | `FoliageTintManager.java` – updatePlayerTints, resetPlayerToVanilla, updateAllOnlinePlayers, collectBiomesFromChunk | ✅ done |
+| 2 | `VisualSeasonManager.java` – Map<UUID, PlayerVisualState>, EventHandler (join/quit/seasonChange), onTick mit Transition-Berechnung, inner class PlayerVisualState | ✅ done |
+| 3 | `SeasonsPlugin.java` – VisualConfig + NmsAdapter + FoliageTintManager + VisualSeasonManager initialisiert, start()/stop() in onEnable/onDisable | ✅ done |
+| 3a | `VisualConfig.java` – `updateIntervalTicks` Feld, Getter, Parsing aus `foliage_tints.yml` | ✅ done |
+| 3b | `foliage_tints.yml` – `update-interval-ticks: 200` Eintrag hinzugefügt | ✅ done |
+| 4 | Build (`compileJava`, `shadowJar`) | ✅ BUILD SUCCESSFUL |
+| 5 | Deployment (JAR + Config kopieren, Server restart) | ⬜ pending |
+"

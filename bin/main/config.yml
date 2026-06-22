@@ -10,6 +10,12 @@ season:
   fall-days: 91
   winter-days: 92
   debug-mode: true
+  debug-overrides:
+    snow-placement-multiplier: 10.0
+    snow-growth-multiplier: 10.0
+    snow-melt-multiplier: 10.0
+    max-snow-chunks-multiplier: 5.0
+    melt-chunks-multiplier: 5.0
 
 temperature:
   min-winter: -0.5
@@ -19,28 +25,33 @@ temperature:
     cold: -0.3
     arid: 0.2
     temperate: 0.0
+  # day-night-amplitude wird derzeit nur in calculateWithDayTime() verwendet (nicht im Hauptprozess)
   day-night-amplitude: 0.15
 
 weather:
   enabled: true
   snow:
     freeze-threshold: 0.0
-    melt-threshold: 0.5
+    melt-threshold: 0.0
     melt-speed: 1
+    melting:
+      layers-per-chunk: 4
     max-natural-height: 2
     height-per-cold: 1
     layers-per-scan: 8
-    min-neighbors-for-growth: 3
+    growth:
+      layers-per-scan: 2
+      saturation-threshold: 0.95
+      cache:
+        temp-level-tolerance: 0
+        ttl-seconds: 30
+        save-interval-seconds: 5
     particle-radius: 32
     particle-count: 50
     particle-y-min: 2
     particle-y-max: 8
     snow-melt-bonemeal: true
     spring-regeneration-bonemeal: true
-    first-snow-min-layers: 3
-    first-snow-max-layers: 5
-    max-attempts-multiplier: 16
-    max-down-search: 32
 
 persistence:
   file: seasons_data.yml
@@ -55,3 +66,10 @@ performance:
   max-snow-chunks-per-tick: 32
   melt-chunks-per-tick: 8
   summary-interval-scans: 50
+  cache-ttl-seconds: 30
+
+cache:
+  persistence:
+    file: chunk_cache.json
+    save-interval-seconds: 5
+    version: 4

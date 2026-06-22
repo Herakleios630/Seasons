@@ -1,10 +1,15 @@
 package de.ajsch.seasons.config;
 
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Set;
 
 public class ConfigManager {
 
@@ -50,6 +55,38 @@ public class ConfigManager {
 
     public boolean isDebugMode() {
         return config.getBoolean("season.debug-mode", false);
+    }
+
+    // Debug-Overrides: Multiplier applied to snow rates when debug mode is active
+    private double getDebugOverride(String key, double defaultValue) {
+        return config.getDouble("season.debug-overrides." + key, defaultValue);
+    }
+
+    public double getSnowPlacementMultiplier() {
+        return getDebugOverride("snow-placement-multiplier", 1.0);
+    }
+
+    public double getSnowGrowthMultiplier() {
+        return getDebugOverride("snow-growth-multiplier", 1.0);
+    }
+
+    public double getSnowMeltMultiplier() {
+        return getDebugOverride("snow-melt-multiplier", 1.0);
+    }
+
+    public double getMaxSnowChunksMultiplier() {
+        return getDebugOverride("max-snow-chunks-multiplier", 1.0);
+    }
+
+    public double getMeltChunksMultiplier() {
+        return getDebugOverride("melt-chunks-multiplier", 1.0);
+    }
+
+    private int applyDebugMultiplier(int rawValue, double multiplier) {
+        if (isDebugMode()) {
+            return Math.max(1, (int) Math.round(rawValue * multiplier));
+        }
+        return rawValue;
     }
 
     // Temperature
@@ -107,11 +144,21 @@ public class ConfigManager {
     }
 
     public int getLayersPerScan() {
-        return config.getInt("weather.snow.layers-per-scan", 3);
+        int raw = config.getInt("weather.snow.layers-per-scan", 3);
+        return applyDebugMultiplier(raw, getSnowPlacementMultiplier());
     }
 
-    public int getMinNeighborsForGrowth() {
-        return config.getInt("weather.snow.min-neighbors-for-growth", 3);
+    public int getGrowthLayersPerScan() {
+        int raw = config.getInt("weather.snow.growth.layers-per-scan", 2);
+        return applyDebugMultiplier(raw, getSnowGrowthMultiplier());
+    }
+
+    public double getSaturationThreshold() {
+        return config.getDouble("weather.snow.growth.saturation-threshold", 0.95);
+    }
+
+    public int getCacheTempLevelTolerance() {
+        return config.getInt("weather.snow.growth.cache.temp-level-tolerance", 0);
     }
 
     public int getParticleRadius() {
@@ -138,22 +185,6 @@ public class ConfigManager {
         return config.getBoolean("weather.snow.spring-regeneration-bonemeal", true);
     }
 
-    public int getFirstSnowMinLayers() {
-        return config.getInt("weather.snow.first-snow-min-layers", 3);
-    }
-
-    public int getFirstSnowMaxLayers() {
-        return config.getInt("weather.snow.first-snow-max-layers", 5);
-    }
-
-    public int getMaxAttemptsMultiplier() {
-        return config.getInt("weather.snow.max-attempts-multiplier", 16);
-    }
-
-    public int getMaxDownSearchTicks() {
-        return config.getInt("weather.snow.max-down-search", 32);
-    }
-
     // Persistence
     public String getPersistenceFile() {
         return config.getString("persistence.file", "seasons_data.yml");
@@ -178,14 +209,100 @@ public class ConfigManager {
     }
 
     public int getMaxSnowChunksPerTick() {
-        return config.getInt("performance.max-snow-chunks-per-tick", 4);
+        int raw = config.getInt("performance.max-snow-chunks-per-tick", 4);
+        return applyDebugMultiplier(raw, getMaxSnowChunksMultiplier());
     }
 
     public int getMeltChunksPerTick() {
-        return config.getInt("performance.melt-chunks-per-tick", 8);
+        int raw = config.getInt("performance.melt-chunks-per-tick", 8);
+        return applyDebugMultiplier(raw, getMeltChunksMultiplier());
+    }
+
+    public int getMeltLayersPerChunk() {
+        int raw = config.getInt("weather.snow.melting.layers-per-chunk", 4);
+        return applyDebugMultiplier(raw, getSnowMeltMultiplier());
     }
 
     public int getSummaryIntervalScans() {
         return config.getInt("performance.summary-interval-scans", 50);
+    }
+
+    public int getCacheTTLSeconds() {
+        return config.getInt("weather.snow.growth.cache.ttl-seconds", 30);
+    }
+
+    // Cache Persistence
+    public String getCacheFile() {
+        return config.getString("cache.persistence.file", "chunk_cache.json");
+    }
+
+    public int getCacheSaveIntervalSeconds() {
+        return config.getInt("weather.snow.growth.cache.save-interval-seconds", 5);
+    }
+
+    public int getCacheVersion() {
+        return config.getInt("cache.persistence.version", 1);
+    }
+
+    // Replaceable plants from replaceable_plants.yml
+    private FileConfiguration plantsConfig;
+
+    private FileConfiguration getPlantsConfig() {
+        if (plantsConfig != null) return plantsConfig;
+        File plantsFile = new File(plugin.getDataFolder(), "replaceable_plants.yml");
+        if (!plantsFile.exists()) {
+            plugin.saveResource("replaceable_plants.yml", false);
+        }
+        if (plantsFile.exists()) {
+            plantsConfig = YamlConfiguration.loadConfiguration(plantsFile);
+            // Diagnose: which material names are recognized?
+            List<String> replaceable = plantsConfig.getStringList("replaceable");
+            List<String> doublePlants = plantsConfig.getStringList("double_plants");
+            int matched = 0, unmatched = 0;
+            java.util.ArrayList<String> unmatchedNames = new java.util.ArrayList<>();
+            for (String name : replaceable) {
+                if (org.bukkit.Material.matchMaterial(name) != null) matched++;
+                else { unmatched++; unmatchedNames.add(name); }
+            }
+            for (String name : doublePlants) {
+                if (org.bukkit.Material.matchMaterial(name) != null) matched++;
+                else { unmatched++; unmatchedNames.add(name); }
+            }
+            plugin.getLogger().info(String.format(
+                "[ConfigManager] replaceable_plants.yml: %d materials matched, %d unmatched",
+                matched, unmatched));
+            if (unmatched > 0) {
+                plugin.getLogger().warning(
+                    "[ConfigManager] Unmatched material names: " + String.join(", ", unmatchedNames));
+            }
+        } else {
+            plugin.getLogger().warning(
+                "[ConfigManager] replaceable_plants.yml not found – no plants will be displaced!");
+        }
+        return plantsConfig;
+    }
+
+    public Set<Material> getReplaceablePlants() {
+        FileConfiguration cfg = getPlantsConfig();
+        if (cfg == null) return Collections.emptySet();
+        List<String> names = cfg.getStringList("replaceable");
+        EnumSet<Material> set = EnumSet.noneOf(Material.class);
+        for (String name : names) {
+            Material mat = Material.matchMaterial(name);
+            if (mat != null) set.add(mat);
+        }
+        return set;
+    }
+
+    public Set<Material> getDoublePlants() {
+        FileConfiguration cfg = getPlantsConfig();
+        if (cfg == null) return Collections.emptySet();
+        List<String> names = cfg.getStringList("double_plants");
+        EnumSet<Material> set = EnumSet.noneOf(Material.class);
+        for (String name : names) {
+            Material mat = Material.matchMaterial(name);
+            if (mat != null) set.add(mat);
+        }
+        return set;
     }
 }

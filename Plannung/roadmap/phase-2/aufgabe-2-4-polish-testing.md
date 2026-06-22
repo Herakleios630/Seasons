@@ -3,7 +3,7 @@ title: "Arbeitsauftrag: Phase 2.4 – Polish & Testing"
 quelle: "roadmap.md → Phase 2, Sprint 2.4"
 related-roadmap: "Plannung/roadmap.md"
 created: "2025-02-20"
-status: pending
+status: code-done
 ---
 
 # Arbeitsauftrag: Phase 2.4 – Polish & Testing
@@ -42,33 +42,33 @@ Nicht anwendbar (Polish & Testing).
 
 ## Erbetene Hilfe
 
-1. **Test-Matrix durchführen**
-   - Alle 4 Seasons nacheinander durchschalten (`/season set FRÜHLING`, `SOMMER`, `HERBST`, `WINTER`)
+1. **Test-Matrix durchführen** (→ auf Server)
+   - Alle 4 Seasons nacheinander durchschalten (`/season set SPRING`, `SUMMER`, `FALL`, `WINTER`)
    - In jeder Season folgende Biome visuell prüfen: Plains, Forest, Birch Forest, Dark Forest, Taiga, Cherry Grove, Jungle, Savanna, Swamp, Badlands
    - Prüfen: Herbst-Farben sichtbar? Winter grau/braun? Frühling frisch + Cherry rosa?
    - Screenshots für Doku machen (optional)
 
-2. **Übergänge feintunen**
-   - `transition-days` in `foliage_tints.yml` testen: 2 Tage vs. 4 Tage vs. 7 Tage
+2. **Übergänge feintunen** (→ auf Server)
+   - `transition-days` in `foliage_tints.yml` testen: 2 Tage vs. 4 Tage vs. 7 Tage
    - Sicherstellen, dass die Interpolation flüssig läuft (kein abruptes Umspringen)
-   - `ColorCalculator.interpolate()` prüfen: RGB-Kanal-weise linear, Clamping auf 0–255
+   - `ColorCalculator.interpolate()` prüfen: RGB-Kanal-weise linear, Clamping auf 0–255 ✅
 
-3. **Performance-Profil**
-   - `/tps` vor und nach Aktivierung des Visual-Systems vergleichen
-   - Mit 1, 5 und (simuliert) 15 Spielern testen
-   - Sicherstellen: <5% Tick-Auslastung durch Visual-System
-   - Ggf. `update-interval-ticks` erhöhen (20s statt 10s) oder Chunk-Caching einbauen
+3. **Performance-Profil** ✅ (Code-seitig)
+   - Chunk-Biome-Caching eingebaut (`ConcurrentHashMap<Long, Set<Biome>>`)
+   - `biomeSampleStep = 4` → 16 statt 256 Block-Lookups pro Chunk
+   - `ChunkUnloadEvent`-Listener zur Cache-Invalidation
+   - `/tps`-Vergleich auf Server ausstehend
 
-4. **Fallback-Test**
+4. **Fallback-Test** (→ auf Server)
    - `foliage_tints.yml` absichtlich löschen → Plugin muss mit sinnvollen Defaults starten
    - `foliage_tints.yml` mit fehlerhaften Werten → Plugin soll Fehler loggen und Vanilla-Farben verwenden
    - NMS-Version nicht unterstützt → Klare Log-Meldung, kein Crash
 
-5. **Dokumentation synchronisieren**
-   - `docs/developer-guide.md`: Package `seasons.visual` dokumentieren, Datenmodell `PlayerVisualState` beschreiben, Architektur-Übersicht erweitern
-   - `docs/handover.md`: Status Phase 2 auf "abgeschlossen" setzen, offene Baustellen notieren (Phase 2b, Phase 3)
-   - `README.md`: Neues Feature "Saisonale Laubfarben" mit kurzer Beschreibung und Config-Hinweis ergänzen
-   - `Plannung/roadmap.md`: Phase 2 Done-Definition abhaken
+5. **Dokumentation synchronisieren** ✅
+   - `docs/developer-guide.md`: Abschnitt 4 (Visual Seasons) hinzugefügt – Architektur, Datenmodelle, Config, NMS, Performance ✅
+   - `docs/handover.md`: Status Phase 2 auf fertig gesetzt, Phase 2.4 als in-progress, offene Baustellen aktualisiert ✅
+   - `README.md`: Phase 2 als abgeschlossen, neues Feature erwähnt ✅
+   - `Plannung/roadmap.md`: Phase 2 Done-Definition abgehakt, Sprint 2.4 auf [~] ✅
 
 6. **Build:** `.\gradlew.bat compileJava` dann `.\gradlew.bat shadowJar -x test`
 
