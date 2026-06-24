@@ -1,201 +1,736 @@
-[09:15:25] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-2-26.04.2-Ubuntu; Ubuntu null) on Linux 7.0.0-22-generic (amd64)
-[09:15:25] [ServerMain/INFO]: [bootstrap] Loading Paper 26.1.2-69-main@76d2ac7 (2026-06-03T17:32:02Z) for Minecraft 26.1.2
-[09:15:25] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[09:15:26] [ServerMain/INFO]: [PluginInitializerManager] Initialized 2 plugins
-[09:15:26] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (2):
- - Seasons (0.1.0-SNAPSHOT), VillagerAI (0.1.0-SNAPSHOT)
-[09:15:32] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[09:15:34] [ServerMain/INFO]: Loaded 1515 recipes
-[09:15:34] [ServerMain/INFO]: Loaded 1617 advancements
-[09:15:34] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[09:15:35] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 544.3ms
-[09:15:35] [Server thread/INFO]: Starting minecraft server version 26.1.2
-[09:15:35] [Server thread/INFO]: Loading properties
-[09:15:35] [Server thread/INFO]: This server is running Paper version 26.1.2-69-main@76d2ac7 (2026-06-03T17:32:02Z) (Implementing API version 26.1.2.build.69-stable)
-[09:15:35] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[09:15:35] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[09:15:35] [Server thread/INFO]: Using 4 threads for Netty based IO
-[09:15:36] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
-[09:15:36] [Server thread/INFO]: Default game type: SURVIVAL
-[09:15:36] [Server thread/INFO]: Generating keypair
-[09:15:36] [Server thread/INFO]: Starting Minecraft server on *:25565
-[09:15:36] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[09:15:36] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
-[09:15:36] [Server thread/INFO]: [Seasons] Loading server plugin Seasons v0.1.0-SNAPSHOT
-[09:15:36] [Server thread/INFO]: [VillagerAI] Loading server plugin VillagerAI v0.1.0-SNAPSHOT
-[09:15:36] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[09:15:36] [Server thread/INFO]: Preparing level "world"
-[09:15:37] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
-[09:15:37] [Server thread/INFO]: Preparing spawn area: 100%
-[09:15:37] [Server thread/INFO]: Prepared spawn area in 2 ms
-[09:15:37] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[09:15:37] [Server thread/INFO]: Prepared spawn area in 1 ms
-[09:15:37] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
-[09:15:37] [Server thread/INFO]: Prepared spawn area in 0 ms
-[09:15:37] [Server thread/INFO]: Done preparing level "world" (0.630s)
-[09:15:37] [Server thread/INFO]: [Seasons] Enabling Seasons v0.1.0-SNAPSHOT
-[09:15:37] [Server thread/INFO]: [Seasons] Seasons Plugin enabled.
-[09:15:37] [Server thread/INFO]: [Seasons] Default config.yml copied to plugins/Seasons/
-[09:15:37] [Server thread/INFO]: [Seasons] Default precipitation_categories.yml copied to plugins/Seasons/
-[09:15:37] [Server thread/INFO]: [Seasons] Default replaceable_plants.yml copied to plugins/Seasons/
-[09:15:37] [Server thread/INFO]: [Seasons] Default foliage_tints.yml copied to plugins/Seasons/
-[09:15:37] [Server thread/INFO]: [Seasons] No chunk cache file found, starting fresh.
-[09:15:37] [Server thread/INFO]: [Seasons] [VisualConfig] Loaded 4 season tints, 12 biome overrides
-[09:15:37] [Server thread/INFO]: [Seasons] [NmsAdapter] Server version: 26.1.2 (bukkit: 26.1.2.build.69-stable)
-[09:15:37] [Server thread/INFO]: [Seasons] [NmsAdapter] Detected 1.21.x NMS structure (BiomeSpecialEffects found).
-[09:15:37] [Server thread/INFO]: [Seasons] [NmsAdapter] Netty diagnostic interceptor registered (PlayerJoinEvent).
-[09:15:37] [Server thread/INFO]: [Seasons] [NmsAdapter] Waiting for player join to inspect outgoing packet classes...
-[09:15:37] [Server thread/INFO]: [Seasons] [VisualSeasonManager] Started with update interval 200 ticks
-[09:15:37] [Server thread/INFO]: [Seasons] [Visual] VisualSeasonManager initialized.
-[09:15:37] [Server thread/INFO]: [Seasons] Seasons ready. Season: Frühling
-[09:15:37] [Server thread/INFO]: [VillagerAI] Enabling VillagerAI v0.1.0-SNAPSHOT
-[09:15:37] [Server thread/WARN]: [VillagerAI] Could not save quests.yml to plugins/VillagerAI/quests.yml because quests.yml already exists.
-[09:15:37] [Server thread/WARN]: [VillagerAI] Could not save conversation-history.yml to plugins/VillagerAI/conversation-history.yml because conversation-history.yml already exists.
-[09:15:37] [Server thread/WARN]: [VillagerAI] Could not save chief-profiles.yml to plugins/VillagerAI/chief-profiles.yml because chief-profiles.yml already exists.
-[09:15:37] [Server thread/WARN]: [VillagerAI] Could not save quest-offers.yml to plugins/VillagerAI/quest-offers.yml because quest-offers.yml already exists.
-[09:15:37] [Server thread/WARN]: [VillagerAI] Could not save quest-rewards.yml to plugins/VillagerAI/quest-rewards.yml because quest-rewards.yml already exists.
-[09:15:37] [Server thread/INFO]: [VillagerAI] Chat-Debug-Log geoeffnet: /home/mc/crafty-4/servers/f5334260-43a9-4b27-9c7d-746f4c1aa528/plugins/VillagerAI/chat-debug.log
-[09:15:37] [Server thread/INFO]: [VillagerAI] mourning.reloadConfig: debug=true enabled=true particle=DUST countPerTick=500 interval=10-20 dayOnly=false
-[09:15:37] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] VillageLightParticleMarkerService created. enabled=true tickInterval=20L
-[09:15:37] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'CHIEF' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
-[09:15:37] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'CLERIC' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
-[09:15:37] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'CLERIC' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
-[09:15:37] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'ARMORER' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
-[09:15:37] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'TOOLSMITH' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
-[09:15:37] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'WEAPONSMITH' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
-[09:15:37] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'MASON' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
-[09:15:37] [Server thread/WARN]: [VillagerAI] Reward-Eintrag fuer 'repair' ignoriert einen ungueltigen quality-tier-Wert: CHAIN
-[09:15:37] [Server thread/INFO]: [VillagerAI] [QuestMarker] start() AUFGERUFEN - erstelle Scheduler...
-[09:15:37] [Server thread/INFO]: [VillagerAI] [QuestMarker] Scheduler erstellt, taskId=9
-[09:15:37] [Server thread/INFO]: [VillagerAI] ChiefAutoAssignment: pre-loaded 4 persisted active chief village(s)
-[09:15:37] [Server thread/INFO]: [VillagerAI] ChiefAutoAssignment: initialScan assigned 0 new chief(s)
-[09:15:37] [Server thread/INFO]: [VillagerAI] Abgelaufene Trauerphase für Dorf c1b44070-f7eb-4034-82e9-3d6e6e12ee2f gefunden, führe Nachfolger-Zuweisung durch.
-[09:15:37] [Server thread/INFO]: [VillagerAI] Abgelaufene Trauerphase für Dorf b01bf686-2e64-4553-9de3-996e880cbff2 gefunden, führe Nachfolger-Zuweisung durch.
-[09:15:37] [Server thread/INFO]: [VillagerAI] VillagerAI enabled using AI provider: http
-[09:15:37] [Server thread/INFO]: [VillagerAI] Quest service ready with repository: YamlQuestRepository
-[09:15:38] [Server thread/INFO]: [spark] Starting background profiler...
-[09:15:38] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[09:15:38] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[09:15:38] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[09:15:38] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[09:15:38] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[09:15:38] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[09:15:38] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[09:15:38] [Server thread/INFO]: Running delayed init tasks
-[09:15:38] [Server thread/INFO]: Done (13.949s)! For help, type "help"
-[09:15:38] [Paper Async Task Handler Thread - 1/INFO]: *** Currently you are 3 build(s) behind ***
-[09:15:38] [Paper Async Task Handler Thread - 1/INFO]: *** It is highly recommended to download the latest build from https://papermc.io/downloads/paper ***
-[09:15:42] [User Authenticator #0/INFO]: UUID of player Mhakari is 813576d6-c458-42be-af1e-a11b74ec5a21
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] Diagnostic handler injected for Mhakari
-[09:15:43] [Server thread/INFO]: [Seasons] [FoliageTintManager] updatePlayerTints called for Mhakari from SUMMER to SUMMER progress=0.00
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:plains -> 7c9e4f/7c9e4f
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:forest -> 7c9e4f/7c9e4f
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:desert -> 7c9e4f/7c9e4f
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:badlands -> 7c9e4f/7c9e4f
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:river -> 7c9e4f/7c9e4f
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:beach -> 7c9e4f/7c9e4f
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:stony_shore -> 7c9e4f/7c9e4f
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:savanna -> 7c9e4f/7c9e4f
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] flushTints: flushing 8 pending tints for player Mhakari
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] refreshAllChunks: world=world, loadedChunks=49
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] refreshAllChunks: world=world_nether, loadedChunks=0
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] refreshAllChunks: world=world_the_end, loadedChunks=0
-[09:15:43] [Server thread/INFO]: [Seasons] [NmsAdapter] refreshAllChunks: reloaded 49 chunks across all worlds
-[09:15:43] [Server thread/INFO]: Mhakari joined the game
-[09:15:43] [Server thread/INFO]: Mhakari[/188.64.212.253:61565] logged in with entity id 113 at ([minecraft:overworld]251729.84446456528, 91.99791056922366, 4755.603038986667)
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG] === Chunk packet #23 ===
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     STREAM_CODEC : StreamCodec = 
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     x : int = Integer
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     z : int = Integer
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     chunkData : ClientboundLevelChunkPacketData = ClientboundLevelChunkPacketData
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     lightData : ClientboundLightUpdatePacketData = ClientboundLightUpdatePacketData
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     ready : boolean = Boolean
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG] --- chunkData (ClientboundLevelChunkPacketData) ---
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   buffer[20086], first 300b: 1000000004075594DA019CB701E435BC29B40482|0100000000000000000000000000000000000000|0000000000000000000000000000000000000000|0000000000000000000000000000000000000000|0000000000000000000000000000000000000000|0000000000000000000000000000000000000000|0000000000000000000000000000000000000000|0000000000000000001100000001000000000000|0000010000010110001000010010010000111100|0000010100001000001000100000010001010100|0010001000100010000010001000000000000100|0100000001110001101110000010100000000101|0011001010000001100000000000000000100001|1000000000010001001100010000000100010000|1101000002000011001101120200000000001110|
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   readBuffer idx r=0 w=20086
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     HEIGHTMAPS_STREAM_CODEC : StreamCodec = 
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     TWO_MEGABYTES : int = Integer
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     heightmaps : Map = HashMap
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     buffer : byte[] = byte[]
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     blockEntitiesData : List = ArrayList
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     extraPackets : List = ArrayList
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     BLOCK_ENTITY_LIMIT : int = Integer
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   chunkData.getReadBuffer() -> FriendlyByteBuf / net.minecraft.network.FriendlyByteBuf
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   chunkData.getWriteBuffer() -> UnpooledHeapByteBuf / io.netty.buffer.UnpooledHeapByteBuf
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   chunkData.getHeightmaps() -> HashMap / java.util.HashMap
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   chunkData.getExtraPackets() -> ArrayList / java.util.ArrayList
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG] --- lightData (ClientboundLightUpdatePacketData) ---
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     DATA_LAYER_STREAM_CODEC : StreamCodec = 
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     skyYMask : BitSet = BitSet
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     blockYMask : BitSet = BitSet
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     emptySkyYMask : BitSet = BitSet
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     emptyBlockYMask : BitSet = BitSet
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     skyUpdates : List = ArrayList
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]     blockUpdates : List = ArrayList
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   lightData.getSkyYMask() -> BitSet / java.util.BitSet
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   lightData.getEmptySkyYMask() -> BitSet / java.util.BitSet
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   lightData.getSkyUpdates() -> ArrayList / java.util.ArrayList
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   lightData.getBlockYMask() -> BitSet / java.util.BitSet
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   lightData.getEmptyBlockYMask() -> BitSet / java.util.BitSet
-[09:15:44] [Netty Epoll IO #3/INFO]: [Seasons] [NmsAdapter] [DIAG]   lightData.getBlockUpdates() -> ArrayList / java.util.ArrayList
-[09:15:44] [Server thread/INFO]: [Seasons] [ConfigManager] replaceable_plants.yml: 54 materials matched, 0 unmatched
-[09:15:45] [Server thread/INFO]: Mhakari issued server command: /season set fall
-[09:15:46] [Server thread/INFO]: [Seasons] [Visual] Season changed: Frühling → Herbst. Starting transition.
-[09:15:46] [Server thread/INFO]: [Seasons] [FoliageTintManager] updatePlayerTints called for Mhakari from SPRING to FALL progress=1.00
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:plains -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:forest -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:badlands -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:desert -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:river -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:lukewarm_ocean -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:warm_ocean -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:eroded_badlands -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:beach -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:stony_shore -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:savanna -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] sendBiomeTint: minecraft:sparse_jungle -> c68a3f/c68a3f
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] flushTints: flushing 12 pending tints for player Mhakari
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] refreshAllChunks: world=world, loadedChunks=312
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] refreshAllChunks: world=world_nether, loadedChunks=0
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] refreshAllChunks: world=world_the_end, loadedChunks=0
-[09:15:46] [Server thread/INFO]: [Seasons] [NmsAdapter] refreshAllChunks: reloaded 312 chunks across all worlds
-[09:15:47] [Server thread/INFO]: Mhakari lost connection: Disconnected
-[09:15:47] [Server thread/INFO]: Mhakari left the game
-[09:15:52] [Server thread/INFO]: Stopping the server
-[09:15:52] [Server thread/INFO]: Stopping server
-[09:15:52] [Server thread/INFO]: [VillagerAI] Disabling VillagerAI v0.1.0-SNAPSHOT
-[09:15:52] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] shutdown() – activeMarkers.size=0
-[09:15:52] [Server thread/INFO]: [Seasons] Disabling Seasons v0.1.0-SNAPSHOT
-[09:15:52] [Server thread/INFO]: [Seasons] Saved 251 chunk cache entries (251 serialized) to chunk_cache.json.
-[09:15:52] [Server thread/INFO]: [Seasons] Seasons Plugin disabled.
-[09:15:52] [Server thread/INFO]: Saving players
-[09:15:52] [Server thread/INFO]: Saving worlds
-[09:15:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[09:15:52] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
-[09:15:52] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
-[09:15:52] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Saved 144 block chunks, 410 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.45s
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
-[09:15:53] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
-[09:15:53] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_end'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_end'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_end'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_end' in 0.00s
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_end'
-[09:15:53] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_end'
-[09:15:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[09:15:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[09:15:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[09:15:53] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[09:15:53] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
-[09:15:53] [Server thread/INFO]: All RegionFile I/O tasks to complete
-[09:15:53] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
-[09:15:53] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
+[18:53:36] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-2-26.04.2-Ubuntu; Ubuntu null) on Linux 7.0.0-22-generic (amd64)
+[18:53:36] [ServerMain/INFO]: [bootstrap] Loading Paper 26.1.2-69-main@76d2ac7 (2026-06-03T17:32:02Z) for Minecraft 26.1.2
+[18:53:36] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[18:53:37] [ServerMain/INFO]: [PluginInitializerManager] Initialized 3 plugins
+[18:53:37] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (3):
+ - ProtocolLib (5.4.0), Seasons (0.1.0-SNAPSHOT), VillagerAI (0.1.0-SNAPSHOT)
+[18:53:43] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[18:53:45] [ServerMain/INFO]: Loaded 1515 recipes
+[18:53:45] [ServerMain/INFO]: Loaded 1617 advancements
+[18:53:45] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[18:53:46] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 554.9ms
+[18:53:46] [Server thread/INFO]: Starting minecraft server version 26.1.2
+[18:53:46] [Server thread/INFO]: Loading properties
+[18:53:46] [Server thread/INFO]: This server is running Paper version 26.1.2-69-main@76d2ac7 (2026-06-03T17:32:02Z) (Implementing API version 26.1.2.build.69-stable)
+[18:53:46] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[18:53:46] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[18:53:46] [Server thread/INFO]: Using 4 threads for Netty based IO
+[18:53:47] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
+[18:53:47] [Server thread/INFO]: Default game type: SURVIVAL
+[18:53:47] [Server thread/INFO]: Generating keypair
+[18:53:47] [Server thread/INFO]: Starting Minecraft server on *:25565
+[18:53:47] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[18:53:47] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[18:53:47] [Server thread/INFO]: [ProtocolLib] Loading server plugin ProtocolLib v5.4.0
+[18:53:47] [Server thread/WARN]: [ProtocolLib] Version (MC: 26.1.2) has not yet been tested! Proceed with caution.
+[18:53:48] [Server thread/INFO]: [Seasons] Loading server plugin Seasons v0.1.0-SNAPSHOT
+[18:53:48] [Server thread/INFO]: [VillagerAI] Loading server plugin VillagerAI v0.1.0-SNAPSHOT
+[18:53:48] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[18:53:48] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.4.0
+[18:53:48] [Server thread/INFO]: Preparing level "world"
+[18:53:48] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[18:53:48] [Server thread/INFO]: Prepared spawn area in 1 ms
+[18:53:48] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[18:53:48] [Server thread/INFO]: Preparing spawn area: 100%
+[18:53:48] [Server thread/INFO]: Prepared spawn area in 1 ms
+[18:53:48] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
+[18:53:48] [Server thread/INFO]: Prepared spawn area in 0 ms
+[18:53:48] [Server thread/INFO]: Done preparing level "world" (0.659s)
+[18:53:48] [Server thread/INFO]: [Seasons] Enabling Seasons v0.1.0-SNAPSHOT
+[18:53:48] [Server thread/INFO]: [Seasons] Seasons Plugin enabled.
+[18:53:49] [Server thread/INFO]: [Seasons] Loaded 647 chunk cache entries from chunk_cache.json (version=4).
+[18:53:49] [Server thread/INFO]: [Seasons] [BiomeBackupStore] 0 Backups geladen, 0 fehlerhafte Einträge übersprungen.
+[18:53:49] [Server thread/INFO]: [Seasons] BiomeBackupStore: 0 Backups geladen.
+[18:53:49] [Server thread/INFO]: [Seasons] [FrostConfig] Loaded: enabled=true, freezeThreshold=0.0, fullFrostThreshold=-7.0, grassColor=0xD0D4D8, foliageColor=0xC0C4C8, particles=true, excludedBiomes=20
+[18:53:49] [Server thread/INFO]: [Seasons] FrostEffectManager started.
+[18:53:49] [Server thread/INFO]: [Seasons] [SeasonColorConfig] Loaded: 4 seasons, 8 biome overrides, 17 enabled biomes
+[18:53:49] [Server thread/INFO]: [Seasons] [SeasonBiomeResolver] Config geladen: oceanSpoof=true deepVariants=true excluded=3 seasonTargets=4 oceanTargets=4 enabledBiomes=17
+[18:53:49] [Server thread/INFO]: [Seasons] [SeasonBiomeResolver] Config geladen: oceanSpoof=true deepVariants=true excluded=3 seasonTargets=4 oceanTargets=4 enabledBiomes=17
+[18:53:49] [Server thread/INFO]: [Seasons] [BiomeSpoofCoordinator] Config geladen: mode=GLOBAL_RING radius=8 budget=16
+[18:53:49] [Server thread/INFO]: [Seasons] [BiomeSpoofCoordinator] 40-Tick-Timer gestartet (taskId=8).
+[18:53:49] [Server thread/INFO]: [Seasons] [VanillaBiomeReference] 65 biomes loaded with color data
+[18:53:49] [Server thread/INFO]: [Seasons] Seasons ready. Season: Sommer
+[18:53:49] [Server thread/INFO]: [VillagerAI] Enabling VillagerAI v0.1.0-SNAPSHOT
+[18:53:49] [Server thread/WARN]: [VillagerAI] Could not save quests.yml to plugins/VillagerAI/quests.yml because quests.yml already exists.
+[18:53:49] [Server thread/WARN]: [VillagerAI] Could not save conversation-history.yml to plugins/VillagerAI/conversation-history.yml because conversation-history.yml already exists.
+[18:53:49] [Server thread/WARN]: [VillagerAI] Could not save chief-profiles.yml to plugins/VillagerAI/chief-profiles.yml because chief-profiles.yml already exists.
+[18:53:49] [Server thread/WARN]: [VillagerAI] Could not save quest-offers.yml to plugins/VillagerAI/quest-offers.yml because quest-offers.yml already exists.
+[18:53:49] [Server thread/WARN]: [VillagerAI] Could not save quest-rewards.yml to plugins/VillagerAI/quest-rewards.yml because quest-rewards.yml already exists.
+[18:53:49] [Server thread/INFO]: [VillagerAI] Chat-Debug-Log geoeffnet: /home/mc/crafty-4/servers/f5334260-43a9-4b27-9c7d-746f4c1aa528/plugins/VillagerAI/chat-debug.log
+[18:53:49] [Server thread/INFO]: [VillagerAI] mourning.reloadConfig: debug=true enabled=true particle=DUST countPerTick=500 interval=10-20 dayOnly=false
+[18:53:49] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] VillageLightParticleMarkerService created. enabled=true tickInterval=20L
+[18:53:49] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'CHIEF' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
+[18:53:49] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'CLERIC' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
+[18:53:49] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'CLERIC' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
+[18:53:49] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'ARMORER' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
+[18:53:49] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'TOOLSMITH' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
+[18:53:49] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'WEAPONSMITH' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
+[18:53:49] [Server thread/WARN]: [VillagerAI] SECURE-Template in 'MASON' ignoriert: gueltiges Block-Material, amount > 0, distance > 0 und radius > 0 sind Pflicht.
+[18:53:49] [Server thread/WARN]: [VillagerAI] Reward-Eintrag fuer 'repair' ignoriert einen ungueltigen quality-tier-Wert: CHAIN
+[18:53:49] [Server thread/INFO]: [VillagerAI] [QuestMarker] start() AUFGERUFEN - erstelle Scheduler...
+[18:53:49] [Server thread/INFO]: [VillagerAI] [QuestMarker] Scheduler erstellt, taskId=11
+[18:53:49] [Server thread/INFO]: [VillagerAI] ChiefAutoAssignment: pre-loaded 4 persisted active chief village(s)
+[18:53:49] [Server thread/INFO]: [VillagerAI] ChiefAutoAssignment: initialScan assigned 0 new chief(s)
+[18:53:49] [Server thread/INFO]: [VillagerAI] Abgelaufene Trauerphase für Dorf c1b44070-f7eb-4034-82e9-3d6e6e12ee2f gefunden, führe Nachfolger-Zuweisung durch.
+[18:53:49] [Server thread/INFO]: [VillagerAI] Abgelaufene Trauerphase für Dorf b01bf686-2e64-4553-9de3-996e880cbff2 gefunden, führe Nachfolger-Zuweisung durch.
+[18:53:49] [Server thread/INFO]: [VillagerAI] VillagerAI enabled using AI provider: http
+[18:53:49] [Server thread/INFO]: [VillagerAI] Quest service ready with repository: YamlQuestRepository
+[18:53:49] [Server thread/INFO]: [spark] Starting background profiler...
+[18:53:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:53:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18:53:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18:53:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:53:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:53:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:53:50] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[18:53:50] [Server thread/INFO]: Running delayed init tasks
+[18:53:50] [Server thread/INFO]: Done (14.843s)! For help, type "help"
+[18:53:50] [Paper Async Task Handler Thread - 1/INFO]: *** Currently you are 3 build(s) behind ***
+[18:53:50] [Paper Async Task Handler Thread - 1/INFO]: *** It is highly recommended to download the latest build from https://papermc.io/downloads/paper ***
+[18:54:40] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=0 | cache: 0 hits, 0 misses, 0 fullyGrown
+[18:54:50] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #60 | enabled=true | onlinePlayers=0 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[18:54:50] [Server thread/INFO]: Server empty for 60 seconds, pausing
+[18:55:30] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=0 | cache: 0 hits, 0 misses, 0 fullyGrown
+[18:55:50] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #120 | enabled=true | onlinePlayers=0 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[18:56:20] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=0 | cache: 0 hits, 0 misses, 0 fullyGrown
+[18:56:27] [User Authenticator #0/INFO]: UUID of player Mhakari is 813576d6-c458-42be-af1e-a11b74ec5a21
+[18:56:27] [Server thread/INFO]: [HorriblePlayerLoginEventHack] You have plugins listening to the PlayerLoginEvent, this will cause re-configuration APIs to be unavailable: [ProtocolLib]
+[18:56:29] [Server thread/INFO]: Mhakari joined the game
+[18:56:29] [Server thread/INFO]: Mhakari[/10.0.0.58:59662] logged in with entity id 1 at ([minecraft:overworld]262005.11978957092, 82.1012817446071, 4780.685240206095)
+[18:56:29] [Server thread/INFO]: [Seasons] [ConfigManager] replaceable_plants.yml: 54 materials matched, 0 unmatched
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_298 -> seasons:summer_forest (first=true, totalSpoofed=1)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_298 -> seasons:summer_forest (first=true, totalSpoofed=2)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_297 -> seasons:summer_forest (first=true, totalSpoofed=3)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_299 -> seasons:summer_forest (first=true, totalSpoofed=4)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_298 -> seasons:summer_forest (first=true, totalSpoofed=5)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_297 -> seasons:summer_forest (first=true, totalSpoofed=6)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_299 -> seasons:summer_forest (first=true, totalSpoofed=7)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_297 -> seasons:summer_forest (first=true, totalSpoofed=8)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_299 -> seasons:summer_forest (first=true, totalSpoofed=9)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_298 -> seasons:summer_forest (first=true, totalSpoofed=10)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_296 -> seasons:summer_forest (first=true, totalSpoofed=11)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_300 -> seasons:summer_forest (first=true, totalSpoofed=12)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_298 -> seasons:summer_forest (first=true, totalSpoofed=13)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_297 -> seasons:summer_forest (first=true, totalSpoofed=14)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_299 -> seasons:summer_forest (first=true, totalSpoofed=15)
+[18:56:31] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_296 -> seasons:summer_forest (first=true, totalSpoofed=16)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_300 -> seasons:summer_forest (first=true, totalSpoofed=17)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_296 -> seasons:summer_forest (first=true, totalSpoofed=18)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_300 -> seasons:summer_forest (first=true, totalSpoofed=19)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_297 -> seasons:summer_forest (first=true, totalSpoofed=20)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_299 -> seasons:summer_forest (first=true, totalSpoofed=21)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_296 -> seasons:summer_forest (first=true, totalSpoofed=22)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_300 -> seasons:summer_forest (first=true, totalSpoofed=23)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_296 -> seasons:summer_river (first=true, totalSpoofed=24)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_300 -> seasons:summer_forest (first=true, totalSpoofed=25)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_298 -> seasons:summer_forest (first=true, totalSpoofed=26)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_295 -> seasons:summer_old_growth_birch_forest (first=true, totalSpoofed=27)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_301 -> seasons:summer_forest (first=true, totalSpoofed=28)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_298 -> seasons:summer_river (first=true, totalSpoofed=29)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_297 -> seasons:summer_forest (first=true, totalSpoofed=30)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_299 -> seasons:summer_forest (first=true, totalSpoofed=31)
+[18:56:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_295 -> seasons:summer_forest (first=true, totalSpoofed=32)
+[18:56:34] [Server thread/INFO]: Mhakari issued server command: /season set fall
+[18:56:34] [Server thread/INFO]: [Seasons] [TransitionManager] Transition gestartet: SUMMER → FALL (4 Schritte, 1 Nacht/Tick pro Schritt, nächster Tick: 13000, Varianten: late_summer, mid_summer, early_fall, fall)
+[18:56:34] [Server thread/INFO]: [Seasons] [BiomeSpoofCoordinator] Season changed to Herbst
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_298 -> seasons:summer_forest (first=true, totalSpoofed=1)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_298 -> seasons:summer_forest (first=true, totalSpoofed=2)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_297 -> seasons:summer_forest (first=true, totalSpoofed=3)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_299 -> seasons:summer_forest (first=true, totalSpoofed=4)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_298 -> seasons:summer_forest (first=true, totalSpoofed=5)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_297 -> seasons:summer_forest (first=true, totalSpoofed=6)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_299 -> seasons:summer_forest (first=true, totalSpoofed=7)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_297 -> seasons:summer_forest (first=true, totalSpoofed=8)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_299 -> seasons:summer_forest (first=true, totalSpoofed=9)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_298 -> seasons:summer_forest (first=true, totalSpoofed=10)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_296 -> seasons:summer_forest (first=true, totalSpoofed=11)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_300 -> seasons:summer_forest (first=true, totalSpoofed=12)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_298 -> seasons:summer_forest (first=true, totalSpoofed=13)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_297 -> seasons:summer_forest (first=true, totalSpoofed=14)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_299 -> seasons:summer_forest (first=true, totalSpoofed=15)
+[18:56:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_296 -> seasons:summer_forest (first=true, totalSpoofed=16)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_300 -> seasons:summer_forest (first=true, totalSpoofed=17)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_296 -> seasons:summer_forest (first=true, totalSpoofed=18)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_300 -> seasons:summer_forest (first=true, totalSpoofed=19)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_297 -> seasons:summer_forest (first=true, totalSpoofed=20)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_299 -> seasons:summer_forest (first=true, totalSpoofed=21)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_296 -> seasons:summer_forest (first=true, totalSpoofed=22)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_300 -> seasons:summer_forest (first=true, totalSpoofed=23)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_296 -> seasons:summer_river (first=true, totalSpoofed=24)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_300 -> seasons:summer_forest (first=true, totalSpoofed=25)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_298 -> seasons:summer_forest (first=true, totalSpoofed=26)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_295 -> seasons:summer_old_growth_birch_forest (first=true, totalSpoofed=27)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_301 -> seasons:summer_forest (first=true, totalSpoofed=28)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_298 -> seasons:summer_river (first=true, totalSpoofed=29)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_297 -> seasons:summer_forest (first=true, totalSpoofed=30)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_299 -> seasons:summer_forest (first=true, totalSpoofed=31)
+[18:56:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_295 -> seasons:summer_forest (first=true, totalSpoofed=32)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_301 -> seasons:summer_forest (first=true, totalSpoofed=33)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_295 -> seasons:summer_old_growth_birch_forest (first=true, totalSpoofed=34)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_301 -> seasons:summer_forest (first=true, totalSpoofed=35)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_297 -> seasons:summer_river (first=true, totalSpoofed=36)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_299 -> seasons:summer_river (first=true, totalSpoofed=37)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_296 -> seasons:summer_forest (first=true, totalSpoofed=38)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_300 -> seasons:summer_forest (first=true, totalSpoofed=39)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_295 -> seasons:summer_forest (first=true, totalSpoofed=40)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_301 -> seasons:summer_forest (first=true, totalSpoofed=41)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_295 -> seasons:summer_river (first=true, totalSpoofed=42)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_301 -> seasons:summer_forest (first=true, totalSpoofed=43)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_296 -> seasons:summer_river (first=true, totalSpoofed=44)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_300 -> seasons:summer_river (first=true, totalSpoofed=45)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_298 -> seasons:summer_forest (first=true, totalSpoofed=46)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_294 -> seasons:summer_old_growth_birch_forest (first=true, totalSpoofed=47)
+[18:56:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_302 -> seasons:summer_forest (first=true, totalSpoofed=48)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_301 -> seasons:summer_forest (first=true, totalSpoofed=49)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_299 -> seasons:summer_forest (first=true, totalSpoofed=50)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_302 -> seasons:summer_forest (first=true, totalSpoofed=51)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_300 -> seasons:summer_forest (first=true, totalSpoofed=52)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_302 -> seasons:summer_forest (first=true, totalSpoofed=53)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_297 -> seasons:summer_forest (first=true, totalSpoofed=54)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_301 -> seasons:summer_forest (first=true, totalSpoofed=55)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_302 -> seasons:summer_forest (first=true, totalSpoofed=56)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_302 -> seasons:summer_forest (first=true, totalSpoofed=57)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_299 -> seasons:summer_forest (first=true, totalSpoofed=58)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_303 -> seasons:summer_forest (first=true, totalSpoofed=59)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_298 -> seasons:summer_forest (first=true, totalSpoofed=60)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_300 -> seasons:summer_forest (first=true, totalSpoofed=61)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_303 -> seasons:summer_forest (first=true, totalSpoofed=62)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_303 -> seasons:summer_forest (first=true, totalSpoofed=63)
+[18:56:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_296 -> seasons:summer_forest (first=true, totalSpoofed=64)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_302 -> seasons:summer_forest (first=true, totalSpoofed=65)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_302 -> seasons:summer_forest (first=true, totalSpoofed=66)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_297 -> seasons:summer_forest (first=true, totalSpoofed=67)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_301 -> seasons:summer_forest (first=true, totalSpoofed=68)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_295 -> seasons:summer_forest (first=true, totalSpoofed=69)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_303 -> seasons:summer_forest (first=true, totalSpoofed=70)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_303 -> seasons:summer_forest (first=true, totalSpoofed=71)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_301 -> seasons:summer_forest (first=true, totalSpoofed=72)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_299 -> seasons:summer_forest (first=true, totalSpoofed=73)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_296 -> seasons:summer_forest (first=true, totalSpoofed=74)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_302 -> seasons:summer_forest (first=true, totalSpoofed=75)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_295 -> seasons:summer_forest (first=true, totalSpoofed=76)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_303 -> seasons:summer_forest (first=true, totalSpoofed=77)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_294 -> seasons:summer_old_growth_birch_forest (first=true, totalSpoofed=78)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_304 -> seasons:summer_forest (first=true, totalSpoofed=79)
+[18:56:44] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_303 -> seasons:summer_forest (first=true, totalSpoofed=80)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_298 -> seasons:summer_forest (first=true, totalSpoofed=81)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_300 -> seasons:summer_forest (first=true, totalSpoofed=82)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_297 -> seasons:summer_forest (first=true, totalSpoofed=83)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_301 -> seasons:summer_forest (first=true, totalSpoofed=84)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_299 -> seasons:summer_forest (first=true, totalSpoofed=85)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_296 -> seasons:summer_forest (first=true, totalSpoofed=86)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_302 -> seasons:summer_forest (first=true, totalSpoofed=87)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_295 -> seasons:summer_forest (first=true, totalSpoofed=88)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_303 -> seasons:summer_forest (first=true, totalSpoofed=89)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_294 -> seasons:summer_forest (first=true, totalSpoofed=90)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_304 -> seasons:summer_forest (first=true, totalSpoofed=91)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_298 -> seasons:summer_forest (first=true, totalSpoofed=92)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_300 -> seasons:summer_forest (first=true, totalSpoofed=93)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_294 -> seasons:summer_forest (first=true, totalSpoofed=94)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_304 -> seasons:summer_forest (first=true, totalSpoofed=95)
+[18:56:46] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_297 -> seasons:summer_forest (first=true, totalSpoofed=96)
+[18:56:47] [Server thread/INFO]: Mhakari issued server command: /season set fall
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_301 -> seasons:summer_forest (first=true, totalSpoofed=97)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_294 -> seasons:summer_forest (first=true, totalSpoofed=98)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_304 -> seasons:summer_forest (first=true, totalSpoofed=99)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_304 -> seasons:summer_forest (first=true, totalSpoofed=100)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_295 -> seasons:summer_forest (first=true, totalSpoofed=101)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_303 -> seasons:summer_forest (first=true, totalSpoofed=102)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_296 -> seasons:summer_forest (first=true, totalSpoofed=103)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_302 -> seasons:summer_forest (first=true, totalSpoofed=104)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_294 -> seasons:summer_forest (first=true, totalSpoofed=105)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_304 -> seasons:summer_forest (first=true, totalSpoofed=106)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_294 -> seasons:summer_river (first=true, totalSpoofed=107)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_304 -> seasons:summer_forest (first=true, totalSpoofed=108)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_302 -> seasons:summer_forest (first=true, totalSpoofed=109)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_299 -> seasons:summer_forest (first=true, totalSpoofed=110)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_293 -> seasons:summer_old_growth_birch_forest (first=true, totalSpoofed=111)
+[18:56:48] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_305 -> seasons:summer_forest (first=true, totalSpoofed=112)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_299 -> seasons:summer_river (first=true, totalSpoofed=113)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_298 -> seasons:summer_forest (first=true, totalSpoofed=114)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_300 -> seasons:summer_forest (first=true, totalSpoofed=115)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_293 -> seasons:summer_forest (first=true, totalSpoofed=116)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_305 -> seasons:summer_forest (first=true, totalSpoofed=117)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_293 -> seasons:summer_river (first=true, totalSpoofed=118)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_305 -> seasons:summer_forest (first=true, totalSpoofed=119)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_298 -> seasons:summer_river (first=true, totalSpoofed=120)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_300 -> seasons:summer_river (first=true, totalSpoofed=121)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_297 -> seasons:summer_forest (first=true, totalSpoofed=122)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_301 -> seasons:summer_forest (first=true, totalSpoofed=123)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_293 -> seasons:summer_forest (first=true, totalSpoofed=124)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_305 -> seasons:summer_forest (first=true, totalSpoofed=125)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_293 -> seasons:summer_birch_forest (first=true, totalSpoofed=126)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_305 -> seasons:summer_forest (first=true, totalSpoofed=127)
+[18:56:50] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_297 -> seasons:summer_river (first=true, totalSpoofed=128)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_301 -> seasons:summer_river (first=true, totalSpoofed=129)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_295 -> seasons:summer_forest (first=true, totalSpoofed=130)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_303 -> seasons:summer_forest (first=true, totalSpoofed=131)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_294 -> seasons:summer_forest (first=true, totalSpoofed=132)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_304 -> seasons:summer_forest (first=true, totalSpoofed=133)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_294 -> seasons:summer_birch_forest (first=true, totalSpoofed=134)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_304 -> seasons:summer_forest (first=true, totalSpoofed=135)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_295 -> seasons:summer_birch_forest (first=true, totalSpoofed=136)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_303 -> seasons:summer_river (first=true, totalSpoofed=137)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_296 -> seasons:summer_forest (first=true, totalSpoofed=138)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_302 -> seasons:summer_forest (first=true, totalSpoofed=139)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_293 -> seasons:summer_forest (first=true, totalSpoofed=140)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_305 -> seasons:summer_forest (first=true, totalSpoofed=141)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_293 -> seasons:summer_birch_forest (first=true, totalSpoofed=142)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_305 -> seasons:summer_forest (first=true, totalSpoofed=143)
+[18:56:52] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_296 -> seasons:summer_forest (first=true, totalSpoofed=144)
+[18:56:52] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] tick() #180 | enabled=true | onlinePlayers=1 | questPlayers=0 | renderedPlayers=0 | noDarkBlocks=0 | activeMarkers=0
+[18:56:52] [Server thread/INFO]: Mhakari issued server command: /season debug
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_302 -> seasons:summer_river (first=true, totalSpoofed=145)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_299 -> seasons:summer_forest (first=true, totalSpoofed=146)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_292 -> seasons:summer_river (first=true, totalSpoofed=147)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_306 -> seasons:summer_forest (first=true, totalSpoofed=148)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_299 -> seasons:summer_forest (first=true, totalSpoofed=149)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_298 -> seasons:summer_forest (first=true, totalSpoofed=150)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_300 -> seasons:summer_forest (first=true, totalSpoofed=151)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_294 -> seasons:summer_river (first=true, totalSpoofed=152)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_304 -> seasons:summer_forest (first=true, totalSpoofed=153)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_292 -> seasons:summer_river (first=true, totalSpoofed=154)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_306 -> seasons:summer_forest (first=true, totalSpoofed=155)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_292 -> seasons:summer_birch_forest (first=true, totalSpoofed=156)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_306 -> seasons:summer_forest (first=true, totalSpoofed=157)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_294 -> seasons:summer_birch_forest (first=true, totalSpoofed=158)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_304 -> seasons:summer_river (first=true, totalSpoofed=159)
+[18:56:53] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_298 -> seasons:summer_forest (first=true, totalSpoofed=160)
+[18:56:55] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_300 -> seasons:summer_river (first=true, totalSpoofed=161)
+[18:56:55] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_295 -> seasons:summer_forest (first=true, totalSpoofed=162)
+[18:56:55] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_303 -> seasons:summer_forest (first=true, totalSpoofed=163)
+[18:56:55] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_293 -> seasons:summer_forest (first=true, totalSpoofed=164)
+[18:56:55] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_305 -> seasons:summer_forest (first=true, totalSpoofed=165)
+[18:56:55] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_293 -> seasons:summer_birch_forest (first=true, totalSpoofed=166)
+[18:56:55] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_305 -> seasons:summer_forest (first=true, totalSpoofed=167)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_295 -> seasons:summer_forest (first=true, totalSpoofed=168)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_303 -> seasons:summer_river (first=true, totalSpoofed=169)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_297 -> seasons:summer_forest (first=true, totalSpoofed=170)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_301 -> seasons:summer_forest (first=true, totalSpoofed=171)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_292 -> seasons:summer_forest (first=true, totalSpoofed=172)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_306 -> seasons:summer_forest (first=true, totalSpoofed=173)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_292 -> seasons:summer_birch_forest (first=true, totalSpoofed=174)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_306 -> seasons:summer_forest (first=true, totalSpoofed=175)
+[18:56:56] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_297 -> seasons:summer_forest (first=true, totalSpoofed=176)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_301 -> seasons:summer_forest (first=true, totalSpoofed=177)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_296 -> seasons:summer_river (first=true, totalSpoofed=178)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_302 -> seasons:summer_forest (first=true, totalSpoofed=179)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_292 -> seasons:summer_forest (first=true, totalSpoofed=180)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_306 -> seasons:summer_forest (first=true, totalSpoofed=181)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_292 -> seasons:summer_birch_forest (first=true, totalSpoofed=182)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_306 -> seasons:summer_forest (first=true, totalSpoofed=183)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_296 -> seasons:summer_forest (first=true, totalSpoofed=184)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_302 -> seasons:summer_forest (first=true, totalSpoofed=185)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_294 -> seasons:summer_river (first=true, totalSpoofed=186)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_304 -> seasons:summer_forest (first=true, totalSpoofed=187)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_293 -> seasons:summer_river (first=true, totalSpoofed=188)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_305 -> seasons:summer_forest (first=true, totalSpoofed=189)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_293 -> seasons:summer_birch_forest (first=true, totalSpoofed=190)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_305 -> seasons:summer_river (first=true, totalSpoofed=191)
+[18:56:57] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_294 -> seasons:summer_birch_forest (first=true, totalSpoofed=192)
+[18:56:58] [Server thread/INFO]: Mhakari issued server command: /season set winter
+[18:56:58] [Server thread/INFO]: [Seasons] SnowParticleScheduler started (radius=32, count=50, y=2-8)
+[18:56:58] [Server thread/INFO]: [Seasons] [TransitionManager] Transition abgebrochen: SUMMER → FALL
+[18:56:59] [Server thread/INFO]: [Seasons] [TransitionManager] Transition gestartet: FALL → WINTER (3 Schritte, 1 Nacht/Tick pro Schritt, nächster Tick: 13000, Varianten: late_fall, early_winter, winter)
+[18:56:59] [Server thread/INFO]: [Seasons] [BiomeSpoofCoordinator] Season changed to Winter
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_299 -> seasons:frost_forest (first=true, totalSpoofed=1)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_299 -> seasons:frost_forest (first=true, totalSpoofed=2)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_298 -> seasons:frost_forest (first=true, totalSpoofed=3)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_300 -> seasons:frost_forest (first=true, totalSpoofed=4)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_299 -> seasons:frost_forest (first=true, totalSpoofed=5)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_298 -> seasons:frost_forest (first=true, totalSpoofed=6)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_300 -> seasons:frost_forest (first=true, totalSpoofed=7)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_298 -> seasons:frost_forest (first=true, totalSpoofed=8)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_300 -> seasons:frost_forest (first=true, totalSpoofed=9)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_299 -> seasons:frost_forest (first=true, totalSpoofed=10)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_297 -> seasons:frost_forest (first=true, totalSpoofed=11)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_301 -> seasons:frost_forest (first=true, totalSpoofed=12)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_299 -> seasons:frost_forest (first=true, totalSpoofed=13)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_298 -> seasons:frost_forest (first=true, totalSpoofed=14)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_300 -> seasons:frost_forest (first=true, totalSpoofed=15)
+[18:56:59] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_297 -> seasons:frost_forest (first=true, totalSpoofed=16)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_301 -> seasons:frost_forest (first=true, totalSpoofed=17)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_297 -> seasons:frost_forest (first=true, totalSpoofed=18)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_301 -> seasons:frost_forest (first=true, totalSpoofed=19)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_298 -> seasons:frost_forest (first=true, totalSpoofed=20)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_300 -> seasons:frost_forest (first=true, totalSpoofed=21)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_297 -> seasons:frost_forest (first=true, totalSpoofed=22)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_301 -> seasons:frost_forest (first=true, totalSpoofed=23)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_297 -> seasons:frost_forest (first=true, totalSpoofed=24)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_301 -> seasons:frost_forest (first=true, totalSpoofed=25)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_299 -> seasons:frost_forest (first=true, totalSpoofed=26)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_296 -> seasons:frost_forest (first=true, totalSpoofed=27)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_302 -> seasons:frost_forest (first=true, totalSpoofed=28)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_299 -> seasons:frost_forest (first=true, totalSpoofed=29)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_298 -> seasons:frost_forest (first=true, totalSpoofed=30)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_300 -> seasons:frost_forest (first=true, totalSpoofed=31)
+[18:57:02] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_296 -> seasons:frost_forest (first=true, totalSpoofed=32)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_302 -> seasons:frost_forest (first=true, totalSpoofed=33)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_296 -> seasons:frost_forest (first=true, totalSpoofed=34)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_302 -> seasons:frost_forest (first=true, totalSpoofed=35)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_298 -> seasons:frost_forest (first=true, totalSpoofed=36)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_300 -> seasons:frost_forest (first=true, totalSpoofed=37)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_297 -> seasons:frost_forest (first=true, totalSpoofed=38)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_301 -> seasons:frost_forest (first=true, totalSpoofed=39)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_296 -> seasons:frost_forest (first=true, totalSpoofed=40)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_302 -> seasons:frost_forest (first=true, totalSpoofed=41)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_296 -> seasons:frost_forest (first=true, totalSpoofed=42)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_302 -> seasons:frost_forest (first=true, totalSpoofed=43)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_297 -> seasons:frost_forest (first=true, totalSpoofed=44)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_301 -> seasons:frost_forest (first=true, totalSpoofed=45)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_299 -> seasons:frost_forest (first=true, totalSpoofed=46)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_295 -> seasons:frost_forest (first=true, totalSpoofed=47)
+[18:57:04] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_303 -> seasons:frost_forest (first=true, totalSpoofed=48)
+[18:57:04] [Server thread/INFO]: Mhakari issued server command: /season set Fall
+[18:57:04] [Server thread/INFO]: [Seasons] [TransitionManager] Transition abgebrochen: FALL → WINTER
+[18:57:04] [Server thread/INFO]: [Seasons] [TransitionManager] Transition gestartet: WINTER → FALL (4 Schritte, 1 Nacht/Tick pro Schritt, nächster Tick: 13000, Varianten: late_winter, mid_winter, early_fall, fall)
+[18:57:04] [Server thread/INFO]: [Seasons] [BiomeSpoofCoordinator] Season changed to Herbst
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_299 -> seasons:winter_forest (first=true, totalSpoofed=1)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_299 -> seasons:winter_forest (first=true, totalSpoofed=2)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_298 -> seasons:winter_forest (first=true, totalSpoofed=3)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_300 -> seasons:winter_forest (first=true, totalSpoofed=4)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_299 -> seasons:winter_forest (first=true, totalSpoofed=5)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_298 -> seasons:winter_forest (first=true, totalSpoofed=6)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_300 -> seasons:winter_forest (first=true, totalSpoofed=7)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_298 -> seasons:winter_forest (first=true, totalSpoofed=8)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_300 -> seasons:winter_forest (first=true, totalSpoofed=9)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_299 -> seasons:winter_forest (first=true, totalSpoofed=10)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_297 -> seasons:winter_forest (first=true, totalSpoofed=11)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_301 -> seasons:winter_forest (first=true, totalSpoofed=12)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_299 -> seasons:winter_forest (first=true, totalSpoofed=13)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_298 -> seasons:winter_forest (first=true, totalSpoofed=14)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_300 -> seasons:winter_forest (first=true, totalSpoofed=15)
+[18:57:05] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_297 -> seasons:winter_forest (first=true, totalSpoofed=16)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_298 -> seasons:winter_forest (first=true, totalSpoofed=17)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_300 -> seasons:winter_forest (first=true, totalSpoofed=18)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_297 -> seasons:winter_forest (first=true, totalSpoofed=19)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_301 -> seasons:winter_forest (first=true, totalSpoofed=20)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_299 -> seasons:winter_forest (first=true, totalSpoofed=21)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_297 -> seasons:winter_forest (first=true, totalSpoofed=22)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_301 -> seasons:winter_forest (first=true, totalSpoofed=23)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_298 -> seasons:winter_forest (first=true, totalSpoofed=24)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_300 -> seasons:winter_forest (first=true, totalSpoofed=25)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_301 -> seasons:winter_forest (first=true, totalSpoofed=26)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_297 -> seasons:winter_forest (first=true, totalSpoofed=27)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_301 -> seasons:winter_forest (first=true, totalSpoofed=28)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_296 -> seasons:winter_forest (first=true, totalSpoofed=29)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_302 -> seasons:winter_forest (first=true, totalSpoofed=30)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_299 -> seasons:winter_forest (first=true, totalSpoofed=31)
+[18:57:07] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_296 -> seasons:winter_forest (first=true, totalSpoofed=32)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_296 -> seasons:winter_forest (first=true, totalSpoofed=33)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_296 -> seasons:winter_forest (first=true, totalSpoofed=34)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_296 -> seasons:winter_forest (first=true, totalSpoofed=35)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_295 -> seasons:winter_forest (first=true, totalSpoofed=36)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_298 -> seasons:winter_forest (first=true, totalSpoofed=37)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_297 -> seasons:winter_forest (first=true, totalSpoofed=38)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_295 -> seasons:winter_forest (first=true, totalSpoofed=39)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_295 -> seasons:winter_old_growth_birch_forest (first=true, totalSpoofed=40)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_297 -> seasons:winter_forest (first=true, totalSpoofed=41)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_296 -> seasons:winter_forest (first=true, totalSpoofed=42)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_295 -> seasons:winter_forest (first=true, totalSpoofed=43)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_295 -> seasons:winter_old_growth_birch_forest (first=true, totalSpoofed=44)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_296 -> seasons:winter_river (first=true, totalSpoofed=45)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_300 -> seasons:winter_forest (first=true, totalSpoofed=46)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_298 -> seasons:winter_forest (first=true, totalSpoofed=47)
+[18:57:09] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_294 -> seasons:winter_old_growth_birch_forest (first=true, totalSpoofed=48)
+[18:57:11] [Server thread/INFO]: [Seasons] [SnowAcc] summary: placed=0 grown=0 melted=1270 | cache: 4439 hits, 796 misses, 0 fullyGrown
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_294 -> seasons:winter_forest (first=true, totalSpoofed=49)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_294 -> seasons:winter_old_growth_birch_forest (first=true, totalSpoofed=50)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_295 -> seasons:winter_forest (first=true, totalSpoofed=51)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_294 -> seasons:winter_forest (first=true, totalSpoofed=52)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_294 -> seasons:winter_river (first=true, totalSpoofed=53)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_295 -> seasons:winter_river (first=true, totalSpoofed=54)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_297 -> seasons:winter_forest (first=true, totalSpoofed=55)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_293 -> seasons:winter_river (first=true, totalSpoofed=56)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_297 -> seasons:winter_river (first=true, totalSpoofed=57)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_296 -> seasons:winter_forest (first=true, totalSpoofed=58)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_293 -> seasons:winter_old_growth_birch_forest (first=true, totalSpoofed=59)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_293 -> seasons:winter_birch_forest (first=true, totalSpoofed=60)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_296 -> seasons:winter_river (first=true, totalSpoofed=61)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_298 -> seasons:winter_river (first=true, totalSpoofed=62)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_294 -> seasons:winter_forest (first=true, totalSpoofed=63)
+[18:57:11] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_294 -> seasons:winter_birch_forest (first=true, totalSpoofed=64)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_295 -> seasons:winter_forest (first=true, totalSpoofed=65)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_293 -> seasons:winter_forest (first=true, totalSpoofed=66)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_294 -> seasons:winter_forest (first=true, totalSpoofed=67)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_293 -> seasons:winter_forest (first=true, totalSpoofed=68)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_296 -> seasons:winter_forest (first=true, totalSpoofed=69)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_292 -> seasons:winter_river (first=true, totalSpoofed=70)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_295 -> seasons:winter_forest (first=true, totalSpoofed=71)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_297 -> seasons:winter_forest (first=true, totalSpoofed=72)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_292 -> seasons:winter_river (first=true, totalSpoofed=73)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_292 -> seasons:winter_birch_forest (first=true, totalSpoofed=74)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_293 -> seasons:winter_forest (first=true, totalSpoofed=75)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_299 -> seasons:winter_forest (first=true, totalSpoofed=76)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_293 -> seasons:winter_birch_forest (first=true, totalSpoofed=77)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_294 -> seasons:winter_forest (first=true, totalSpoofed=78)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_298 -> seasons:winter_forest (first=true, totalSpoofed=79)
+[18:57:14] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_292 -> seasons:winter_forest (first=true, totalSpoofed=80)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_292 -> seasons:winter_birch_forest (first=true, totalSpoofed=81)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_292 -> seasons:winter_birch_forest (first=true, totalSpoofed=82)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=83)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=84)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=85)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_293 -> seasons:winter_birch_forest (first=true, totalSpoofed=86)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_291 -> seasons:winter_river (first=true, totalSpoofed=87)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=88)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_292 -> seasons:winter_birch_forest (first=true, totalSpoofed=89)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=90)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_294 -> seasons:winter_birch_forest (first=true, totalSpoofed=91)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=92)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=93)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_293 -> seasons:winter_birch_forest (first=true, totalSpoofed=94)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_295 -> seasons:winter_birch_forest (first=true, totalSpoofed=95)
+[18:57:16] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_291 -> seasons:winter_river (first=true, totalSpoofed=96)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=97)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_292 -> seasons:winter_forest (first=true, totalSpoofed=98)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=99)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=100)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_292 -> seasons:winter_birch_forest (first=true, totalSpoofed=101)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_291 -> seasons:winter_river (first=true, totalSpoofed=102)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_290 -> seasons:winter_forest (first=true, totalSpoofed=103)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_289 -> seasons:winter_birch_forest (first=true, totalSpoofed=104)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=105)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=106)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_294 -> seasons:winter_birch_forest (first=true, totalSpoofed=107)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_293 -> seasons:winter_forest (first=true, totalSpoofed=108)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_289 -> seasons:winter_birch_forest (first=true, totalSpoofed=109)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_289 -> seasons:winter_birch_forest (first=true, totalSpoofed=110)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_293 -> seasons:winter_birch_forest (first=true, totalSpoofed=111)
+[18:57:18] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_295 -> seasons:winter_forest (first=true, totalSpoofed=112)
+[18:57:19] [Server thread/INFO]: Mhakari issued server command: /season debug
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_292 -> seasons:winter_river (first=true, totalSpoofed=113)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_289 -> seasons:winter_birch_forest (first=true, totalSpoofed=114)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_289 -> seasons:winter_birch_forest (first=true, totalSpoofed=115)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_292 -> seasons:winter_birch_forest (first=true, totalSpoofed=116)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_296 -> seasons:winter_forest (first=true, totalSpoofed=117)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_290 -> seasons:winter_forest (first=true, totalSpoofed=118)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=119)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_291 -> seasons:winter_river (first=true, totalSpoofed=120)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_289 -> seasons:winter_forest (first=true, totalSpoofed=121)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_289 -> seasons:winter_birch_forest (first=true, totalSpoofed=122)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=123)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_297 -> seasons:winter_river (first=true, totalSpoofed=124)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_294 -> seasons:winter_river (first=true, totalSpoofed=125)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_288 -> seasons:winter_birch_forest (first=true, totalSpoofed=126)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_294 -> seasons:winter_forest (first=true, totalSpoofed=127)
+[18:57:20] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_293 -> seasons:winter_river (first=true, totalSpoofed=128)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_295 -> seasons:winter_forest (first=true, totalSpoofed=129)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_292 -> seasons:winter_river (first=true, totalSpoofed=130)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_296 -> seasons:winter_forest (first=true, totalSpoofed=131)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_290 -> seasons:winter_forest (first=true, totalSpoofed=132)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_291 -> seasons:winter_forest (first=true, totalSpoofed=133)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_297 -> seasons:winter_forest (first=true, totalSpoofed=134)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_289 -> seasons:winter_forest (first=true, totalSpoofed=135)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_294 -> seasons:winter_river (first=true, totalSpoofed=136)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_288 -> seasons:winter_birch_forest (first=true, totalSpoofed=137)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_293 -> seasons:winter_river (first=true, totalSpoofed=138)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_295 -> seasons:winter_forest (first=true, totalSpoofed=139)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_288 -> seasons:winter_birch_forest (first=true, totalSpoofed=140)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_292 -> seasons:winter_forest (first=true, totalSpoofed=141)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_296 -> seasons:winter_forest (first=true, totalSpoofed=142)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_288 -> seasons:winter_forest (first=true, totalSpoofed=143)
+[18:57:22] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_288 -> seasons:winter_birch_forest (first=true, totalSpoofed=144)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_298 -> seasons:winter_forest (first=true, totalSpoofed=145)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_299 -> seasons:winter_forest (first=true, totalSpoofed=146)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_297 -> seasons:winter_forest (first=true, totalSpoofed=147)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_300 -> seasons:winter_forest (first=true, totalSpoofed=148)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_299 -> seasons:winter_forest (first=true, totalSpoofed=149)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_298 -> seasons:winter_forest (first=true, totalSpoofed=150)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_300 -> seasons:winter_forest (first=true, totalSpoofed=151)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_295 -> seasons:winter_river (first=true, totalSpoofed=152)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_294 -> seasons:winter_river (first=true, totalSpoofed=153)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_296 -> seasons:winter_river (first=true, totalSpoofed=154)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_301 -> seasons:winter_forest (first=true, totalSpoofed=155)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_293 -> seasons:winter_river (first=true, totalSpoofed=156)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_297 -> seasons:winter_forest (first=true, totalSpoofed=157)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_301 -> seasons:winter_forest (first=true, totalSpoofed=158)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_291 -> seasons:winter_forest (first=true, totalSpoofed=159)
+[18:57:24] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_299 -> seasons:winter_forest (first=true, totalSpoofed=160)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_300 -> seasons:winter_forest (first=true, totalSpoofed=161)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_301 -> seasons:winter_forest (first=true, totalSpoofed=162)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_302 -> seasons:winter_forest (first=true, totalSpoofed=163)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_302 -> seasons:winter_forest (first=true, totalSpoofed=164)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_302 -> seasons:winter_forest (first=true, totalSpoofed=165)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_298 -> seasons:winter_forest (first=true, totalSpoofed=166)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_302 -> seasons:winter_forest (first=true, totalSpoofed=167)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16367_300 -> seasons:winter_forest (first=true, totalSpoofed=168)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16368_301 -> seasons:winter_forest (first=true, totalSpoofed=169)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16366_299 -> seasons:winter_forest (first=true, totalSpoofed=170)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_302 -> seasons:winter_forest (first=true, totalSpoofed=171)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_302 -> seasons:winter_forest (first=true, totalSpoofed=172)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_299 -> seasons:winter_river (first=true, totalSpoofed=173)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16365_296 -> seasons:winter_forest (first=true, totalSpoofed=174)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_303 -> seasons:winter_forest (first=true, totalSpoofed=175)
+[18:57:26] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16365_295 -> seasons:winter_forest (first=true, totalSpoofed=176)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_301 -> seasons:winter_forest (first=true, totalSpoofed=177)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_302 -> seasons:winter_forest (first=true, totalSpoofed=178)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_300 -> seasons:winter_river (first=true, totalSpoofed=179)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_303 -> seasons:winter_forest (first=true, totalSpoofed=180)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_303 -> seasons:winter_forest (first=true, totalSpoofed=181)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_298 -> seasons:winter_river (first=true, totalSpoofed=182)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_303 -> seasons:winter_forest (first=true, totalSpoofed=183)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_303 -> seasons:winter_forest (first=true, totalSpoofed=184)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_299 -> seasons:winter_river (first=true, totalSpoofed=185)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_302 -> seasons:winter_forest (first=true, totalSpoofed=186)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_301 -> seasons:winter_forest (first=true, totalSpoofed=187)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_303 -> seasons:winter_forest (first=true, totalSpoofed=188)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_303 -> seasons:winter_forest (first=true, totalSpoofed=189)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_300 -> seasons:winter_river (first=true, totalSpoofed=190)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_304 -> seasons:winter_forest (first=true, totalSpoofed=191)
+[18:57:28] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_297 -> seasons:winter_forest (first=true, totalSpoofed=192)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_302 -> seasons:winter_forest (first=true, totalSpoofed=193)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_303 -> seasons:winter_forest (first=true, totalSpoofed=194)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_301 -> seasons:winter_river (first=true, totalSpoofed=195)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_304 -> seasons:winter_forest (first=true, totalSpoofed=196)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_298 -> seasons:winter_forest (first=true, totalSpoofed=197)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_304 -> seasons:winter_forest (first=true, totalSpoofed=198)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_299 -> seasons:winter_forest (first=true, totalSpoofed=199)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_304 -> seasons:winter_forest (first=true, totalSpoofed=200)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_304 -> seasons:winter_forest (first=true, totalSpoofed=201)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_296 -> seasons:winter_forest (first=true, totalSpoofed=202)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_300 -> seasons:winter_river (first=true, totalSpoofed=203)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_303 -> seasons:winter_river (first=true, totalSpoofed=204)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_302 -> seasons:winter_river (first=true, totalSpoofed=205)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16371_304 -> seasons:winter_forest (first=true, totalSpoofed=206)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_304 -> seasons:winter_forest (first=true, totalSpoofed=207)
+[18:57:30] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_295 -> seasons:winter_forest (first=true, totalSpoofed=208)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_301 -> seasons:winter_forest (first=true, totalSpoofed=209)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_298 -> seasons:winter_forest (first=true, totalSpoofed=210)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_297 -> seasons:winter_forest (first=true, totalSpoofed=211)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_299 -> seasons:winter_forest (first=true, totalSpoofed=212)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_296 -> seasons:winter_forest (first=true, totalSpoofed=213)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_300 -> seasons:winter_forest (first=true, totalSpoofed=214)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_303 -> seasons:winter_river (first=true, totalSpoofed=215)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_302 -> seasons:winter_forest (first=true, totalSpoofed=216)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_304 -> seasons:winter_river (first=true, totalSpoofed=217)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_295 -> seasons:winter_forest (first=true, totalSpoofed=218)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_301 -> seasons:winter_forest (first=true, totalSpoofed=219)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_305 -> seasons:winter_forest (first=true, totalSpoofed=220)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_298 -> seasons:winter_forest (first=true, totalSpoofed=221)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_305 -> seasons:winter_forest (first=true, totalSpoofed=222)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_305 -> seasons:winter_forest (first=true, totalSpoofed=223)
+[18:57:32] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_293 -> seasons:winter_birch_forest (first=true, totalSpoofed=224)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_294 -> seasons:winter_forest (first=true, totalSpoofed=225)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_297 -> seasons:winter_forest (first=true, totalSpoofed=226)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_292 -> seasons:winter_birch_forest (first=true, totalSpoofed=227)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_296 -> seasons:winter_forest (first=true, totalSpoofed=228)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_293 -> seasons:winter_forest (first=true, totalSpoofed=229)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_295 -> seasons:winter_forest (first=true, totalSpoofed=230)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_299 -> seasons:winter_forest (first=true, totalSpoofed=231)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_294 -> seasons:winter_forest (first=true, totalSpoofed=232)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_300 -> seasons:winter_forest (first=true, totalSpoofed=233)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=234)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_303 -> seasons:winter_river (first=true, totalSpoofed=235)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_292 -> seasons:winter_forest (first=true, totalSpoofed=236)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_302 -> seasons:winter_forest (first=true, totalSpoofed=237)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_297 -> seasons:winter_forest (first=true, totalSpoofed=238)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=239)
+[18:57:34] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_304 -> seasons:winter_river (first=true, totalSpoofed=240)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_296 -> seasons:winter_forest (first=true, totalSpoofed=241)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_298 -> seasons:winter_forest (first=true, totalSpoofed=242)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_293 -> seasons:winter_forest (first=true, totalSpoofed=243)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_301 -> seasons:winter_forest (first=true, totalSpoofed=244)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_295 -> seasons:winter_forest (first=true, totalSpoofed=245)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_299 -> seasons:winter_forest (first=true, totalSpoofed=246)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_294 -> seasons:winter_forest (first=true, totalSpoofed=247)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_300 -> seasons:winter_forest (first=true, totalSpoofed=248)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=249)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_303 -> seasons:winter_forest (first=true, totalSpoofed=250)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_292 -> seasons:winter_forest (first=true, totalSpoofed=251)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_302 -> seasons:winter_forest (first=true, totalSpoofed=252)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_297 -> seasons:winter_forest (first=true, totalSpoofed=253)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_305 -> seasons:winter_forest (first=true, totalSpoofed=254)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=255)
+[18:57:36] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_304 -> seasons:winter_river (first=true, totalSpoofed=256)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_296 -> seasons:winter_forest (first=true, totalSpoofed=257)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_298 -> seasons:winter_forest (first=true, totalSpoofed=258)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_293 -> seasons:winter_forest (first=true, totalSpoofed=259)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_301 -> seasons:winter_forest (first=true, totalSpoofed=260)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_295 -> seasons:winter_forest (first=true, totalSpoofed=261)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_299 -> seasons:winter_forest (first=true, totalSpoofed=262)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_294 -> seasons:winter_forest (first=true, totalSpoofed=263)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_300 -> seasons:winter_forest (first=true, totalSpoofed=264)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_291 -> seasons:winter_birch_forest (first=true, totalSpoofed=265)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_303 -> seasons:winter_forest (first=true, totalSpoofed=266)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_292 -> seasons:winter_forest (first=true, totalSpoofed=267)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_302 -> seasons:winter_forest (first=true, totalSpoofed=268)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16385_297 -> seasons:winter_forest (first=true, totalSpoofed=269)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_289 -> seasons:winter_birch_forest (first=true, totalSpoofed=270)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_305 -> seasons:winter_river (first=true, totalSpoofed=271)
+[18:57:38] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_290 -> seasons:winter_birch_forest (first=true, totalSpoofed=272)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_305 -> seasons:winter_forest (first=true, totalSpoofed=273)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_305 -> seasons:winter_river (first=true, totalSpoofed=274)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_304 -> seasons:winter_forest (first=true, totalSpoofed=275)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_306 -> seasons:winter_forest (first=true, totalSpoofed=276)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16372_305 -> seasons:winter_forest (first=true, totalSpoofed=277)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_306 -> seasons:winter_forest (first=true, totalSpoofed=278)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_306 -> seasons:winter_river (first=true, totalSpoofed=279)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_305 -> seasons:winter_river (first=true, totalSpoofed=280)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16374_306 -> seasons:winter_forest (first=true, totalSpoofed=281)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_306 -> seasons:winter_river (first=true, totalSpoofed=282)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16370_304 -> seasons:winter_forest (first=true, totalSpoofed=283)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_304 -> seasons:winter_forest (first=true, totalSpoofed=284)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16373_306 -> seasons:winter_forest (first=true, totalSpoofed=285)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_306 -> seasons:winter_river (first=true, totalSpoofed=286)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_301 -> seasons:winter_forest (first=true, totalSpoofed=287)
+[18:57:40] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16369_303 -> seasons:winter_forest (first=true, totalSpoofed=288)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_305 -> seasons:winter_river (first=true, totalSpoofed=289)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_303 -> seasons:winter_forest (first=true, totalSpoofed=290)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16380_306 -> seasons:winter_river (first=true, totalSpoofed=291)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_302 -> seasons:winter_forest (first=true, totalSpoofed=292)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16382_305 -> seasons:winter_river (first=true, totalSpoofed=293)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16383_304 -> seasons:winter_forest (first=true, totalSpoofed=294)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16377_307 -> seasons:winter_river (first=true, totalSpoofed=295)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16385_299 -> seasons:winter_forest (first=true, totalSpoofed=296)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16376_307 -> seasons:winter_river (first=true, totalSpoofed=297)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16378_307 -> seasons:winter_river (first=true, totalSpoofed=298)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16381_306 -> seasons:winter_river (first=true, totalSpoofed=299)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16384_303 -> seasons:winter_forest (first=true, totalSpoofed=300)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16385_298 -> seasons:winter_forest (first=true, totalSpoofed=301)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16385_300 -> seasons:winter_forest (first=true, totalSpoofed=302)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16375_307 -> seasons:winter_forest (first=true, totalSpoofed=303)
+[18:57:42] [Server thread/INFO]: [Seasons] [ChunkBiomeApplier] captureAndApply chunk=16379_307 -> seasons:winter_river (first=true, totalSpoofed=304)
+[18:57:42] [Server thread/INFO]: Mhakari lost connection: Disconnected
+[18:57:42] [Server thread/INFO]: Mhakari left the game
+[18:57:48] [Server thread/INFO]: Stopping the server
+[18:57:48] [Server thread/INFO]: Stopping server
+[18:57:48] [Server thread/INFO]: [VillagerAI] Disabling VillagerAI v0.1.0-SNAPSHOT
+[18:57:48] [Server thread/INFO]: [de.ajsch.villagerai.service.VillageLightParticleMarkerService] shutdown() – activeMarkers.size=0
+[18:57:48] [Server thread/INFO]: [Seasons] Disabling Seasons v0.1.0-SNAPSHOT
+[18:57:48] [Server thread/INFO]: [Seasons] Saved 648 chunk cache entries (648 serialized) to chunk_cache.json.
+[18:57:48] [Server thread/INFO]: [Seasons] [BiomeSpoofCoordinator] Timer gestoppt.
+[18:57:48] [Server thread/INFO]: [Seasons] BiomeBackupStore: 0 Backups gespeichert.
+[18:57:48] [Server thread/INFO]: [Seasons] Seasons Plugin disabled.
+[18:57:48] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v5.4.0
+[18:57:48] [Server thread/INFO]: Saving players
+[18:57:48] [Server thread/INFO]: Saving worlds
+[18:57:48] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:57:48] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
+[18:57:48] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
+[18:57:48] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Saved 1204 block chunks, 888 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 1.71s
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
+[18:57:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
+[18:57:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_end'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_end'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_end'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_end' in 0.00s
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_end'
+[18:57:50] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_end'
+[18:57:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:57:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:57:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:57:50] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[18:57:50] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[18:57:50] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[18:57:50] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[18:57:50] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...

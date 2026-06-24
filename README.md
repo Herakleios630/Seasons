@@ -12,7 +12,8 @@ Alle Werte sind über Configs steuerbar – keine Magic Numbers, kein Hardcoding
 
 - **Phase 1 MVP abgeschlossen** – Seasons, Temperatur, Schnee-Akkumulation, Commands
 - **Phase 2 (Visual Seasons) abgeschlossen** – Saisonale Laubfarben per NMS-Packet-Override, Chunk-Biome-Caching, sanfte Übergänge
-- **Phase 2b (Frost) offen** – Temperaturabhängiger Frost als Tint-Lerp + Partikel
+
+- **Phase 2.6c abgeschlossen** – BiomeJsonGenerator erzeugt Custom-Biome-JSONs + `/season generate-biomes` Command
 - Siehe [Roadmap](Plannung/roadmap.md) und [Architektur-Konzept](docs/architecture-concept.md)
 
 ---

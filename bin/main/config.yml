@@ -9,7 +9,7 @@ season:
   summer-days: 91
   fall-days: 91
   winter-days: 92
-  debug-mode: true
+  debug-mode: false
   debug-overrides:
     snow-placement-multiplier: 10.0
     snow-growth-multiplier: 10.0

@@ -15,6 +15,8 @@ public class ConfigManager {
 
     private final JavaPlugin plugin;
     private FileConfiguration config;
+    private de.ajsch.seasons.visual.SeasonColorConfig seasonColors;
+    private FrostConfig frostConfig;
 
     public ConfigManager(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -30,6 +32,32 @@ public class ConfigManager {
 
     public void reload() {
         load();
+    }
+
+    /** Reloads all configuration files including season_colors.yml. */
+    public void reloadAll() {
+        load();
+        if (seasonColors != null) {
+            seasonColors.reloadFromConfig();
+        }
+    }
+
+    /** Returns the SeasonColorConfig instance, initializing it if needed. */
+    public de.ajsch.seasons.visual.SeasonColorConfig getSeasonColors() {
+        if (seasonColors == null) {
+            seasonColors = new de.ajsch.seasons.visual.SeasonColorConfig(plugin);
+            seasonColors.reloadFromConfig();
+        }
+        return seasonColors;
+    }
+
+    /** Returns the FrostConfig instance, initializing it if needed. */
+    public FrostConfig getFrostConfig() {
+        if (frostConfig == null) {
+            frostConfig = new FrostConfig(plugin);
+            frostConfig.load();
+        }
+        return frostConfig;
     }
 
     // Season
@@ -242,6 +270,124 @@ public class ConfigManager {
 
     public int getCacheVersion() {
         return config.getInt("cache.persistence.version", 1);
+    }
+
+    // Biome spoofing from biome_spoof.yml
+    private FileConfiguration biomeSpoofConfig;
+
+    private FileConfiguration getBiomeSpoofConfig() {
+        if (biomeSpoofConfig != null) return biomeSpoofConfig;
+        File file = new File(plugin.getDataFolder(), "biome_spoof.yml");
+        if (!file.exists()) {
+            plugin.saveResource("biome_spoof.yml", false);
+        }
+        biomeSpoofConfig = YamlConfiguration.loadConfiguration(file);
+        return biomeSpoofConfig;
+    }
+
+    public boolean isBiomeSpoofEnabled() {
+        return getBiomeSpoofConfig().getBoolean("enabled", true);
+    }
+
+    public String getSpoofMode() {
+        return getBiomeSpoofConfig().getString("mode", "GLOBAL_RING");
+    }
+
+    public int getSpoofRadiusChunks() {
+        return getBiomeSpoofConfig().getInt("radius_chunks", 8);
+    }
+
+    public int getSpoofBudgetPerTick() {
+        return getBiomeSpoofConfig().getInt("budget_chunks_per_tick", 16);
+    }
+
+    public int getSpoofTransitionDays() {
+        return getBiomeSpoofConfig().getInt("transition_days", 3);
+    }
+
+    public boolean isRevertOnNonWinter() {
+        return getBiomeSpoofConfig().getBoolean("revert_on_non_winter", true);
+    }
+
+    public int getTransitionNightsPerStep() {
+        return getBiomeSpoofConfig().getInt("transition.nights_per_step", 1);
+    }
+
+    public org.bukkit.block.Biome getSeasonTargetBiome(
+            de.ajsch.seasons.season.Season season) {
+        String name = getBiomeSpoofConfig().getString("seasons." + season.name());
+        if (name != null) {
+            name = name.trim();
+            // 1. Vanilla-Biome über Enum-Lookup
+            try {
+                return org.bukkit.block.Biome.valueOf(name.toUpperCase());
+            } catch (IllegalArgumentException ignored) {}
+            // 2. Custom-Biome über NamespacedKey / Registry
+            try {
+                org.bukkit.NamespacedKey key = org.bukkit.NamespacedKey.fromString(name.toLowerCase());
+                if (key != null) {
+                    org.bukkit.block.Biome biome = org.bukkit.Registry.BIOME.get(key);
+                    if (biome != null) return biome;
+                }
+            } catch (IllegalArgumentException ignored) {}
+        }
+        return null;
+    }
+
+    public boolean isOceanSpoofEnabled() {
+        return getBiomeSpoofConfig().getBoolean("oceans.enabled", true);
+    }
+
+    public boolean isKeepDeepOceanVariants() {
+        return getBiomeSpoofConfig().getBoolean("oceans.keep_deep_variants", true);
+    }
+
+    public org.bukkit.block.Biome getOceanTargetBiome(
+            de.ajsch.seasons.season.Season season) {
+        String name = getBiomeSpoofConfig().getString("oceans.seasons." + season.name());
+        if (name != null) {
+            name = name.trim();
+            // 1. Vanilla-Biome über Enum-Lookup
+            try {
+                return org.bukkit.block.Biome.valueOf(name.toUpperCase());
+            } catch (IllegalArgumentException ignored) {}
+            // 2. Custom-Biome über NamespacedKey / Registry
+            try {
+                org.bukkit.NamespacedKey key = org.bukkit.NamespacedKey.fromString(name.toLowerCase());
+                if (key != null) {
+                    org.bukkit.block.Biome biome = org.bukkit.Registry.BIOME.get(key);
+                    if (biome != null) return biome;
+                }
+            } catch (IllegalArgumentException ignored) {}
+        }
+        return null;
+    }
+
+    public java.util.Set<org.bukkit.block.Biome> getExcludedBiomes() {
+        java.util.List<String> names = getBiomeSpoofConfig().getStringList("excluded_biomes");
+        java.util.Set<org.bukkit.block.Biome> set = new java.util.HashSet<>();
+        for (String name : names) {
+            try {
+                set.add(org.bukkit.block.Biome.valueOf(name.trim().toUpperCase()));
+            } catch (IllegalArgumentException ignored) {}
+        }
+        return set;
+    }
+
+    public java.util.List<String> getDisabledFxWorlds() {
+        return getBiomeSpoofConfig().getStringList("disabled_fx_worlds");
+    }
+
+    public boolean isDiskBackupEnabled() {
+        return getBiomeSpoofConfig().getBoolean("disk_backup.enabled", true);
+    }
+
+    public boolean isResendEnabled() {
+        return getBiomeSpoofConfig().getBoolean("resend_enabled", true);
+    }
+
+    public int getResendChunksPerTick() {
+        return getBiomeSpoofConfig().getInt("resend_chunks_per_tick", 8);
     }
 
     // Replaceable plants from replaceable_plants.yml

@@ -1,0 +1,56 @@
+# Frost-System Konfiguration (Phase 2b)
+# Steuert Frost-Biome (Custom-Biome-Datapack) und Schneeflocken-Partikel
+# bei Temperaturen unter dem Gefrierpunkt.
+
+frost:
+  # Master-Schalter für das gesamte Frost-System
+  enabled: true
+
+  # Temperatur-Schwellen
+  # Ab freeze-threshold wird das Frost-Biom aktiv (binäre Entscheidung)
+  freeze-threshold: -0.2
+  # Temperaturwert, der in die Frost-Biome-JSONs geschrieben wird
+  biome-temperature: -0.5
+  # Bei full-frost-threshold erreichen Partikel maximale Intensität
+  full-frost-threshold: -1.0
+
+  # Zielfarben für Frost-Biome (in die JSONs geschrieben)
+  # Kühles Weiß/Grau für Gras und Laub
+
+
+  target-grass-color: "#D0D4D8"
+  target-foliage-color: "#C0C4C8"
+
+  # Partikel-System
+  particles:
+    enabled: true
+    # Partikel-Typ: SNOWFLAKE, WHITE_ASH, END_ROD
+    type: SNOWFLAKE
+    # Partikel pro Sekunde pro Spieler bei voller Frost-Intensität
+    particles-per-second: 12
+    # Block-Radius um den Spieler für Partikel-Spawn
+    spread-radius: 3.0
+
+  # Biome, in denen KEIN Frost-Effekt auftritt
+  # (Wüste, Savanne, Ozeane ohne Frost, Nether, End)
+  excluded-biomes:
+    - DESERT
+    - BADLANDS
+    - ERODED_BADLANDS
+    - WOODED_BADLANDS
+    - SAVANNA
+    - SAVANNA_PLATEAU
+    - WINDSWEPT_SAVANNA
+    - WARM_OCEAN
+    - LUKEWARM_OCEAN
+    - DEEP_LUKEWARM_OCEAN
+    - NETHER_WASTES
+    - SOUL_SAND_VALLEY
+    - CRIMSON_FOREST
+    - WARPED_FOREST
+    - BASALT_DELTAS
+    - THE_END
+    - END_BARRENS
+    - END_HIGHLANDS
+    - END_MIDLANDS
+    - SMALL_END_ISLANDS

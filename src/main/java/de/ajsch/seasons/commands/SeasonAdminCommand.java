@@ -5,6 +5,7 @@ import de.ajsch.seasons.season.Season;
 import de.ajsch.seasons.season.SeasonClock;
 import de.ajsch.seasons.temperature.BiomeTemperature;
 import de.ajsch.seasons.temperature.TemperatureCalculator;
+import de.ajsch.seasons.visual.BiomeJsonGenerator;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.Command;
@@ -18,13 +19,16 @@ public class SeasonAdminCommand implements CommandExecutor {
     private final TemperatureCalculator tempCalc;
     private final ConfigManager configManager;
     private final BiomeTemperature biomeTemp;
+    private final BiomeJsonGenerator biomeJsonGenerator;
 
     public SeasonAdminCommand(SeasonClock clock, TemperatureCalculator tempCalc,
-                              ConfigManager configManager, BiomeTemperature biomeTemp) {
+                              ConfigManager configManager, BiomeTemperature biomeTemp,
+                              BiomeJsonGenerator biomeJsonGenerator) {
         this.clock = clock;
         this.tempCalc = tempCalc;
         this.configManager = configManager;
         this.biomeTemp = biomeTemp;
+        this.biomeJsonGenerator = biomeJsonGenerator;
     }
 
     @Override
@@ -37,6 +41,7 @@ public class SeasonAdminCommand implements CommandExecutor {
             case "speed" -> handleSpeed(sender, args);
             case "temp" -> handleTemp(sender, args);
             case "reload" -> handleReload(sender);
+            case "generate-biomes" -> handleGenerateBiomes(sender, args);
             default -> false;
         };
     }
@@ -146,6 +151,30 @@ public class SeasonAdminCommand implements CommandExecutor {
         configManager.reload();
         biomeTemp.reload();
         sender.sendMessage(Component.text("Configs neu geladen.", NamedTextColor.GREEN));
+        return true;
+    }
+
+    private boolean handleGenerateBiomes(CommandSender sender, String[] args) {
+        if (!sender.hasPermission("seasons.admin")) {
+            sender.sendMessage(Component.text("Keine Berechtigung.", NamedTextColor.RED));
+            return true;
+        }
+
+        boolean force = false;
+        if (args.length > 1 && args[1].equalsIgnoreCase("force")) {
+            force = true;
+        }
+
+        sender.sendMessage(Component.text("Generiere Custom-Biome-JSONs...", NamedTextColor.YELLOW));
+        int count = biomeJsonGenerator.generate(force);
+
+        if (count == 0) {
+            sender.sendMessage(Component.text(
+                    "Keine JSONs generiert (Config unverandert oder Fehler). Nutze /season generate-biomes force fur Neugenerierung.",
+                    NamedTextColor.GRAY));
+        } else {
+            sender.sendMessage(Component.text(count + " Biome-JSONs generiert.", NamedTextColor.GREEN));
+        }
         return true;
     }
 }

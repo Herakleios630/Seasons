@@ -9,11 +9,12 @@ version = "0.1.0-SNAPSHOT"
 repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
+
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.5-R0.1-SNAPSHOT")
-    compileOnly("io.netty:netty-all:4.1.119.Final")
+    // netty-all removed - no longer needed for NMS
 }
 
 java {

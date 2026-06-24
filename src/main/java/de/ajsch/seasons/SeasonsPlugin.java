@@ -4,7 +4,9 @@ import de.ajsch.seasons.commands.SeasonAdminCommand;
 import de.ajsch.seasons.commands.MainSeasonCommand;
 import de.ajsch.seasons.commands.SeasonCommand;
 import de.ajsch.seasons.config.ConfigManager;
+import de.ajsch.seasons.config.FrostConfig;
 import de.ajsch.seasons.config.ResourceCopier;
+import de.ajsch.seasons.effects.FrostEffectManager;
 import de.ajsch.seasons.listener.BlockEventListener;
 import de.ajsch.seasons.listener.PlayerJoinListener;
 import de.ajsch.seasons.listener.PlayerMoveListener;
@@ -19,14 +21,20 @@ import de.ajsch.seasons.season.SeasonConfig;
 import de.ajsch.seasons.temperature.BiomeTemperature;
 import de.ajsch.seasons.temperature.TemperatureCalculator;
 import de.ajsch.seasons.temperature.TemperatureConfig;
+import de.ajsch.seasons.visual.BiomeBackupStore;
+import de.ajsch.seasons.visual.BiomeJsonGenerator;
+import de.ajsch.seasons.visual.BiomeSpoofCoordinator;
+import de.ajsch.seasons.visual.BiomeSpoofListener;
+import de.ajsch.seasons.visual.ChunkBiomeApplier;
+import de.ajsch.seasons.visual.SeasonBiomeResolver;
+import de.ajsch.seasons.visual.SeasonColorConfig;
+import de.ajsch.seasons.visual.TransitionManager;
+import de.ajsch.seasons.visual.VanillaBiomeReference;
 import de.ajsch.seasons.weather.ChunkCacheManager;
 import de.ajsch.seasons.weather.SnowAccumulator;
 import de.ajsch.seasons.weather.WeatherConfig;
 import de.ajsch.seasons.weather.WeatherInterceptor;
-import de.ajsch.seasons.visual.FoliageTintManager;
-import de.ajsch.seasons.visual.VisualConfig;
-import de.ajsch.seasons.visual.VisualSeasonManager;
-import de.ajsch.seasons.visual.nms.NmsAdapter;
+import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -41,8 +49,13 @@ public final class SeasonsPlugin extends JavaPlugin {
     private BiomeTemperature biomeTemp;
     private ChunkCacheManager cacheManager;
     private SnowAccumulator snowAccumulator;
-    private VisualSeasonManager visualSeasonManager;
-    private NmsAdapter nmsAdapter;
+    private BiomeBackupStore biomeBackupStore;
+    private SeasonBiomeResolver biomeResolver;
+    private BiomeSpoofCoordinator biomeSpoofCoordinator;
+    private TransitionManager transitionManager;
+    private FrostConfig frostConfig;
+    private FrostEffectManager frostEffectManager;
+    private World overworld;
 
     @Override
     public void onEnable() {
@@ -69,10 +82,10 @@ public final class SeasonsPlugin extends JavaPlugin {
             getLogger().warning("No worlds found.");
             return;
         }
-        World overworld = worlds.get(0);
+        this.overworld = worlds.get(0);
 
         SeasonConfig seasonConfig = new SeasonConfig(configManager);
-        clock = new SeasonClock(overworld, dataStore, seasonConfig);
+        clock = new SeasonClock(this.overworld, dataStore, seasonConfig);
 
         TemperatureConfig tempConfig = new TemperatureConfig(configManager);
         TemperatureCalculator tempCalc = new TemperatureCalculator(seasonConfig, tempConfig, biomeTemp);
@@ -118,29 +131,50 @@ public final class SeasonsPlugin extends JavaPlugin {
         );
         snowAccumulator.start();
 
-        // --- Visual Season System (Phase 2) ---
-        VisualConfig visualConfig = new VisualConfig(this);
-        visualConfig.load();
-
-        try {
-            nmsAdapter = NmsAdapter.create(this);
-            nmsAdapter.onEnable();
-        } catch (UnsupportedOperationException e) {
-            getLogger().warning("[Visual] NmsAdapter not available for this server version; visual features disabled.");
-            nmsAdapter = null;
-        }
-
-        if (nmsAdapter != null) {
-            FoliageTintManager tintManager = new FoliageTintManager(this, nmsAdapter, visualConfig);
-            visualSeasonManager = new VisualSeasonManager(this, tintManager, visualConfig);
-            visualSeasonManager.start();
-            getLogger().info("[Visual] VisualSeasonManager initialized.");
-        }
-
         SeasonChangeListener seasonChangeListener = new SeasonChangeListener(this, weatherInterceptor, weatherConfig);
         getServer().getPluginManager().registerEvents(seasonChangeListener, this);
 
         chunkCacheStore.startAsyncSaveTask();
+
+        // Phase 2: BiomeBackupStore initialisieren und vorhandene Backups laden
+        biomeBackupStore = new BiomeBackupStore(getDataFolder().toPath(), getLogger());
+        biomeBackupStore.loadAll();
+        getLogger().info("BiomeBackupStore: " + biomeBackupStore.size() + " Backups geladen.");
+        // Phase 2.6d2: FrostConfig früh laden, dann SeasonBiomeResolver +
+        // ChunkBiomeApplier + TransitionManager + BiomeSpoofCoordinator
+        FrostConfig frostConfig = new FrostConfig(this);
+        frostConfig.load();
+        this.frostConfig = frostConfig;
+
+        // Phase 2b: FrostEffectManager – SNOWFLAKE particles when temperature < freeze-threshold
+        frostEffectManager = new FrostEffectManager(this, frostConfig, tempCalc, clock);
+        if (frostConfig.isEnabled()) {
+            frostEffectManager.start();
+            getLogger().info("FrostEffectManager started.");
+        }
+
+        SeasonColorConfig seasonColorConfig = new SeasonColorConfig(this);
+        seasonColorConfig.reloadFromConfig();
+        biomeResolver = new SeasonBiomeResolver(biomeBackupStore, configManager, seasonColorConfig,
+                frostConfig, getLogger());
+        ChunkBiomeApplier chunkBiomeApplier = new ChunkBiomeApplier(biomeBackupStore, getLogger());
+        transitionManager = new TransitionManager(seasonColorConfig, configManager, getLogger());
+        biomeSpoofCoordinator = new BiomeSpoofCoordinator(this, clock, configManager, tempCalc,
+                biomeBackupStore, biomeResolver, chunkBiomeApplier, transitionManager);
+        biomeSpoofCoordinator.register();
+
+        // Phase 2.4: BiomeSpoofListener registrieren
+        BiomeSpoofListener biomeSpoofListener = new BiomeSpoofListener(biomeSpoofCoordinator, biomeBackupStore, getLogger());
+        getServer().getPluginManager().registerEvents(biomeSpoofListener, this);
+
+
+
+
+
+
+
+
+
 
         SnowListener snowListener = new SnowListener(this, clock, tempCalc, snowAccumulator, weatherConfig);
         getServer().getPluginManager().registerEvents(snowListener, this);
@@ -154,27 +188,35 @@ public final class SeasonsPlugin extends JavaPlugin {
         PlayerMoveListener moveListener = new PlayerMoveListener(clock, tempCalc, biomeTemp, weatherConfig);
         getServer().getPluginManager().registerEvents(moveListener, this);
 
+        // Phase 2.6c: BiomeJsonGenerator (nutzt das bereits geladene frostConfig)
+        VanillaBiomeReference vanillaBiomeReference = new VanillaBiomeReference();
+        vanillaBiomeReference.loadFromResources(this);
+        BiomeJsonGenerator biomeJsonGenerator = new BiomeJsonGenerator(this, seasonColorConfig, vanillaBiomeReference, frostConfig);
+
         SeasonCommand infoCommand = new SeasonCommand(clock, tempCalc, biomeTemp);
-        SeasonAdminCommand adminCommand = new SeasonAdminCommand(clock, tempCalc, configManager, biomeTemp);
+        SeasonAdminCommand adminCommand = new SeasonAdminCommand(clock, tempCalc, configManager, biomeTemp, biomeJsonGenerator);
         MainSeasonCommand mainCommand = new MainSeasonCommand(infoCommand, adminCommand);
         getCommand("season").setExecutor(mainCommand);
 
         getLogger().info("Seasons ready. Season: " + clock.getCurrentSeason().getDisplayName());
     }
 
-    @Override
     public void onDisable() {
-        if (visualSeasonManager != null) {
-            visualSeasonManager.stop();
-        }
-        if (nmsAdapter != null) {
-            nmsAdapter.onDisable();
+        if (frostEffectManager != null) {
+            frostEffectManager.stop();
         }
         if (chunkCacheStore != null) {
             chunkCacheStore.save();
         }
         if (dataStore != null) {
             dataStore.save();
+        }
+        if (biomeSpoofCoordinator != null) {
+            biomeSpoofCoordinator.unregister();
+        }
+        if (biomeBackupStore != null && overworld != null) {
+            biomeBackupStore.saveAll(overworld);
+            getLogger().info("BiomeBackupStore: " + biomeBackupStore.size() + " Backups gespeichert.");
         }
         getLogger().info("Seasons Plugin disabled.");
     }
