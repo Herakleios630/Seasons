@@ -148,147 +148,524 @@ weather/
 
 ---
 
-## Phase 2: Visual Seasons – Foliage Tints 🍂
-> **Konzept:** `Plannung/visual-seasons-concept.md`
-> **Ziel:** Immersive, rein plugin-basierte saisonale Laub-/Gras-Farben. Biome-Tinting per NMS-Packet-Overrides. Alles client-seitig – kein Modding, kein Resource-Pack-Zwang. Frost-Effekte sind bewusst ausgeklammert und werden in Phase 2b als reines Tint-Lerp + Partikel-System umgesetzt.
-> **Wichtig:** Erst in Phase 2 sind NMS/Reflection erlaubt (Paper-Adapter).
-> **Voraussetzung:** Phase 1.5 abgeschlossen (stabiles Snow-System als Fundament).
+## Phase 2-PRE: Rückbau altes Visual-Seasons-Konzept 🧹
+> **Konzept:** `Plannung/phase2-biome-spoofing-concept.md`
+> **Ziel:** Alle Artefakte des alten NMS-basierten Phase-2-Ansatzes entfernen, Code bereinigen, Projekt auf den neuen Biome-Spoofing-Ansatz vorbereiten.
+> **Voraussetzung:** Phase 1.5 abgeschlossen.
 
-### Architektur (neues Package `seasons.visual`)
-| Klasse | Verantwortung |
+### Zu bereinigende Artefakte
+
+| Artefakt | Aktion |
 |---|---|
-| `VisualSeasonManager.java` | Haupt-Koordination, pro-Spieler Tick-Loop |
-| `FoliageTintManager.java` | Biome Color Tinting per NMS-Packet-Overrides |
-| `SeasonalColorCalculator.java` | Interpolation Saison-Farben |
-| `VisualConfig.java` | Config-Handling für `visual.yml` |
-| `nms/NmsAdapter.java` | Version-sichere NMS-Abstraktion |
-
-### Sprint-Übersicht
+| `visual/FoliageTintManager.java` | Löschen (NMS-basiert) |
+| `visual/VisualSeasonManager.java` | Löschen (NMS-basiert) |
+| `visual/SeasonalColorCalculator.java` | Löschen (NMS-basiert) |
+| `visual/VisualConfig.java` | Löschen (NMS-basiert) |
+| `nms/` Package | Komplett löschen |
+| `visual.yml` | Löschen (wird durch `biome_spoof.yml` ersetzt) |
+| `SeasonsPlugin.java` | Alte Visual-Registrierungen entfernen |
+| `PlayerJoinListener.java` | Alte Visual-Referenzen entfernen |
+| `SeasonChangeListener.java` | Alte Visual-Referenzen entfernen |
+| `build.gradle.kts` | NMS-Abhängigkeiten prüfen/entfernen |
+| `docs/visual-seasons-concept.md` | Als "verworfen" markieren, auf neues Konzept verweisen |
 
 | Sprint | Feature | Datei(en) | Status |
 |---|---|---|---|
-| 2.1 | Foundation | `NmsAdapter.java`, `VisualConfig.java`, `SeasonalColorCalculator.java`, `visual.yml` | [ ] |
-| 2.2 | FoliageTintManager | `FoliageTintManager.java`, `VisualSeasonManager.java` (Grundgerüst) | [ ] |
-| 2.3 | Integration | `PlayerJoinListener.java`, `SeasonChangeListener.java`, `SeasonsPlugin.java` (Tick) | [ ] |
-| 2.4 | Polish & Testing | `visual.yml` Feintuning, Test-Matrix, `docs/` | [~] |
+| 2-PRE.1 | visuelles Package & NMS-Code löschen | `visual/`, `nms/` (löschen) | [x] |
+| 2-PRE.2 | Plugin-Registrierungen bereinigen | `SeasonsPlugin.java`, `PlayerJoinListener.java`, `SeasonChangeListener.java` | [x] |
+| 2-PRE.3 | Build & Config bereinigen | `build.gradle.kts`, `visual.yml` (löschen), `docs/visual-seasons-concept.md` | [x] |
+| 2-PRE.4 | Build, Deploy, Smoke-Test | `build\libs\Seasons-0.1.0-SNAPSHOT.jar` | [x] |
 
-### Sprint-Details
-
-#### 2.1 – Foundation
-- **NmsAdapter.java**: Abstraktion für Paper-API-Versionen (Packet-Play-Out-Map-Chunk, Biome-Farben)
-- **VisualConfig.java**: Lädt `plugins/Seasons/visual.yml` mit `foliage.seasons`, `visual.transition-days`
-- **SeasonalColorCalculator.java**: Lineare Interpolation zwischen Saison-Farbe und Biome-Multiplier
-- **visual.yml**: Vollständige Default-Config (Season-Farben pro Baumart)
-
-#### 2.2 – FoliageTintManager
-- Überschreibt Biome-Farben (Foliage + Grass) via `PacketPlayOutMapChunk`-Hook
-- Pro Saison konfigurierbare Default-Tints + Overrides pro Baumart (Birch, Oak, Dark Oak, Cherry, …)
-- Biome-Multiplier (Taiga ×1.3, Mountains ×1.5, …)
-- `VisualSeasonManager` als Koordinator (pro Spieler, Chunk-basiert)
-- **Kein Frost-Lerp** – Frost folgt in Phase 2b als separater Layer
-
-#### 2.3 – Integration
-- `PlayerJoinEvent` → FoliageTintManager sendet aktuelle Saison-Farben
-- `SeasonChangeEvent` → komplette Neuberechnung für alle Online-Spieler
-- Tick-Loop in `VisualSeasonManager.onTick(Player)`: Saison-Tint berechnen und senden
-
-#### 2.4 – Polish & Testing
-- Übergänge feintunen: Saison-Übergang langsam (mehrere Tage)
-- Test-Matrix: Alle 4 Seasons durchschalten
-- Performance-Profil: Tint-Update
-- Dokumentation in `docs/developer-guide.md` und `docs/visual-seasons-concept.md`
-
-### Done‑Definition Phase 2
-- [x] `NmsAdapter` abstrahiert Paper-Versionen; Fallback bei nicht unterstützter Version
-- [x] Im Herbst leuchten Birken orange, Eichen rot, Dark-Forest gelb
-- [x] Im Frühling Kirsch-Biome rosa / intensiver
-- [x] Im Winter alles braun/grau
-- [x] Im Sommer Vanilla-Farben
-- [x] Alle Farben über `foliage_tints.yml` konfigurierbar
-- [x] Keine Konflikte mit Snow-System aus Phase 1.5
-- [x] Performance: <5% Tick-Auslastung durch Visual-System
+**Done‑Definition Phase 2-PRE:**
+- [x] Keine NMS/Reflection-Importe mehr im Projekt
+- [x] Keine `visual/` oder `nms/` Packages mehr
+- [x] `SeasonsPlugin` startet sauber ohne visuelle Komponenten
+- [x] Phase 1.5 funktioniert unverändert weiter
+- [x] Build erfolgreich
 
 ---
 
-## Phase 2b: Frost System – Temperaturabhängiger Frost (Tint-Lerp + Partikel) ❄️
-> **Konzept:** `Plannung/frost-concept-phase-2b.md`
-> **Ziel:** Eine frostige/weiße Optik bei Temperaturen <0°C, unabhängig von echten Snow-Layern. Rein plugin-basiert über Biome-Color-Tint-Lerp und `SNOWFLAKE`-Partikel. Kein `sendBlockChange()`, kein permanenter Block-State.
-> **Voraussetzung:** Phase 2 (`FoliageTintManager` + `VisualSeasonManager`) muss abgeschlossen sein.
+## ⚠️ VERALTET – Phase 2: Visual Seasons – Biome-Spoofing 🍂
+> **Konzept:** `Plannung/phase2-biome-spoofing-concept.md`
+> **Status:** ❌ VERWORFEN – Ersetzt durch **Phase 2.6: Custom-Biome-Datapack** (siehe `Plannung/custom-biome-concept.md`)
+> **Grund:** `world.setBiome()` + `refreshChunk()` ändert Biome serverseitig, aber der Client sieht die Farbänderung NICHT zuverlässig. Der ProtocolLib-Ansatz (Phase 2.5) scheiterte an Minecrafts komplexem Farb-Rendering. Der neue Datapack-Ansatz mit Custom-Biomes funktioniert im Proof-of-Concept.
+> **Original-Ziel:** Immersive saisonale Laub-/Gras-Farben rein plugin-basiert – OHNE NMS/Reflection, stattdessen mit Paper-API `world.setBiome()` / `world.refreshChunk()`. Der Client berechnet Foliage/Grass-Colors automatisch aus dem geänderten Biome.
+> **Voraussetzung:** Phase 2-PRE abgeschlossen (kein alter NMS-Code mehr), Phase 1.5 abgeschlossen.
 
-### Architektur (neue/ergänzte Klassen)
+### Architektur (neues Package `seasons.visual`)
+
+```
+visual/
+├── BiomeSpoofAdapter.java       (→ Hauptklasse, Listener + Runnable, ~350 Z.)
+├── BiomeBackupStore.java        (→ Persistenz der Original-Biome auf Platte, ~150 Z.)
+├── BiomeSpoofListener.java      (→ ChunkLoad/Unload/SeasonChange-Events, ~100 Z.)
+├── BiomeFamily.java             (→ Enum: LAND, OCEAN)
+├── SpoofMode.java               (→ Enum: OFF, GLOBAL_RING)
+└── biome_spoof.yml              (→ Config-Datei)
+```
+
 | Klasse | Verantwortung |
 |---|---|
-| `FrostEffectManager.java` | Frost-Faktor, Biome-Filter, Partikel-Spawns |
-| `FrostConfig.java` | Config-Handling für `frost.yml` |
+| `BiomeSpoofAdapter` | Haupt-Koordinator. 40-Tick-Timer, iteriert über Online-Player, bestimmt Ziel-Biom pro Season+Family, Backup + `setBiome()` + `refreshChunk()`, Nudge-Queue. |
+| `BiomeBackupStore` | Speichert Original-Biome pro Chunk als JSON (`biome_backups.json`). Lädt bei Start, speichert periodisch. |
+| `BiomeSpoofListener` | `ChunkLoadEvent` → aus Caches entfernen. `ChunkUnloadEvent` → Revert + Cache-Cleanup. `SeasonChangeEvent` → Revert-Phase einleiten. |
+| `BiomeFamily` | Enum: `LAND`, `OCEAN` (später erweiterbar: `SHORE`, `RIVER`). |
+| `SpoofMode` | Enum: `OFF` (deaktiviert), `GLOBAL_RING` (um Spieler herum, Blickrichtungs-Priorisierung). |
+| `biome_spoof.yml` | Vollständige Config (Season-Mappings, Ocean-Settings, Excluded-Biomes, Transition-Days, Budget, Radius). |
 
 ### Sprint-Übersicht
 
 | Sprint | Feature | Datei(en) | Status |
 |---|---|---|---|
-| 2b.1 | Config – FrostConfig + frost.yml | `FrostConfig.java`, `frost.yml`, `ConfigManager.java` (erweitern) | [ ] |
-| 2b.2 | FrostEffectManager – Frost-Faktor + Partikel | `FrostEffectManager.java` (neu) | [ ] |
-| 2b.3 | Integration in VisualSeasonManager – Tint-Lerp | `VisualSeasonManager.java` (erweitern) | [ ] |
-| 2b.4 | Testing & Feintuning | Test-Matrix, Partikel-Dichte, Performance | [ ] |
+| 2.1 | Config & Datenmodell | `biome_spoof.yml`, `SpoofMode.java`, `BiomeFamily.java` | [x] |
+| 2.2 | BiomeBackupStore | `BiomeBackupStore.java` (Persistenz + Load/Restore) | [x] |
+| 2.3 | BiomeSpoofAdapter – Grundgerüst | `BiomeSpoofAdapter.java` (init, reload, Timer, Player-Loop) | [x] |
+| 2.4 | BiomeSpoofAdapter – Klassifizierung & Mappings | Family-Klassifizierung, Season→Biome-Mapping, isChunkExcluded, shouldSkipSpoof | [x] |
+| 2.5 | BiomeSpoofAdapter – Capture & Apply | `captureAndApply()`, `revertChunk()`, `revertAll()`, `refreshChunk()` | [x] |
+| 2.6 | BiomeSpoofAdapter – Nudge-System | `nudgeViewers()`, `enqueueNudge()`, `flushNudges()` | [x] |
+| 2.7 | BiomeSpoofListener – Events | ChunkLoad/Unload/SeasonChange-Listener | [x] |
+| 2.8 | Integration & Test | `SeasonsPlugin.java` (init/shutdown), Build, Deploy, Funktionstest | [x] |
+
+### Sprint-Details
+
+#### 2.1 – Config & Datenmodell
+- `biome_spoof.yml` wie im Konzept spezifiziert anlegen
+- `SpoofMode.java`: `OFF`, `GLOBAL_RING` (nur globale Ring-Methode für MVP)
+- `BiomeFamily.java`: `LAND`, `OCEAN`
+- `ConfigManager.java` erweitern: `biome_spoof.yml` laden
+
+#### 2.2 – BiomeBackupStore
+- JSON-Serialisierung/Deserialisierung mit Gson
+- Methoden: `saveFirstTouch(Chunk, Biome[])`, `loadAll()`, `saveAll()`, `purgeOld()`
+- World-UID als Top-Level-Key, Chunk-Keys als `\"cx_cz\"`
+
+#### 2.3 – BiomeSpoofAdapter Grundgerüst
+- Konstruktor: `BiomeSpoofAdapter(SeasonsPlugin, SeasonClock)`
+- `reloadFromConfig()`: Alle Config-Werte einlesen, Mappings aus `biome_spoof.yml`
+- `register()`: Listener registrieren + 40-Tick-Timer starten
+- `unregister()`: revertAll() + Timer cancel + Listener unregister
+- `run()`: Grundgerüst mit Player-Iteration, Budget-Loop (noch ohne echte Logik)
+
+#### 2.4 – Klassifizierung & Mappings
+- `classifyOriginalFamily(Chunk)`: Aus Backup oder Sampling bestimmen ob LAND/OCEAN
+- `chooseTargetBiomeForChunk(key, family, …)`: Season + Family → Target-Biome
+- `isChunkExcludedByConfig(Chunk)`: Prüft excludedBiomes
+- `shouldSkipSpoofForChunk(Chunk, Season)`: Natürlich kalte Chunks außerhalb Winter skippen
+- `isColdBiome(Biome)`: String-basierte Prüfung auf \"SNOWY\", \"FROZEN\", \"ICE\", \"GROVE\", \"PEAK\", \"MOUNTAIN\"
+
+#### 2.5 – Capture & Apply
+- `captureAndApply(Chunk, Biome)`: Original-Biome in Liste sammeln → Backup → setBiome() für alle Sections → refreshChunk()
+- `revertChunk(Chunk)`: Backup-Array durchgehen → setBiome() original → refreshChunk()
+- `revertAll()`: Alle geladenen Chunks revertieren
+
+#### 2.6 – Nudge-System
+- `nudgeViewers(World, chunkX, chunkZ)`: Für alle Spieler im View-Distance-Radius Nudge enqueuen
+- `enqueueNudge(Player, World, chunkX, chunkZ)`: Nudge pro Spieler in Queue, 3s Cooldown
+- `flushNudges()`: Max 8 Nudges pro Tick abarbeiten
+
+#### 2.7 – BiomeSpoofListener
+- `onChunkLoad(ChunkLoadEvent)`: Entferne Chunk aus spoofed/backups/lastApplied/familyCache
+- `onChunkUnload(ChunkUnloadEvent)`: Falls gespooft → revertChunk(), entferne aus allen Maps
+- `onSeasonChange(SeasonUpdateEvent)`: Setze `seasonTransitionUntil = now + 5000`. Transition-Fenster für Pre-Transition-Faktor.
+
+#### 2.8 – Integration & Test
+- `SeasonsPlugin.java`: BiomeSpoofAdapter init + BiomeBackupStore laden in `onEnable()`, unregister in `onDisable()`
+- Build, Deploy auf Server
+- Test-Matrix: Alle 4 Seasons durchschalten mit `/season skip`
+- Prüfen: Biome-Wechsel sichtbar? Chunk-Refresh? Keine Doppel-Reverts?
+- Performance: Tick-Auslastung mit 5-10 Spielern messen
+
+### Done‑Definition Phase 2
+- [x] `BiomeSpoofAdapter` arbeitet mit 40-Tick-Timer, kein NMS
+- [x] `biome_spoof.yml` wird korrekt geladen und genutzt
+- [x] Im Herbst: Plains → Windswept Savanna, Wälder → herbstliche Brauntöne
+- [x] Im Frühling: Plains → Flower Forest (blühendes Grün)
+- [x] Im Winter: Plains → Snowy Plains (weiß), Ozean → Frozen Ocean
+- [x] Im Sommer: Plains → Plains (Vanilla)
+- [x] Ozeane werden korrekt behandelt (Deep-Varianten erhalten, Frozen Ocean im Winter)
+- [x] Excluded Biomes (Mushroom, Deep Dark, The Void) bleiben unverändert
+- [x] Chunk-Unload/Server-Stop revertiert alle gespooften Chunks sauber
+- [x] `biome_backups.json` persistiert Original-Biome Crash-sicher
+- [x] Performance: <5% Tick-Auslastung durch Spoofing
+- [x] Keine Konflikte mit Snow-System aus Phase 1.5
+- [x] Keine NMS/Reflection-Nutzung in Phase 2
+
+---
+
+## ⚠️ VERALTET – Phase 2.5: ProtocolLib Chunk-Packet-Override 🎨
+> **Konzept:** `Plannung/phase2-protocollib-biome-color-override-concept.md`
+> **Status:** ❌ VERWORFEN – Ersetzt durch **Phase 2.6: Custom-Biome-Datapack** (siehe `Plannung/custom-biome-concept.md`)
+> **Grund:** Packet-Override via ProtocolLib konnte Biome-Farben nicht zuverlässig client-seitig rendern. Minecraft's Farb-Rendering ist zu komplex (Biome-Blending, Client-Caches). Der Datapack-Ansatz mit echten Custom-Biomes funktioniert.
+> **Original-Ziel:** Die serverseitigen Biome-Änderungen aus Phase 2 client-seitig sichtbar machen. Dazu wird ProtocolLib verwendet, um `ClientboundLevelChunkWithLightPacket`-Pakete abzufangen und die Biome-Daten vor dem Senden an den Client zu überschreiben.
+> **Voraussetzung:** Phase 2 abgeschlossen (BiomeSpoofAdapter, BiomeBackupStore, BiomeSpoofListener laufen).
+> **Abhängigkeit:** ProtocolLib muss auf dem Server installiert sein (`softdepend` in `plugin.yml`).
+
+### Was aus Phase 2 erhalten bleibt
+
+| Klasse | Änderung |
+|---|---|
+| `BiomeSpoofAdapter.java` | `captureAndApply()`, `revertChunk()`, `revertAll()`, Klassifizierung, Mappings – **unverändert** |
+| `BiomeSpoofListener.java` | ChunkLoad/Unload/SeasonChange – **unverändert** |
+| `BiomeBackupStore.java` | Persistenz – **unverändert** |
+| `biome_spoof.yml` | Config – **um `resend_chunks_per_tick` und `resend_enabled` erweitert** |
+
+### Was aus Phase 2 wegfällt / ersetzt wird
+
+| Artefakt | Aktion |
+|---|---|
+| `flushResends()` + `chunksNeedingResend` in `BiomeSpoofAdapter` | Ersetzt durch `ChunkPacketInterceptor` (ProtocolLib-basiert) |
+| `nudgeViewers()` / `enqueueNudge()` / `flushNudges()` | Entfällt – Chunk-Re-Send triggert Client-Update direkt |
+| Heartbeat-Diagnose | Bleibt, aber angepasst an neue Metriken |
+
+### Neue Architektur
+
+```
+visual/
+├── BiomeSpoofAdapter.java       (→ bestehend, mini-Änderungen)
+├── BiomeSpoofListener.java      (→ bestehend, unverändert)
+├── BiomeBackupStore.java        (→ bestehend, unverändert)
+├── ChunkPacketInterceptor.java  (→ NEU: ProtocolLib-Packet-Interceptor)
+├── BiomeFamily.java             (→ unverändert)
+├── SpoofMode.java               (→ unverändert)
+└── biome_spoof.yml              (→ erweitert)
+```
+
+### Datenfluss
+
+```
+1. SeasonChangeEvent → BiomeSpoofListener.onSeasonChange()
+2. Timer (40 ticks): BiomeSpoofAdapter.run()
+   └── setBiome() serverseitig + markiert Chunk als \"dirty\"
+3. flushResends(): chunk.unload(true) + world.getChunkAt()
+   └── Server sendet ClientboundLevelChunkWithLightPacket
+4. ChunkPacketInterceptor.onPacketSending()
+   └── Prüft ob Chunk gespooft → überschreibt Biome-Daten im Packet
+5. Client empfängt Chunk-Paket mit neuen Biome-Daten → Farben ändern sich
+```
+
+### Sprint-Übersicht
+
+| Sprint | Feature | Datei(en) | Status |
+|---|---|---|---|
+| 2.5.1 | ProtocolLib-Dependency + plugin.yml | `build.gradle.kts`, `plugin.yml` | [ ] |
+| 2.5.2 | ChunkPacketInterceptor – Grundgerüst + Registrierung | `ChunkPacketInterceptor.java` (neu), `SeasonsPlugin.java` (erweitern) | [ ] |
+| 2.5.3 | Packet-Override-Logik (Biome-Daten im Chunk-Paket überschreiben) | `ChunkPacketInterceptor.java` (erweitern) | [ ] |
+| 2.5.4 | Integration mit BiomeSpoofAdapter + Aufräumen | `BiomeSpoofAdapter.java` (Nudge-Code entfernen, Re-Send vereinfachen), `biome_spoof.yml` (erweitern) | [ ] |
+| 2.5.5 | Build, Deploy, Funktionstest | `build\libs\Seasons-0.1.0-SNAPSHOT.jar` | [ ] |
+
+### Sprint-Details
+
+#### 2.5.1 – ProtocolLib-Dependency + plugin.yml
+- `build.gradle.kts`: ProtocolLib-Repository (`repo.dmulloy2.net`) + Dependency (`compileOnly(\"com.comphenix.protocol:ProtocolLib:5.3.0\")`)
+- `plugin.yml`: `softdepend: [ProtocolLib]` hinzufügen
+- Build testen: `compileJava` muss mit ProtocolLib im Classpath funktionieren
+- **Achtung:** ProtocolLib 5.3.0 ist die letzte stabile Version für 1.21.x
+
+#### 2.5.2 – ChunkPacketInterceptor Grundgerüst + Registrierung
+- Neue Klasse `visual/ChunkPacketInterceptor.java`
+- Implementiert `PacketListener` von ProtocolLib
+- Registriert sich auf `PacketType.Play.Server.MAP_CHUNK` für SENDING-Events
+- Zugriff auf `BiomeSpoofAdapter.getSpoofedSet()` und `getLastAppliedMap()`
+- Grundgerüst: Log-Ausgabe wenn ein Chunk-Paket abgefangen wird
+- Registrierung in `SeasonsPlugin.onEnable()` via `ProtocolLibrary.getProtocolManager().addPacketListener(interceptor)`
+- Deregistrierung in `onDisable()` via `ProtocolLibrary.getProtocolManager().removePacketListener(interceptor)`
+
+#### 2.5.3 – Packet-Override-Logik
+- `onPacketSending(PacketEvent event)` implementieren
+- Chunk-Koordinaten aus dem Packet lesen (StructureModifier / PacketContainer API)
+- Prüfen ob Chunk in `spoofed` Set und `lastApplied` Map
+- Biome-Daten im Packet überschreiben:
+  - Zugriff auf die Biome-Palette im Chunk-Paket (NMS-Reflection via ProtocolLib)
+  - Alle Biome-IDs in der Palette durch das Ziel-Biom ersetzen
+  - ODER: Biome-Section-Array durchgehen und Ziel-Biome setzen
+- Nach erfolgreichem Override: Log-Ausgabe (nur jeden 10. Chunk)
+
+#### 2.5.4 – Integration mit BiomeSpoofAdapter + Aufräumen
+- `captureAndApply()`: Nach `setBiome()` + `refreshChunk()` → `chunk.unload(true)` + `world.getChunkAt()` triggern
+- Nudge-System komplett entfernen:
+  - `nudgeQueues`, `nudgeLast`, `nudgeCooldownMs`, `nudgeMaxPerTick` Felder löschen
+  - `nudgeViewers()`, `enqueueNudge()`, `flushNudges()` Methoden löschen
+  - `nudge`-Konfiguration aus `reloadFromConfig()` entfernen
+- `biome_spoof.yml` erweitern:
+  - `resend_enabled: true` (NEU)
+  - `resend_chunks_per_tick: 8` (NEU)
+- `ConfigManager`: Neue Felder auslesen
+- Heartbeat-Log anpassen: Statt Nudge-Queue → Re-Send-Queue-Pending anzeigen
+
+#### 2.5.5 – Build, Deploy, Funktionstest
+- Build: `compileJava` + `shadowJar -x test`
+- ProtocolLib auf dem Server prüfen/installieren
+- Deploy: JAR kopieren, `biome_spoof.yml` kopieren, Server restart
+- Test-Matrix:
+  1. Einloggen → `captureAndApply`-Logs für Initial-Biome erscheinen
+  2. `/season set fall` → `ChunkPacketInterceptor`-Logs erscheinen
+  3. **Visuell prüfen: Laubfarben ändern sich?**
+  4. `/season set winter` → erneut prüfen
+  5. `/season set spring` → erneut prüfen
+  6. Mit 2+ Spielern testen (verschiedene Positionen)
+
+### Done‑Definition Phase 2.5
+- [ ] ProtocolLib ist als `softdepend` registriert, Plugin startet auch ohne ProtocolLib
+- [ ] `ChunkPacketInterceptor` fängt Chunk-Pakete ab und überschreibt Biome-Daten
+- [ ] **Laub-/Gras-Farben ändern sich sichtbar bei Season-Wechsel**
+- [ ] Herbst: Braune/Orange Töne (Windswept Savanna)
+- [ ] Winter: Weiße/Graue Töne (Snowy Plains, Frozen Ocean)
+- [ ] Frühling: Blühendes Grün (Flower Forest)
+- [ ] Sommer: Normales Grün (Plains)
+- [ ] Keine Nudge-Queue mehr – Code ist sauber entfernt
+- [ ] Performance: Max 8 Chunk-Re-Sends pro Tick
+- [ ] Re-Send-Queue wird nicht größer als ~500 Einträge
+- [ ] Keine NMS-Importe außerhalb von `ChunkPacketInterceptor`
+- [ ] Build erfolgreich
+
+---
+
+## Phase 2.6: Custom-Biome-Datapack – Biome-Farben sichtbar machen 🎨
+> **Konzept:** `Plannung/custom-biome-concept.md`
+> **Ziel:** Saisonale Laub-/Gras-Farben client-seitig sichtbar machen – durch ein Plugin-generiertes Custom-Biome-Datapack + `world.setBiome()`. Der Ansatz aus Phase 2 (Biome-Spoofing) bleibt als Grundgerüst erhalten, aber statt auf Vanilla-Biome zu mappen, werden **generierte Custom-Biomes** mit interpolierten Farben verwendet.
+> **Voraussetzung:** Phase 2-PRE abgeschlossen (kein alter NMS-Code), Phase 1.5 abgeschlossen. Phase 2 (BiomeSpoofAdapter, BiomeBackupStore, BiomeSpoofListener) wird als Basis verwendet und erweitert.
+
+### Warum dieser Ansatz?
+
+| Ansatz | Ergebnis |
+|--------|----------|
+| `world.setBiome()` + `refreshChunk()` (Phase 2) | ❌ Client sieht keine Farbänderung |
+| ProtocolLib Packet-Override (Phase 2.5) | ❌ Farb-Rendering zu komplex |
+| **Custom-Biome via Datapack + `world.setBiome()`** | ✅ **Funktioniert!** Im Proof-of-Concept validiert |
+
+### Architektur (nach Refactoring)
+
+```
+visual/
+├── BiomeFamily.java              ✅ unverändert
+├── SpoofMode.java                ✅ unverändert
+├── BiomeBackupStore.java         🔄 Registry-Lookup statt Biome.valueOf()
+├── BiomeSpoofListener.java       🔄 Leichte Anpassungen
+├── BiomeSpoofCoordinator.java    🆕 Timer, Spieler-Loop, Budget
+├── SeasonBiomeResolver.java      🆕 Klassifizierung + Target + Sub-Varianten
+├── ChunkBiomeApplier.java        🆕 captureAndApply/revert
+├── TransitionManager.java        🆕 Nacht-Check, Stufen-Tracking
+├── SeasonColorConfig.java        🆕 Liest season_colors.yml
+├── VanillaBiomeReference.java    🆕 Hält Dump der Original-Biom-Farben (im JAR)
+└── BiomeJsonGenerator.java       🆕 Erzeugt alle Custom-Biome-JSONs
+
+❌ ChunkPacketInterceptor.java    GELÖSCHT (Phase 2.6a)
+❌ BiomeSpoofAdapter.java         AUFGETEILT (→ Coordinator, Resolver, Applier)
+```
+
+### Neue Config-Dateien
+
+| Datei | Zweck |
+|-------|-------|
+| `season_colors.yml` | Zentrale Farbsteuerung: Ziel-Farben pro Saison, Biom-Overrides, Transition-Steps |
+| `biome_spoof.yml` | Vereinfacht: Transition-Steuerung, `seasons`- und `oceans.seasons`-Sektionen ENTFALLEN (Mapping jetzt dynamisch aus Original-Biom abgeleitet) |
+
+### Generator-Prinzip
+
+1. **VanillaBiomeReference** liest beim Start die Original-Biom-Farben aus dem Plugin-JAR (einmaliger Dump der Vanilla-Biome-JSONs)
+2. **SeasonColorConfig** liest `season_colors.yml` (Ziel-Farben, Overrides, Transition-Steps)
+3. **BiomeJsonGenerator** interpoliert für jedes konfigurierte Biom: `lerp(original, target, blend_factor)` → N Sub-Varianten pro Übergang
+4. Schreibt generierte Custom-Biome-JSONs nach `world/datapacks/seasons_biomes/`
+
+**Kernregel: Jede generierte JSON ist eine 1:1-Kopie des Vanilla-Originals** (temperature, downfall, precipitation, effects, carvers, features, spawn_costs, spawners). **Ausschließlich** `grass_color` und `foliage_color` werden überschrieben. Später erweiterbar um `sky_color`, `water_color`, `water_fog_color`, `fog_color` (siehe `Plannung/_TODO-future-features.md`).
+5. Nach Server-Neustart lädt die Welt die Custom-Biomes → Farben aktiv
+
+### Transition-Konzept: Sub-Varianten mit Nacht-Wechsel
+
+Statt räumlichem Staffeln wechseln **alle sichtbaren Chunks gleichzeitig** in der Nacht. Der sanfte Übergang entsteht durch mehrere **Farb-Zwischenstufen** (Sub-Varianten), die in aufeinanderfolgenden Nächten getauscht werden.
+
+```
+Sommer → Herbst (4 Stufen):
+  Nacht 1: late_summer  (t=0.25)
+  Nacht 2: early_fall   (t=0.50)
+  Nacht 3: mid_fall     (t=0.75)
+  Nacht 4: fall         (t=1.00)
+```
+
+### Sprint-Übersicht
+
+| Sprint | Feature | Datei(en) | Status |
+|---|---|---|---|
+| 2.6a | Aufräumen: ChunkPacketInterceptor + ProtocolLib entfernen | `ChunkPacketInterceptor.java` (löschen), `build.gradle.kts`, `plugin.yml` | [ ] |
+| 2.6b | SeasonColorConfig + VanillaBiomeReference | `SeasonColorConfig.java`, `VanillaBiomeReference.java`, `season_colors.yml` | [ ] |
+| 2.6c | BiomeJsonGenerator + `/season generate-biomes` | `BiomeJsonGenerator.java`, `MainSeasonCommand.java` (erweitern) | [x] |
+| 2.6d | Refactoring: BiomeSpoofAdapter aufteilen | `BiomeSpoofCoordinator.java`, `SeasonBiomeResolver.java`, `ChunkBiomeApplier.java` | [~] (2.6d1 ✅) |
+| 2.6e | TransitionManager | `TransitionManager.java` (Nacht-Check, Stufen-Tracking) | [ ] |
+| 2.6f | BiomeBackupStore: Registry-Lookup | `BiomeBackupStore.java` (`Biome.valueOf()` → Registry) | [ ] |
+| 2.6g | Integration & Test | `SeasonsPlugin.java`, Build, Deploy, Farb-Test | [~] (weitgehend durch 2b.5 erledigt – Frost-System testet gleichzeitig 2.6-Infrastruktur) |
+
+### Sprint-Details
+
+#### 2.6a – Aufräumen
+- `ChunkPacketInterceptor.java` löschen (157 Zeilen toter Code)
+- ProtocolLib-Dependency aus `build.gradle.kts` entfernen
+- `softdepend: [ProtocolLib]` aus `plugin.yml` entfernen
+- Build testen
+
+#### 2.6b – SeasonColorConfig + VanillaBiomeReference
+- `VanillaBiomeReference.java`: Liest Vanilla-Biome-JSONs aus JAR-Ressource `vanilla_biomes/`, stellt `getGrassColor(Biome)` / `getFoliageColor(Biome)` bereit
+- `SeasonColorConfig.java`: Liest `season_colors.yml`, stellt `getTargetColor(Biome, Season, ColorType)`, `getTransitionSteps(Season, Season)` bereit
+- `season_colors.yml` im Ressourcen-Ordner anlegen, wird nach `plugins/Seasons/` kopiert
+
+#### 2.6c – BiomeJsonGenerator
+- Iteriert über `enabled_biomes` aus Config
+- Interpoliert Farben: `lerp(original, target, step/totalSteps)`
+- Schreibt JSONs nach `world/datapacks/seasons_biomes/data/seasons/worldgen/biome/`
+- Aktualisiert `pack.mcmeta`
+- Command: `/season generate-biomes [force]`
+- Hash-Check: Nur bei Config-Änderung neu generieren
+
+#### 2.6d – Refactoring BiomeSpoofAdapter
+- `BiomeSpoofCoordinator`: Timer, Spieler-Loop, Budget (aus `BiomeSpoofAdapter.run()`)
+- `SeasonBiomeResolver`: Klassifizierung LAND/OCEAN, **dynamisches Per-Biome-Mapping** (siehe Konzept 11a).
+  **Kein** hartes `seasonTarget.get(season)` mehr – jedes Vanilla-Biom bekommt eigene Custom-Variante:
+  `seasons:<variant>_<biomeKey>` (z.B. `seasons:fall_swamp`, `seasons:fall_birch_forest`)
+- `ChunkBiomeApplier`: `captureAndApply()`, `revertChunk()`, `revertAll()` (aus `BiomeSpoofAdapter`)
+- `BiomeSpoofAdapter.java` wird nach erfolgreichem Test gelöscht
+
+#### 2.6e – TransitionManager
+- Zustandsmaschine: `fromSeason`, `toSeason`, `totalSteps`, `currentStep`, `nextTransitionTick`
+- Trigger: `SeasonChangeEvent` → initialisiert Transition
+- Nacht-Check: Alle 40 Ticks prüfen, ob Nacht erreicht → `currentStep++` → alle Chunks updaten
+- `nights_per_step: 1` in `biome_spoof.yml`
+
+#### 2.6f – BiomeBackupStore Registry-Lookup
+- `Biome.valueOf()` (Enum) durch Registry-Lookup ersetzen: `Registry.BIOME.get(NamespacedKey)`
+- Custom-Biomes haben keinen Vanilla-Enum-Wert, müssen via Registry geladen werden
+- Rückwärtskompatibilität: Alte Backups mit Vanilla-Namen weiterhin lesbar
+
+#### 2.6g – Integration & Test
+- `SeasonsPlugin.java`: Neue Komponenten initialisieren, Generator bei Bedarf ausführen
+- Build, Deploy, Server-Neustart (Datapack wird erst nach 2. Start aktiv)
+- Test: `/season skip` durch alle Seasons, Farben mit F3 prüfen
+- Test: Biome-Blending an Chunk-Grenzen beobachten
+
+### Done‑Definition Phase 2.6
+- [ ] `ChunkPacketInterceptor.java` + ProtocolLib-Abhängigkeit entfernt
+- [ ] `BiomeJsonGenerator` erzeugt valide Custom-Biome-JSONs im Datapack
+- [ ] **Laub-/Gras-Farben ändern sich sichtbar bei Season-Wechsel**
+- [ ] Herbst: Braune/Orange Töne (via interpolierte Custom-Biomes)
+- [ ] Winter: Graue/Entsättigte Töne (Nadelbäume bleiben grün!)
+- [ ] Frühling: Original-Farben (blend_factor = 0)
+- [ ] Sommer: Original-Farben (Vanilla)
+- [ ] Transition über Nacht-Wechsel sichtbar (mehrere Stufen)
+- [ ] Ozeane werden korrekt behandelt
+- [ ] `BiomeBackupStore` kann Custom-Biomes laden/speichern
+- [ ] Keine NMS/Reflection-Nutzung
+- [ ] Keine ProtocolLib-Abhängigkeit mehr
+- [ ] Build erfolgreich
+
+---
+
+## Phase 2b: Frost System – Frost-Biome + Partikel ❄️
+> **Konzept:** `Plannung/frost-concept-phase-2b.md`
+> **Ziel:** Frostige Optik bei Temperaturen unter 0°C – realisiert durch **Frost-Biome** (Custom-Biome-Datapack) + `SNOWFLAKE`-Partikel. Kein dynamischer Tint-Lerp, kein `sendBlockChange()`.
+> **Voraussetzung:** Phase 2.6 abgeschlossen (BiomeJsonGenerator, SeasonBiomeResolver, Custom-Biome-Datapack).
+
+### Prinzip
+
+1. **BiomeJsonGenerator** erzeugt pro Vanilla-Biom eine zusätzliche Frost-Variante: `seasons:frost_<biome>` (z.B. `seasons:frost_forest`). Farbe: kühles Weiß/Grau (aus `frost.yml`).
+2. **SeasonBiomeResolver** wählt das Frost-Biom statt des normalen Saison-Bioms, wenn die aktuelle Temperatur < `freeze-threshold` ist.
+3. **FrostEffectManager** spawnt `SNOWFLAKE`-Partikel um Spieler, wenn Frost aktiv ist.
+
+### Betroffene Klassen
+
+| Klasse | Änderung |
+|---|---|
+| `BiomeJsonGenerator.java` | Erweitert: Liest Frost-Zielfarben aus `frost.yml`, erzeugt `frost_*.json` |
+| `SeasonBiomeResolver.java` | Erweitert: `resolveBiome()` prüft Temperatur → wählt Frost-Variante |
+| `FrostConfig.java` | 🆕 Liest `frost.yml` (Thresholds, Farben, Partikel, Excluded-Biomes) |
+| `FrostEffectManager.java` | 🆕 Frost-Faktor, Partikel-Spawns, Biome-Filter |
+| `BiomeSpoofCoordinator.java` | Minimal: Übergibt Temperatur an Resolver (bereits vorhanden) |
+
+### Sprint-Übersicht
+
+| Sprint | Feature | Datei(en) | Status |
+|---|---|---|---|
+| 2b.1 | FrostConfig + frost.yml | `FrostConfig.java`, `frost.yml`, `ConfigManager.java` | [x] |
+| 2b.2 | BiomeJsonGenerator: Frost-Biome erzeugen | `BiomeJsonGenerator.java` (erweitern) | [x] |
+| 2b.3 | SeasonBiomeResolver: Frost-Biom wählen | `SeasonBiomeResolver.java` (erweitern) | [x] |
+| 2b.4 | FrostEffectManager: Partikel | `FrostEffectManager.java` (neu) | [x] |
+| 2b.5 | Integration & Test | Build, Deploy, Server-Test | [x]
 
 ### Sprint-Details
 
 #### 2b.1 – Config
-- **frost.yml** mit `freeze-threshold`, `full-frost-threshold`, `day-night-transition-seconds`, `intensity-multiplier`, `target-color`, `tint-strength`, `particles.*`, `excluded-biomes`
-- **FrostConfig.java** lädt und wrappt die Werte
+- **frost.yml**: `freeze-threshold`, `full-frost-threshold`, `target-grass-color`, `target-foliage-color`, `particles.*`, `excluded-biomes`
+- **FrostConfig.java** wrappt alle Werte
 - **ConfigManager.java** registriert `frost.yml`
 
-#### 2b.2 – FrostEffectManager
-- Berechnet `frostFactor` pro Spieler aus `TemperatureCalculator.getTemperature(loc)`
-- Prüft `excluded-biomes` (Biome-Filter, keine Frost-Effekte in Wüste/Nether/End)
-- Spawnt `SNOWFLAKE`-Partikel um den Spieler bei `frostFactor > 0`
-- Periodischer Task (alle 4–8 Sekunden) für aktive Spieler
+#### 2b.2 – Frost-Biome im Generator
+- `BiomeJsonGenerator` liest Frost-Zielfarben aus `FrostConfig`
+- Erzeugt pro `enabled_biome` eine `frost_<biome>.json` (z.B. `frost_forest.json`)
+- Nur `grass_color` und `foliage_color` werden auf Frost-Farben gesetzt
+
+#### 2b.3 – Resolver wählt Frost-Biom
+- `SeasonBiomeResolver.resolveBiome(originalBiome, season, temperature)`:
+  - Wenn `temperature < freezeThreshold` → `seasons:frost_<biomeKey>`
+  - Sonst → normales Saison-Biom (`seasons:<variant>_<biomeKey>`)
+
+#### 2b.4 – FrostEffectManager (Partikel)
+- Berechnet `frostFactor` aus Temperatur (für Partikel-Intensität)
+- Spawnt `SNOWFLAKE`-Partikel bei `frostFactor > 0`
+- Prüft `excluded-biomes` (keine Partikel in Wüste, Nether, End)
+- Periodischer Task (alle 4–8 Sekunden)
 - Cleanup bei `PlayerQuitEvent`
 
-#### 2b.3 – Integration
-- `VisualSeasonManager.updatePlayerVisuals()` erweitern:
-  1. Saison-Tint von `FoliageTintManager`
-  2. `frostFactor` von `FrostEffectManager`
-  3. Finaler Tint: `lerp(seasonTint, frostTargetColor, frostFactor * tintStrength)`
-- `FrostEffectManager` kennt den `FoliageTintManager` nicht direkt
-- Kein `PlayerMoveEvent`-Trigger; 4s-Timer fängt Temperaturänderungen ein
-
-#### 2b.4 – Testing & Feintuning
-- Tag/Nacht-Frost-Übergang muss flüssig sein (60s Transition)
-- Partikel-Dichte bei 10–15 Spielern testen
-- Biome-Ausschlussliste prüfen (keine Frost-Partikel in Desert, Savanna, Nether, End)
-- Performance: Partikel-Spawns sind leichtgewichtig, kein zusätzlicher CPU-Verbrauch
+#### 2b.5 – Integration & Test
+- `SeasonsPlugin.onEnable()`: `FrostEffectManager` starten
+- Build, Deploy, `/season generate-biomes force`, Server-Neustart
+- Test: Im Winter + Nacht → Frost-Biome aktiv + Partikel sichtbar
 
 ### Done‑Definition Phase 2b
-- [ ] Deutlich frostige Optik unter 0°C (Gras/Laub bleicht aus)
-- [ ] `SNOWFLAKE`-Partikel bei Frost sichtbar, konfigurierbare Dichte
-- [ ] Keine Frost-Effekte in `excluded-biomes` (Wüste, Nether, End etc.)
-- [ ] Schnelle Tag/Nacht-Reaktion ohne Lag
-- [ ] Keine spürbaren Performance-Einbußen bei 10–15 Spielern
-- [ ] Alle Werte über `frost.yml` steuerbar
-- [ ] Keine Konflikte mit Snow-System aus Phase 1.5
+- [x] `BiomeJsonGenerator` erzeugt `frost_*.json` für alle `enabled_biomes`
+- [x] `SeasonBiomeResolver` wählt Frost-Biom bei Temperatur < `freeze-threshold`
+- [x] Gras-/Laub-Farben frostig (kühles Weiß/Grau) bei Frost
+- [x] `SNOWFLAKE`-Partikel sichtbar, Dichte konfigurierbar
+- [x] Keine Frost-Effekte in `excluded-biomes`
+- [x] Schnelle Tag/Nacht-Reaktion (< 40 Ticks über Coordinator-Timer)
+- [x] Keine Konflikte mit Snow-System (Phase 1.5) oder Custom-Biome-Datapack (Phase 2.6)
 
 ---
 
 ## Phase 3: Temperatur‑Effekte & Spieler‑Interaktion 🌡️
-**Ziel:** Extreme Temperaturen beeinflussen Spieler (Hunger, Speed). Eis‑Effekt auf stehendem Gewässer. Nebel bei Übergängen.
+> **Konzept:** `Plannung/phase3-effects-concept.md`
+> **Ziel:** Eis‑Effekt auf Wasser via Frost-Biome‑Temperatur (vanilla Random‑Tick), atmosphärischer Nebel via `fog_color` in Custom‑Biome‑JSONs, Spieler‑Debuffs bei extremen Temperaturen.
+> **Grundlegende Überarbeitung nach Phase 2.6+2b:** `IceEffect` und `MistEffect` werden größtenteils durch Vanilla‑Mechaniken ersetzt (Biome‑Temperatur, Custom‑Biome‑`fog_color`). Nur `TemperatureEffect` bleibt als eigener Potion‑Manager. `SeasonalEffect`‑Interface + `EffectScheduler` bündeln Laufzeiteffekte in einem Timer.
+
+### Neue Architektur
+
+```
+effects/
+├── SeasonalEffect.java         (Interface: tick + isApplicable)
+├── EffectScheduler.java        (Ein Timer, Spieler-Iteration, delegiert)
+├── FrostEffectManager.java     (umbauen: implements SeasonalEffect)
+└── TemperatureEffect.java      (NEU: Potion-Debuffs)
+
+❌ IceEffect.java               GELÖSCHT
+❌ MistEffect.java              GELÖSCHT (atmosphärischer Nebel via Biome, Partikel-Nebel später)
+```
 
 | Sprint | Feature | Datei(en) | Status |
 |---|---|---|---|
-| 3.1 | SeasonalEffect‑Interface + EffectScheduler | `SeasonalEffect.java`, `EffectScheduler.java` | [ ] |
-| 3.2 | TemperatureEffect – Spieler‑Modifier bei Kälte/Hitze | `TemperatureEffect.java` | [ ] |
-| 3.3 | MistEffect – Sicht‑Nebel in Morgen/Abend‑Stunden des Herbstes | `MistEffect.java` | [ ] |
-| 3.4 | IceEffect – Stehendes Wasser friert bei Minusgraden | `IceEffect.java` | [ ] |
-| 3.5 | Config‑Erweiterung für Effekt‑Stärken | `config.yml` (Patch) | [ ] |
-| 3.6 | Test‑Durchlauf aller Effekte | — | [ ] |
+| 3.1 | BiomeJsonGenerator + Configs: `temperature` + `fog_color` in JSONs | `BiomeJsonGenerator.java` (erweitern), `season_colors.yml` (fog), `frost.yml` (temperature) | [ ] |
+| 3.2 | SeasonalEffect‑Interface + EffectScheduler + FrostEffectManager umbauen | `SeasonalEffect.java`, `EffectScheduler.java`, `FrostEffectManager.java` | [ ] |
+| 3.3 | TemperatureEffect – Potion‑Debuffs (Hunger/Slowness) | `TemperatureEffect.java` | [ ] |
+| 3.4 | Config‑Erweiterung `temperature-effects` + Tests | `config.yml` (erweitern) | [ ] |
+| 3.5 | Integration, Build, Deploy & Test | `SeasonsPlugin.java` | [ ] |
 
 **Done‑Definition Phase 3:**
-- [ ] Bei -0.2 °C effektiver Temperatur leichter Hunger‑Effekt
-- [ ] Bei -0.5 °C Slowness‑Stufe
-- [ ] Hitzewellen im Sommer idem (Erschöpfung)
-- [ ] Nebel in morgendlichen Herbst‑Biomen
-- [ ] Stehendes Wasser friert bei anhaltenden Minusgraden (Random‑Tick)
-- [ ] Bei extremen Temperaturen können auch Wasserfälle einfrieren
-- [ ] Eis taut bei positiven Temperaturen wieder
+- [ ] Frost‑Biome setzen `temperature < 0` → stehendes Wasser friert per Vanilla Random‑Tick
+- [ ] `fog_color` in Custom‑Biome‑JSONs → atmosphärischer Horizont‑Dunst sichtbar
+- [ ] Bei `temp < -0.2` (konfigurierbar) leichter Hunger‑Effekt
+- [ ] Bei `temp < -0.5` (konfigurierbar) Slowness I
+- [ ] Bei `temp > 0.8` (konfigurierbar) Erschöpfungs‑Hunger
+- [ ] `EffectScheduler` bündelt alle Laufzeiteffekte in EINEM Timer
+- [ ] `FrostEffectManager` implementiert `SeasonalEffect` Interface
+- [ ] Kein manueller `IceEffect`‑Code (kein Block‑Scan, kein `setType(ICE)`)
+- [ ] Kein separater `MistEffect`‑Code (atmosphärischer Nebel via Biome, Partikel‑Nebel in Zukunft)
+- [ ] Keine NMS/Reflection
+- [ ] Build erfolgreich
 
 ---
 

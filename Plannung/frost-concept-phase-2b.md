@@ -1,8 +1,8 @@
-# Frost System – Temperaturabhängiger Frost (Phase 2b)
+# Frost System – Frost-Biome + Partikel (Phase 2b)
 
-**Status:** Überarbeitetes Konzept nach Codebasis-Analyse  
-**Phase:** 2b (nach erfolgreichem Abschluss von Phase 2 – Foliage Tints)  
-**Ziel:** Eine frostige/weiße Optik der Welt bei niedrigen Temperaturen, unabhängig von echten Snow-Layern. Schnelle Tag/Nacht-Reaktion + langsame Saison-Integration.
+**Status:** Überarbeitet – angepasst an Custom-Biome-Datapack-Architektur (Phase 2.6)
+**Phase:** 2b (nach erfolgreichem Abschluss von Phase 2.6)
+**Ziel:** Frostige Optik bei Temperaturen unter 0°C – realisiert durch **Frost-Biome** (Custom-Biome-Datapack) + `SNOWFLAKE`-Partikel. Kein dynamischer Tint-Lerp, kein `sendBlockChange()`.
 
 ---
 
@@ -10,55 +10,77 @@
 
 - Die Welt soll bei Temperaturen unter 0°C **frostig** wirken (auch ohne Schnee-Layer).
 - Schnee-Layer (Phase 1) wirken dadurch natürlicher und nicht „auf grünem Gras".
-- Schnelle Reaktion auf Tag/Nacht-Temperaturschwankungen (30–90 Sekunden).
+- Schnelle Reaktion auf Tag/Nacht-Temperaturschwankungen (~40 Ticks über Coordinator-Timer).
 - Sehr langsame Saison-Übergänge (passend zum 365-Tage-Jahr).
 
 ---
 
-## 2. Kernprinzipien (rein Plugin)
+## 2. Kernprinzipien
 
-- **Pro Spieler** Ansatz (keine globalen Block-Änderungen).
-- **Zwei kombinierte Techniken**:
-  - **Biome Color Tint (Foliage + Grass)** – Frost-Zielfarbe wird per Lerp in die Saison-Tint gemischt.
-  - **Frost-Partikel** – bei aktivem Frost schweben `SNOWFLAKE`-Partikel um den Spieler.
-- **Kein `sendBlockChange()`-Overlay.** Es gibt keinen passenden Vanilla-Block-Typ, und Chunk-Updates würden die Effekte zerstören (Flackern, Relog-Verlust). Die Kombination Tint + Partikel liefert 90% der Optik ohne diese Probleme.
-- **Kein permanenter Block-State** – alles client-seitig und temporär.
+### 2.1 Frost-Biome (Custom-Biome-Datapack)
+
+Der **BiomeJsonGenerator** (Phase 2.6) erzeugt pro Vanilla-Biom eine zusätzliche Frost-Variante:
+
+```
+Schema: seasons:frost_<biome_key>
+
+Beispiele:
+  seasons:frost_forest
+  seasons:frost_plains
+  seasons:frost_birch_forest
+  seasons:frost_swamp
+  seasons:frost_taiga
+```
+
+**Farbe:** Kühles Weiß/Grau, konfigurierbar in `frost.yml`:
+- `target-grass-color: 0xD0D4D8`
+- `target-foliage-color: 0xC0C4C8`
+
+Die Frost-Biome-JSONs sind **1:1-Kopien des Vanilla-Originals** – nur `grass_color` und `foliage_color` werden überschrieben. Kein Sub-Stufen-Lerp, kein dynamisches Mischen zur Laufzeit.
+
+### 2.2 Resolver wählt Frost-Biom
+
+Der **SeasonBiomeResolver** (Phase 2.6) prüft bei jedem Resolve:
+
+```
+Wenn Temperatur < freeze-threshold → seasons:frost_<biomeKey>
+Sonst → normales Saison-Biom (seasons:<variant>_<biomeKey>)
+```
+
+Das passiert automatisch im 40-Tick-Timer des `BiomeSpoofCoordinator` – keine zusätzliche Infrastruktur nötig.
+
+### 2.3 Frost-Partikel
+
+Der **FrostEffectManager** spawnt `SNOWFLAKE`-Partikel um Spieler, wenn Frost aktiv ist. Leichtgewichtig, kein Block-Scan, kein State-Tracking.
+
+### 2.4 Was wir NICHT tun
+
+- ❌ Kein dynamischer Tint-Lerp (Custom-Biomes sind statisch)
+- ❌ Kein `sendBlockChange()`-Overlay
+- ❌ Kein `VisualSeasonManager` / `FoliageTintManager` (existieren nicht)
+- ❌ Keine Sub-Varianten für Frost (eine einzige `frost_`-Variante pro Biom reicht)
 
 ---
 
-## 3. Frost-Berechnung
-
-```java
-double getFrostFactor(Location loc) {
-    double temp = temperatureManager.getTemperature(loc);
-    if (temp >= config.getFreezeThreshold()) return 0.0;
-
-    double intensity = (config.getFreezeThreshold() - temp) /
-                       (config.getFullFrostThreshold() - config.getFreezeThreshold());
-
-    return Math.clamp(intensity * config.getIntensityMultiplier(), 0.0, 1.0);
-}
-```
-
-**Config-Ausschnitt** (`frost.yml`):
+## 3. Config: `frost.yml`
 
 ```yaml
 frost:
   enabled: true
-  freeze-threshold: 0.0            # Temperatur, ab der Frost beginnt
-  full-frost-threshold: -7.0       # Temperatur, bei der Frost maximal ist
-  day-night-transition-seconds: 60 # Geschwindigkeit des Tag/Nacht-Frostwechsels
-  intensity-multiplier: 0.75       # Gesamtstärke-Skalierung (0.0 = kein Frost)
 
-  # Frost-Lerp-Zielfarbe (auf Gras, Laub, Foliage)
-  target-color: "0xDDE4E8"         # Kühles, leicht bläuliches Weiß
-  tint-strength: 0.65              # max. Einfluss des Frost-Lerp (0.0–1.0)
+  # Temperatur-Schwellen
+  freeze-threshold: 0.0            # Temperatur, ab der Frost-Biom aktiv wird
+  full-frost-threshold: -7.0       # Temperatur für maximale Partikel-Intensität
+
+  # Frost-Biom-Farben (in die JSONs geschrieben)
+  target-grass-color: 0xD0D4D8     # Kühles Weiß/Grau für Gras
+  target-foliage-color: 0xC0C4C8   # Kühles Weiß/Grau für Laub
 
   # Partikel-System
   particles:
     enabled: true
     type: SNOWFLAKE                # Alternativ: WHITE_ASH, END_ROD
-    particles-per-second: 12       # pro Spieler
+    particles-per-second: 12       # pro Spieler bei full-frost
     spread-radius: 3.0             # Block-Radius um den Spieler
 
   # Biome-Ausschlussliste (KEIN Frost in diesen Biomen)
@@ -87,46 +109,87 @@ frost:
 
 ---
 
-## 4. FrostEffectManager
-
-**Verantwortlichkeiten:**
-- Berechnet `frostFactor` pro Spieler (aus Temperatur + Biome-Check).
-- Bestimmt Partikel-Dichte und spawns `SNOWFLAKE`-Partikel.
-- Meldet den Frost-Faktor an den `VisualSeasonManager`, der den Tint-Lerp durchführt.
-- Prüft `excluded-biomes` – in heißen/wüsten Biomen wird kein Frost angewendet.
-
-**Optimierungen:**
-- Nur alle 4–8 Sekunden updaten (periodischer Bukkit-Task).
-- Partikel-Spawns sind leichtgewichtig, kein State-Tracking nötig.
-- Kein Chunk-Scan, kein Block-Iterieren, kein Cache – nur Mathematik + `spawnParticle()`.
-- Cleanup bei Spieler Quit (Task-Logik prüft `player.isOnline()`).
-
----
-
-## 5. Integration mit Phase 2
-
-- Baut auf `FoliageTintManager` auf.
-- `VisualSeasonManager.updatePlayerVisuals()`:
-  1. Holt Saison-Tint von `FoliageTintManager.getSeasonalColors()`
-  2. Holt `frostFactor` von `FrostEffectManager.getFrostFactor(player)`
-  3. Mischt final: `lerp(seasonTint, frostTargetColor, frostFactor * tintStrength)`
-- `VisualSeasonManager` ist der einzige Koordinator – `FrostEffectManager` kennt den Tint-Manager nicht direkt.
+## 4. Frost-Berechnung
 
 ```java
-// VisualSeasonManager.updatePlayerVisuals() in Phase 2b:
-int seasonGrass = foliageTintManager.getSeasonalColors(biome, temp).grassColor();
-int frostTarget = frostEffectManager.getTargetColor();
-double frostFactor = frostEffectManager.getFrostFactor(player);
-int finalGrass = lerpColor(seasonGrass, frostTarget, frostFactor * tintStrength);
+double getFrostFactor(double temperature) {
+    if (temperature >= config.getFreezeThreshold()) return 0.0;
+
+    double range = config.getFreezeThreshold() - config.getFullFrostThreshold();
+    double progress = (config.getFreezeThreshold() - temperature) / range;
+
+    return Math.clamp(progress, 0.0, 1.0);
+}
 ```
+
+Der `frostFactor` wird NUR für die Partikel-Intensität verwendet. Die Biom-Wahl ist binär: `temperature < freezeThreshold` → Frost-Biom.
 
 ---
 
-## 6. Ablauf
+## 5. Betroffene Klassen
 
-- Periodischer Task (alle 4–8 Sekunden) für aktive Spieler.
-- Bei SeasonChange → sanfter Übergang (Frost-Faktor folgt der Temperatur ohnehin stetig).
-- **Kein `PlayerMoveEvent`-Trigger.** Die Temperatur ändert sich nur bei Biome- oder signifikantem Höhen-Wechsel, der 4s-Timer fängt das ausreichend schnell ein.
+### 5.1 BiomeJsonGenerator (erweitern)
+
+- Liest Frost-Zielfarben aus `FrostConfig`
+- Erzeugt pro `enabled_biome` eine `frost_<biome>.json`
+- Nur `grass_color` und `foliage_color` werden auf Frost-Farben gesetzt
+- Alle anderen Felder = 1:1-Kopie des Vanilla-Originals
+
+```java
+// In BiomeJsonGenerator.generate():
+for (String biomeKey : enabledBiomes) {
+    // ... normale Saison-Biomes generieren ...
+
+    // Frost-Variante
+    BiomeJson frostJson = vanillaBiomeReference.copyOf(biomeKey);
+    frostJson.setGrassColor(frostConfig.getTargetGrassColor());
+    frostJson.setFoliageColor(frostConfig.getTargetFoliageColor());
+    writeJson("frost_" + biomeKey, frostJson);
+}
+```
+
+### 5.2 SeasonBiomeResolver (erweitern)
+
+- `resolveBiome(originalBiome, season, temperature)`:
+  - Wenn `temperature < frostConfig.getFreezeThreshold()` → `seasons:frost_<biomeKey>`
+  - Sonst → normales Saison-Biom
+
+### 5.3 FrostConfig (NEU)
+
+- Liest `frost.yml`
+- Stellt `getFreezeThreshold()`, `getFullFrostThreshold()`, `getTargetGrassColor()`, `getTargetFoliageColor()`, `getParticlesPerSecond()`, `getSpreadRadius()`, `getExcludedBiomes()` bereit
+
+### 5.4 FrostEffectManager (NEU)
+
+- Berechnet `frostFactor` aus Temperatur
+- Spawnt `SNOWFLAKE`-Partikel bei `frostFactor > 0`
+- Prüft `excluded-biomes` – keine Partikel in Wüste, Nether, End
+- Periodischer Task (alle 4–8 Sekunden) für aktive Spieler
+- Cleanup bei `PlayerQuitEvent`
+
+### 5.5 BiomeSpoofCoordinator (minimal)
+
+- Übergibt Temperatur an `SeasonBiomeResolver.resolveBiome()` – bereits vorhanden, keine strukturellen Änderungen nötig
+
+---
+
+## 6. Datenfluss
+
+```
+1. BiomeSpoofCoordinator.run() (alle 40 Ticks)
+   └── Für jeden Spieler:
+       └── Temperatur = TemperatureCalculator.getTemperature(loc)
+       └── SeasonBiomeResolver.resolveBiome(original, season, temperatur)
+           └── temp < freezeThreshold? → seasons:frost_forest
+           └── sonst → seasons:fall_forest
+       └── ChunkBiomeApplier.captureAndApply(chunk, resolvedBiome)
+
+2. FrostEffectManager (alle 4–8 Sekunden)
+   └── Für jeden Spieler:
+       └── frostFactor = getFrostFactor(temperature)
+       └── prüfe excluded-biomes
+       └── spawnParticle(SNOWFLAKE, player.getLocation(), count, spread)
+```
 
 ---
 
@@ -134,8 +197,9 @@ int finalGrass = lerpColor(seasonGrass, frostTarget, frostFactor * tintStrength)
 
 | Maßnahme                    | Effekt |
 |----------------------------|--------|
+| Frost-Biom = statische JSON | 0 Laufzeit-Overhead |
+| Resolver-Check = 1 Vergleich | O(1) pro Chunk |
 | Kein Block-Scan            | 0 Chunk-Iterationen |
-| Tint-Lerp rein rechnerisch | O(1) pro Spieler |
 | Partikel-Leichtbau         | `spawnParticle()` ist billig |
 | 4–8 Sekunden Intervall     | Minimaler CPU-Verbrauch |
 | Biome-Ausschlussliste      | Keine Frost-Effekte in Wüste/Nether/End |
@@ -147,24 +211,29 @@ int finalGrass = lerpColor(seasonGrass, frostTarget, frostFactor * tintStrength)
 ## 8. ToDo für Phase 2b
 
 - [ ] `FrostConfig` + `frost.yml` (erstellen, in `ConfigManager` registrieren)
+- [ ] `BiomeJsonGenerator` erweitern: Frost-Biome erzeugen
+- [ ] `SeasonBiomeResolver` erweitern: Frost-Biom bei Temperatur < Threshold wählen
 - [ ] `FrostEffectManager` (Frost-Faktor, Biome-Filter, Partikel)
-- [ ] Integration in `VisualSeasonManager` (Tint-Lerp mit Frost-Zielfarbe)
-- [ ] Partikel-System (Dichte, Spread, Type)
-- [ ] Performance-Tests mit vielen Spielern
-- [ ] Feintuning Tag/Nacht-Übergänge (Transition-Seconds aus Config)
+- [ ] Integration in `SeasonsPlugin.onEnable()`
+- [ ] Build, Deploy, `/season generate-biomes force`, Server-Neustart
+- [ ] Funktionstest: Winter + Nacht → Frost-Biome + Partikel sichtbar
 
 ---
 
 ## 9. Abhängigkeiten
 
-- `TemperatureCalculator` / `TemperatureConfig` (bereits vorhanden – Phase 1)
-- `FoliageTintManager` + `VisualSeasonManager` (muss in Phase 2 gebaut werden)
-- `ConfigManager` (muss `frost.yml` laden können)
-- `ExcludedBiomes` – nutzt `BiomeTemperature` / `PrecipitationCategory`-Infrastruktur aus Phase 1
+- `TemperatureCalculator` / `TemperatureConfig` (Phase 1) – ✅ vorhanden
+- `BiomeJsonGenerator` (Phase 2.6) – 🔄 muss erweitert werden
+- `SeasonBiomeResolver` (Phase 2.6) – 🔄 muss erweitert werden
+- `BiomeSpoofCoordinator` (Phase 2.6) – ✅ vorhanden, übergibt bereits Temperatur
+- `ConfigManager` (Phase 1) – ✅ vorhanden, muss `frost.yml` registrieren
+- `VanillaBiomeReference` (Phase 2.6) – ✅ vorhanden, wird als Basis für Frost-JSONs genutzt
 
 **Fertigstellungskriterien:**
-- Deutliche frostige Optik unter 0°C (Gras/Laub bleicht aus)
-- Schneeflocken-Partikel bei Frost sichtbar
+- `BiomeJsonGenerator` erzeugt `frost_*.json` für alle `enabled_biomes`
+- `SeasonBiomeResolver` wählt Frost-Biom bei Temperatur < `freeze-threshold`
+- Gras-/Laub-Farben frostig (kühles Weiß/Grau) bei Frost
+- Schneeflocken-Partikel bei Frost sichtbar, Dichte konfigurierbar
 - Keine Frost-Effekte in excluded-biomes
-- Schnelle Tag/Nacht-Reaktion ohne Lag
-- Keine spürbaren Performance-Einbußen bei 10–15 Spielern
+- Schnelle Tag/Nacht-Reaktion (< 40 Ticks über Coordinator-Timer)
+- Keine Konflikte mit Snow-System (Phase 1.5) oder Custom-Biome-Datapack (Phase 2.6)

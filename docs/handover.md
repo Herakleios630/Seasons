@@ -7,7 +7,7 @@
 ## Aktueller Stand
 
 - **Phase 1 MVP fertig** – Seasons, Temperatur, Schnee-Akkumulation, Commands
-- **Phase 2 (Visual Seasons) fertig** – FoliageTintManager mit Chunk-Biome-Caching, VisualSeasonManager mit Übergangslogik, NmsAdapter für 1.21.x
+- **Phase 2-PRE abgeschlossen** – altes NMS-basiertes Visual-System komplett entfernt, Netty-Dependency gelöscht
 - **Bugfix 0/X Placements abgeschlossen** – `SnowAccumulator` auf per-Column-Logik umgebaut
 - **18 aktive Regeln**, Build erfolgreich
 - **Phase 2.4 (Polish & Testing) in Arbeit** – Performance-Optimierung abgeschlossen, Dokumentation wird synchronisiert

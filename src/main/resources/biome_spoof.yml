@@ -1,0 +1,42 @@
+# Biome-Spoofing-Config: Überschreibt serverseitig das Biome für Clients
+# in einem ringförmigen Bereich um den Spieler herum.
+enabled: true
+mode: GLOBAL_RING
+radius_chunks: 8
+budget_chunks_per_tick: 16
+revert_on_non_winter: true
+transition_days: 3
+
+# Transition: Schrittweise Biome-Wechsel ueber mehrere Naechte
+transition:
+  nights_per_step: 1
+
+seasons:
+  SPRING: FLOWER_FOREST
+  SUMMER: PLAINS
+  FALL: seasons:fall_forest
+  WINTER: SNOWY_PLAINS
+
+oceans:
+  enabled: true
+  keep_deep_variants: true
+  seasons:
+    SPRING: LUKEWARM_OCEAN
+    SUMMER: WARM_OCEAN
+    FALL: OCEAN
+    WINTER: FROZEN_OCEAN
+
+excluded_biomes:
+  - MUSHROOM_FIELDS
+  - DEEP_DARK
+  - THE_VOID
+
+disabled_fx_worlds:
+  - world_nether
+  - world_the_end
+
+disk_backup:
+  enabled: true
+
+resend_enabled: true
+resend_chunks_per_tick: 8

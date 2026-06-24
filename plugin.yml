@@ -1,0 +1,66 @@
+name: AdvancedSeasons
+main: net.advancedplugins.seasons.Core
+description: Adds advanced seasons to your server!
+version: 1.0.10
+api-version: '1.20'
+
+softdepend:
+  - ProtocolLib
+  - MultiverseCore
+  - Vault
+  - Geyser-Spigot
+  - PlaceholderAPI
+
+load: POSTWORLD
+
+permissions:
+  advancedseasons.calendar:
+    description: Open the calendar menu
+    default: true
+  advancedseasons.seasonshop:
+    description: Open the season shop menu
+    default: op
+  advancedseasons.use:
+    description: Permission to use /advancedseasons commands
+    default: op
+  advancedseasons.addworld:
+    description: Add Seasons to a world
+    default: op
+  advancedseasons.removeworld:
+    description: Remove seasons from a world
+    default: op
+  advancedseasons.nextseason:
+    description: Forward a season
+    default: op
+  advancedseasons.setseason:
+    description: Set season of a world
+    default: op
+  advancedseasons.reload:
+    description: Reload all configuration (does not reload season colors)
+    default: op
+  advancedseasons.info:
+    description: Info of current season
+    default: op
+  advancedseasons.temperature:
+    description: Set your current temperature
+    default: op
+  advancedseasons.admin:
+    description: Info about a block in front of player
+    default: op
+
+commands:
+  advancedseasons:
+    aliases:
+      - as
+      - season
+      - seasons
+      - aseasons
+  calendar:
+    description: Opens the seasons calendar
+    aliases:
+      - cal
+      - date
+  seasonshop:
+    description: Opens the seasonal items shop
+    aliases:
+      - sshop

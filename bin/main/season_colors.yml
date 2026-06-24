@@ -1,0 +1,89 @@
+# season_colors.yml – Zentrale Farbsteuerung für saisonale Biome
+# Ziel-Farben werden mit den Original-Farben des Bioms interpoliert.
+# Farbwerte in 0xRRGGBB.
+
+# Sub-Varianten pro Übergang (kann pro Übergang individuell sein)
+transitions:
+  default_steps: 4
+  WINTER_TO_SPRING: 2
+  SPRING_TO_SUMMER: 2
+  SUMMER_TO_FALL: 4
+  FALL_TO_WINTER: 3
+
+# Blending-Faktor pro Saison: 0.0 = Original, 1.0 = Ziel
+# Für SPRING/SUMMER auf 0.0 → keine Änderung
+defaults:
+  spring:
+    blend_factor: 0.0
+    grass_color_target: 0x68B040
+    foliage_color_target: 0x3C9A1E
+  summer:
+    blend_factor: 0.0
+    grass_color_target: 0x68B040
+    foliage_color_target: 0x3C9A1E
+  fall:
+    blend_factor: 0.7
+    grass_color_target: 0xB88A30
+    foliage_color_target: 0xBB8820
+    fog_color: 0xD4C4A0
+    sky_color: 0xB0A8A0
+    water_fog_color: 0xC0B070
+  winter:
+    blend_factor: 1.0
+    grass_color_target: 0x808088
+    foliage_color_target: 0x70787A
+
+# Biom-spezifische Overrides (nur was vom Default abweicht)
+biomes:
+  minecraft:taiga:
+    winter:
+      grass_color_target: 0x68A030
+      foliage_color_target: 0x3C7010
+  minecraft:snowy_taiga:
+    winter:
+      grass_color_target: 0x68A030
+      foliage_color_target: 0x3C7010
+  minecraft:old_growth_pine_taiga:
+    winter:
+      grass_color_target: 0x5C8A28
+      foliage_color_target: 0x346010
+  minecraft:old_growth_spruce_taiga:
+    winter:
+      grass_color_target: 0x5C8A28
+      foliage_color_target: 0x346010
+  minecraft:swamp:
+    fall:
+      grass_color_target: 0x8B6914
+      foliage_color_target: 0x6B4E14
+  minecraft:mangrove_swamp:
+    fall:
+      grass_color_target: 0x8B6914
+      foliage_color_target: 0x6B4E14
+  minecraft:dark_forest:
+    fall:
+      grass_color_target: 0xA06020
+      foliage_color_target: 0x8A3E10
+  minecraft:plains:
+    fall:
+      grass_color_target: 0xD4A030
+      foliage_color_target: 0xB88820
+
+# Welche Biomes überhaupt saisonal angepasst werden sollen
+enabled_biomes:
+  - minecraft:forest
+  - minecraft:flower_forest
+  - minecraft:birch_forest
+  - minecraft:old_growth_birch_forest
+  - minecraft:dark_forest
+  - minecraft:taiga
+  - minecraft:snowy_taiga
+  - minecraft:old_growth_pine_taiga
+  - minecraft:old_growth_spruce_taiga
+  - minecraft:plains
+  - minecraft:sunflower_plains
+  - minecraft:meadow
+  - minecraft:swamp
+  - minecraft:mangrove_swamp
+  - minecraft:river
+  - minecraft:cherry_grove
+  - minecraft:pale_garden

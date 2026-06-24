@@ -17,6 +17,8 @@ public class ResourceCopier {
         copyIfMissing("precipitation_categories.yml");
         copyIfMissing("replaceable_plants.yml");
         copyIfMissing("foliage_tints.yml");
+        copyIfMissing("season_colors.yml");
+        copyIfMissing("frost.yml");
     }
 
     private void copyIfMissing(String resourceName) {
